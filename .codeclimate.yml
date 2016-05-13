@@ -1,0 +1,11 @@
+engines:
+  tailor:
+    enabled: true
+    config: .tailor.yml
+  shellcheck:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.swift"
