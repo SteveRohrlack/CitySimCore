@@ -2,4 +2,7 @@ language: objective-c
 osx_image: xcode7.3
 xcode_project: CitySimCore.xcodeproj
 xcode_scheme: CitySimCoreiOS
-xcode_sdk: iphonesimulator9.2
+xcode_sdk: iphonesimulator9.3
+addons:
+    code_climate:
+        repo_token: ff68225fb2a64fb00c8af7f2bf998a68bedeef11232fa13fc99896b8a0c102f3
