@@ -1,5 +1,17 @@
 # CitySimCore
 
+This is sort of my personal swift playground - nothing special.
+
+## setup
+
+    bundle install
+
+## Docs
+
+Docs are generated using jazzy. To update, run:
+
+    bundle exec "jazzy"
+
 ## QA
 
 ### Travis
