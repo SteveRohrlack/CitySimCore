@@ -23,14 +23,13 @@ class CityMap {
         self.noiseLayer = StatisticsMap(rows: height, columns: width)
     }
     
-    private func updateStatisticsLayers(ploppable plopp: Ploppable, at location: Locateable) {
-        for effectType in plopp.effectTypes {
-            switch effectType {
-            case .Landvalue(let radius, let value, let accumulates):
-                landvalueLayer.addGradient(at: location, radius: radius, value: value, accumulates: accumulates)
-                //case .Noise(let radius, let value):
-                //noiseLayer.addGradient(at: location, radius: radius, value: value)
-                break
+    private func updateStatisticsLayers(ploppable plopp: Ploppable) {
+        for statisticType in plopp.statisticTypes {
+            switch statisticType {
+            case .Landvalue(let radius, let value):
+                landvalueLayer.addGradient(at: plopp, radius: radius, value: value)
+            case .Noise(let radius, let value):
+                noiseLayer.addGradient(at: plopp, radius: radius, value: value)
             default:
                 break
             }
@@ -106,7 +105,11 @@ class CityMap {
         let tilesToRemove = tileLayer.usedByTilesAt(location: location)
         
         for tile in tilesToRemove {
-            //TODO
+            if tile is MapStatisticType {
+                
+            }
+            
+            tileLayer.remove(tile: tile)
         }
     }
     
@@ -124,19 +127,13 @@ class CityMap {
         try add(tile: zone as Tileable)
     }
     
-    func plopp(ploppable plopp: Ploppable, origin: (Int,Int)) throws {
-        let tile = Tile(origin: origin, height: plopp.height, width: plopp.width, type: .Ploppable(plopp.type))
+    func plopp(plopp plopp: Ploppable) throws {
+        try add(tile: plopp)
         
-        try add(tile: tile)
-        
-        updateStatisticsLayers(ploppable: plopp, at: tile)
+        updateStatisticsLayers(ploppable: plopp)
     }
     
-    func prop(tile tile: Tile) throws {
-        guard case .Prop = tile.type else {
-            throw CityMapError.UsePropOnly
-        }
-        
-        try add(tile: tile)
+    func prop(prop prop: Prop) throws {
+        try add(tile: prop)
     }
 }

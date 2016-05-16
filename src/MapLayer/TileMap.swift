@@ -31,6 +31,12 @@ struct TileMap: Array2DMapping {
         }
     }
     
+    mutating func remove(tile tile: ValueType) {
+        tile.forEachCell {(y: Int, x: Int) in
+            self[y, x] = nil
+        }
+    }
+    
     func usedByTilesAt(location location: Locateable) -> [ValueType] {
         var tiles: [ValueType] = []
         

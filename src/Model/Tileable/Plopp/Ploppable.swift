@@ -1,5 +1,5 @@
 //
-//  PloppableTypeable.swift
+//  Ploppable.swift
 //  CitySimCore
 //
 //  Created by Steve Rohrlack on 13.05.16.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PloppableTypeable {
-    var type: PloppableType { get }
+protocol Ploppable: Tileable, MapStatistical {
+    var name: String { get set }
 }

@@ -29,13 +29,13 @@ class TileMapTests: XCTestCase {
     }
     
     func testSubscriptSet() {
-        subject![0,0] = Tile(origin: (0,0), height: 1, width: 1, type: .Zoneable(.Residential))
+        subject![0,0] = Zone(origin: (0,0), height: 1, width: 1, type: .Zoneable(.Residential))
         XCTAssertNotNil(subject![0,0])
         XCTAssertNil(subject![1,0])
     }
     
     func testAddTile() {
-        let tile = Tile(origin: (1,1), height: 2, width: 2, type: .Zoneable(.Residential))
+        let tile = Zone(origin: (1,1), height: 2, width: 2, type: .Zoneable(.Residential))
         
         do {
             try subject!.addTile(tile: tile)
@@ -68,7 +68,7 @@ class TileMapTests: XCTestCase {
     }
     
     func testAddTileFails() {
-        let tile = Tile(origin: (4,4), height: 2, width: 2, type: .Zoneable(.Residential))
+        let tile = Zone(origin: (4,4), height: 2, width: 2, type: .Zoneable(.Residential))
         var errorOccured = false
         
         do {
@@ -88,8 +88,8 @@ class TileMapTests: XCTestCase {
     }
     
     func testUsedByTilesAt() {
-        let tile1 = Tile(origin: (0,0), height: 1, width: 1, type: .Zoneable(.Residential))
-        let tile2 = Tile(origin: (1,1), height: 1, width: 1, type: .Zoneable(.Commercial))
+        let tile1 = Zone(origin: (0,0), height: 1, width: 1, type: .Zoneable(.Residential))
+        let tile2 = Zone(origin: (1,1), height: 1, width: 1, type: .Zoneable(.Commercial))
         
         do {
             try subject!.addTile(tile: tile1)

@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol Statistical {
-    
+enum MapStatisticType {
+    case Landvalue(radius: Int, value: Int)
+    case Noise(radius: Int, value: Int)
+    case Firehazzard(radius: Int, value: Int)
 }

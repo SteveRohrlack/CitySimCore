@@ -1,17 +1,17 @@
 //
-//  Zone.swift
+//  Prop.swift
 //  CitySimCore
 //
-//  Created by Steve Rohrlack on 13.05.16.
+//  Created by Steve Rohrlack on 16.05.16.
 //  Copyright © 2016 Steve Rohrlack. All rights reserved.
 //
 
 import Foundation
 
-struct Zone: Zoneable {
-    let origin: (Int,Int)
+struct Prop: Propable {
+    let origin: (Int, Int)
     let height: Int
     let width: Int
     let type: TileType
-    var content: Int?
+    let content: Int
 }
