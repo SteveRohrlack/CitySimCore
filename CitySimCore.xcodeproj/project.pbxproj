@@ -23,8 +23,8 @@
 		E20B14E01CE610CE0067BC91 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14DE1CE610CE0067BC91 /* CityMap.swift */; };
 		E20B14E41CE611920067BC91 /* TileTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E11CE611460067BC91 /* TileTypeTests.swift */; };
 		E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E11CE611460067BC91 /* TileTypeTests.swift */; };
-		E20B14E71CE613F00067BC91 /* TileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileMapTests.swift */; };
-		E20B14E81CE613F00067BC91 /* TileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileMapTests.swift */; };
+		E20B14E71CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
+		E20B14E81CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
 		E22D206F1CEB336100E97894 /* MapStatistical.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D206D1CEB336100E97894 /* MapStatistical.swift */; };
 		E22D20701CEB336100E97894 /* MapStatistical.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D206D1CEB336100E97894 /* MapStatistical.swift */; };
 		E22D20741CEB336C00E97894 /* MapStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D20731CEB336C00E97894 /* MapStatistic.swift */; };
@@ -39,12 +39,16 @@
 		E2782CC31CE5DBDA00E5DF9A /* CitySimCoreMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2782CB91CE5DBDA00E5DF9A /* CitySimCoreMacOS.framework */; };
 		E2782CD61CE5DD2300E5DF9A /* CitySimCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E2782CD11CE5DD0D00E5DF9A /* CitySimCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2782CD71CE5DD2700E5DF9A /* CitySimCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E2782CD11CE5DD0D00E5DF9A /* CitySimCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2A48B8C1CEB3688006D272B /* SmallPark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8B1CEB3688006D272B /* SmallPark.swift */; };
+		E2A48B8D1CEB3688006D272B /* SmallPark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8B1CEB3688006D272B /* SmallPark.swift */; };
+		E2A48B8F1CEB36A1006D272B /* Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8E1CEB36A1006D272B /* Street.swift */; };
+		E2A48B901CEB36A1006D272B /* Street.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8E1CEB36A1006D272B /* Street.swift */; };
 		E2D86CEB1CEA4247007EABD8 /* Tileable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86CD61CEA4247007EABD8 /* Tileable.swift */; };
 		E2D86CEC1CEA4247007EABD8 /* Tileable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86CD61CEA4247007EABD8 /* Tileable.swift */; };
 		E2D86CED1CEA4247007EABD8 /* TileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86CD71CEA4247007EABD8 /* TileType.swift */; };
 		E2D86CEE1CEA4247007EABD8 /* TileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86CD71CEA4247007EABD8 /* TileType.swift */; };
-		E2D86D031CEA4364007EABD8 /* TileMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D001CEA4364007EABD8 /* TileMap.swift */; };
-		E2D86D041CEA4364007EABD8 /* TileMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D001CEA4364007EABD8 /* TileMap.swift */; };
+		E2D86D031CEA4364007EABD8 /* TileLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D001CEA4364007EABD8 /* TileLayer.swift */; };
+		E2D86D041CEA4364007EABD8 /* TileLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D001CEA4364007EABD8 /* TileLayer.swift */; };
 		E2D86D121CEA44E2007EABD8 /* Plopp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D061CEA44E2007EABD8 /* Plopp.swift */; };
 		E2D86D131CEA44E2007EABD8 /* Plopp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D061CEA44E2007EABD8 /* Plopp.swift */; };
 		E2D86D161CEA44E2007EABD8 /* Ploppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D081CEA44E2007EABD8 /* Ploppable.swift */; };
@@ -93,7 +97,7 @@
 		E20B14B51CE6108F0067BC91 /* TileableMapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileableMapError.swift; sourceTree = "<group>"; };
 		E20B14DE1CE610CE0067BC91 /* CityMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
 		E20B14E11CE611460067BC91 /* TileTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTypeTests.swift; sourceTree = "<group>"; };
-		E20B14E61CE613F00067BC91 /* TileMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMapTests.swift; sourceTree = "<group>"; };
+		E20B14E61CE613F00067BC91 /* TileLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerTests.swift; sourceTree = "<group>"; };
 		E22D206D1CEB336100E97894 /* MapStatistical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatistical.swift; sourceTree = "<group>"; };
 		E22D20731CEB336C00E97894 /* MapStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatistic.swift; sourceTree = "<group>"; };
 		E22D20791CEB33D700E97894 /* StatisticsLayering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLayering.swift; sourceTree = "<group>"; };
@@ -106,9 +110,11 @@
 		E2782CD11CE5DD0D00E5DF9A /* CitySimCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitySimCore.h; sourceTree = "<group>"; };
 		E2782CD21CE5DD0D00E5DF9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2782CD51CE5DD0D00E5DF9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2A48B8B1CEB3688006D272B /* SmallPark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallPark.swift; sourceTree = "<group>"; };
+		E2A48B8E1CEB36A1006D272B /* Street.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Street.swift; sourceTree = "<group>"; };
 		E2D86CD61CEA4247007EABD8 /* Tileable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tileable.swift; sourceTree = "<group>"; };
 		E2D86CD71CEA4247007EABD8 /* TileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileType.swift; sourceTree = "<group>"; };
-		E2D86D001CEA4364007EABD8 /* TileMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileMap.swift; sourceTree = "<group>"; };
+		E2D86D001CEA4364007EABD8 /* TileLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayer.swift; sourceTree = "<group>"; };
 		E2D86D061CEA44E2007EABD8 /* Plopp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plopp.swift; sourceTree = "<group>"; };
 		E2D86D081CEA44E2007EABD8 /* Ploppable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ploppable.swift; sourceTree = "<group>"; };
 		E2D86D091CEA44E2007EABD8 /* PloppableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloppableType.swift; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 		E2782CD01CE5DD0D00E5DF9A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				E2A48B8A1CEB3678006D272B /* Content */,
 				E20B149E1CE6108F0067BC91 /* Lib */,
 				E2D86CFE1CEA4364007EABD8 /* MapLayer */,
 				E20B14A01CE6108F0067BC91 /* Model */,
@@ -231,11 +238,20 @@
 			isa = PBXGroup;
 			children = (
 				E20B14441CE5EC420067BC91 /* LocationTests.swift */,
-				E20B14E61CE613F00067BC91 /* TileMapTests.swift */,
+				E20B14E61CE613F00067BC91 /* TileLayerTests.swift */,
 				E20B14E11CE611460067BC91 /* TileTypeTests.swift */,
 				E2782CD51CE5DD0D00E5DF9A /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		E2A48B8A1CEB3678006D272B /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				E2A48B8B1CEB3688006D272B /* SmallPark.swift */,
+				E2A48B8E1CEB36A1006D272B /* Street.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		E2D86CCD1CEA4247007EABD8 /* Tileable */ = {
@@ -254,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				E22D20791CEB33D700E97894 /* StatisticsLayering.swift */,
-				E2D86D001CEA4364007EABD8 /* TileMap.swift */,
+				E2D86D001CEA4364007EABD8 /* TileLayer.swift */,
 				E22D207F1CEB33FE00E97894 /* StatisticsLayer.swift */,
 				E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */,
 			);
@@ -465,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A48B8F1CEB36A1006D272B /* Street.swift in Sources */,
 				E2D86CED1CEA4247007EABD8 /* TileType.swift in Sources */,
 				E22D207A1CEB33D700E97894 /* StatisticsLayering.swift in Sources */,
 				E2D86D161CEA44E2007EABD8 /* Ploppable.swift in Sources */,
@@ -480,13 +497,14 @@
 				E22D20831CEB341100E97894 /* StatisticlayersContainer.swift in Sources */,
 				E2D86D1A1CEA44E2007EABD8 /* Prop.swift in Sources */,
 				E22D20741CEB336C00E97894 /* MapStatistic.swift in Sources */,
-				E2D86D031CEA4364007EABD8 /* TileMap.swift in Sources */,
+				E2D86D031CEA4364007EABD8 /* TileLayer.swift in Sources */,
 				E20B14DC1CE6108F0067BC91 /* TileableMapError.swift in Sources */,
 				E20B14BE1CE6108F0067BC91 /* Location.swift in Sources */,
 				E2D86D121CEA44E2007EABD8 /* Plopp.swift in Sources */,
 				E22D20801CEB33FE00E97894 /* StatisticsLayer.swift in Sources */,
 				E20B14DF1CE610CE0067BC91 /* CityMap.swift in Sources */,
 				E2D86D201CEA44E2007EABD8 /* Zone.swift in Sources */,
+				E2A48B8C1CEB3688006D272B /* SmallPark.swift in Sources */,
 				E20B14BC1CE6108F0067BC91 /* Locateable.swift in Sources */,
 				E2D86D181CEA44E2007EABD8 /* PloppableType.swift in Sources */,
 			);
@@ -497,7 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20B14E41CE611920067BC91 /* TileTypeTests.swift in Sources */,
-				E20B14E71CE613F00067BC91 /* TileMapTests.swift in Sources */,
+				E20B14E71CE613F00067BC91 /* TileLayerTests.swift in Sources */,
 				E20B14451CE5EF160067BC91 /* LocationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A48B901CEB36A1006D272B /* Street.swift in Sources */,
 				E2D86CEE1CEA4247007EABD8 /* TileType.swift in Sources */,
 				E22D207B1CEB33D700E97894 /* StatisticsLayering.swift in Sources */,
 				E2D86D171CEA44E2007EABD8 /* Ploppable.swift in Sources */,
@@ -521,13 +540,14 @@
 				E22D20841CEB341100E97894 /* StatisticlayersContainer.swift in Sources */,
 				E2D86D1B1CEA44E2007EABD8 /* Prop.swift in Sources */,
 				E22D20751CEB336C00E97894 /* MapStatistic.swift in Sources */,
-				E2D86D041CEA4364007EABD8 /* TileMap.swift in Sources */,
+				E2D86D041CEA4364007EABD8 /* TileLayer.swift in Sources */,
 				E20B14DD1CE6108F0067BC91 /* TileableMapError.swift in Sources */,
 				E20B14BF1CE6108F0067BC91 /* Location.swift in Sources */,
 				E2D86D131CEA44E2007EABD8 /* Plopp.swift in Sources */,
 				E22D20811CEB33FE00E97894 /* StatisticsLayer.swift in Sources */,
 				E20B14E01CE610CE0067BC91 /* CityMap.swift in Sources */,
 				E2D86D211CEA44E2007EABD8 /* Zone.swift in Sources */,
+				E2A48B8D1CEB3688006D272B /* SmallPark.swift in Sources */,
 				E20B14BD1CE6108F0067BC91 /* Locateable.swift in Sources */,
 				E2D86D191CEA44E2007EABD8 /* PloppableType.swift in Sources */,
 			);
@@ -538,7 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */,
-				E20B14E81CE613F00067BC91 /* TileMapTests.swift in Sources */,
+				E20B14E81CE613F00067BC91 /* TileLayerTests.swift in Sources */,
 				E20B14461CE5EF1C0067BC91 /* LocationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

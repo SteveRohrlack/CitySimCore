@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TileMap: Array2DMapping {
+struct TileLayer: Array2DMapping {
     typealias ValueType = Tileable
     
     let rows: Int

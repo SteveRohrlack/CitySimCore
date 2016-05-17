@@ -11,13 +11,13 @@ import Foundation
 class CityMap {
     private var height: Int
     private var width: Int
-    private var tileLayer: TileMap
+    private var tileLayer: TileLayer
     private var statisticsLayerContainer: StatisticlayersContainer
     
     init(height: Int, width: Int) {
         self.width = width
         self.height = height
-        self.tileLayer = TileMap(rows: height, columns: width)
+        self.tileLayer = TileLayer(rows: height, columns: width)
         self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
     }
     

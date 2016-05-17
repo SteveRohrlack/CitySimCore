@@ -11,12 +11,12 @@ import XCTest
 
 class TileMapTests: XCTestCase {
     
-    var subject: TileMap?
+    var subject: TileLayer?
     
     override func setUp() {
         super.setUp()
         
-        subject = TileMap(rows: 5, columns: 5)
+        subject = TileLayer(rows: 5, columns: 5)
     }
     
     override func tearDown() {
