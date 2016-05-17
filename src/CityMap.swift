@@ -12,28 +12,13 @@ class CityMap {
     private var height: Int
     private var width: Int
     private var tileLayer: TileMap
-    private var landvalueLayer: StatisticsMap
-    private var noiseLayer: StatisticsMap
+    private var statisticsLayerContainer: StatisticlayersContainer
     
     init(height: Int, width: Int) {
         self.width = width
         self.height = height
         self.tileLayer = TileMap(rows: height, columns: width)
-        self.landvalueLayer = StatisticsMap(rows: height, columns: width)
-        self.noiseLayer = StatisticsMap(rows: height, columns: width)
-    }
-    
-    private func updateStatisticsLayers(ploppable plopp: Ploppable) {
-        for statisticType in plopp.statisticTypes {
-            switch statisticType {
-            case .Landvalue(let radius, let value):
-                landvalueLayer.addGradient(at: plopp, radius: radius, value: value)
-            case .Noise(let radius, let value):
-                noiseLayer.addGradient(at: plopp, radius: radius, value: value)
-            default:
-                break
-            }
-        }
+        self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
     }
     
     // MARK: add, remove
@@ -105,8 +90,8 @@ class CityMap {
         let tilesToRemove = tileLayer.usedByTilesAt(location: location)
         
         for tile in tilesToRemove {
-            if tile is MapStatisticType {
-                
+            if tile is MapStatistical {
+                statisticsLayerContainer.removeStatistics(at: tile, statistical: tile as! MapStatistical)
             }
             
             tileLayer.remove(tile: tile)
@@ -130,7 +115,7 @@ class CityMap {
     func plopp(plopp plopp: Ploppable) throws {
         try add(tile: plopp)
         
-        updateStatisticsLayers(ploppable: plopp)
+        statisticsLayerContainer.addStatistics(at: plopp, statistical: plopp)
     }
     
     func prop(prop prop: Prop) throws {

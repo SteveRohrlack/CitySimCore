@@ -15,8 +15,6 @@ protocol Array2DMapping {
     var rows: Int { get }
     var values: [ValueType?] { get set }
     
-    init(rows: Int, columns: Int)
-    
     subscript(row: Int, column: Int) -> ValueType? { get set }
 }
 

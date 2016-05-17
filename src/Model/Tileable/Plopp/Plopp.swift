@@ -14,5 +14,5 @@ struct Plopp: Ploppable {
     let width: Int
     let type: TileType
     var name: String
-    let statisticTypes: [MapStatisticType]
+    let statistics: [MapStatistic]
 }

@@ -29,6 +29,6 @@ extension Buildable {
     func asPlopp(origin origin: (Int, Int)) -> Plopp {
         let tileType: TileType = .Ploppable(type)
         
-        return Plopp(origin: origin, height: height, width: width, type: tileType, name: name, statisticTypes: statisticTypes)
+        return Plopp(origin: origin, height: height, width: width, type: tileType, name: name, statistics: statistics)
     }
 }

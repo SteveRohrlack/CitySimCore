@@ -9,11 +9,11 @@
 import Foundation
 
 protocol MapStatistical {
-    var statisticTypes: [MapStatisticType] { get }
+    var statistics: [MapStatistic] { get }
 }
 
 extension MapStatistical {
-    var statisticTypes: [MapStatisticType] {
+    var statistics: [MapStatistic] {
         return []
     }
 }
