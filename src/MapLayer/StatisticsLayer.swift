@@ -32,10 +32,14 @@ struct StatisticsLayer: StatisticsLayering {
         }
     }
     
-    mutating func remove(at location: Locateable, radius: Int, value: ValueType) {
+    mutating func remove(at location: Locateable, radius: Int, value: ValueType) throws {
+        var errorWhileRemoving: StatisticsLayerError?
+        
         let areaIncludingRadius = location + radius
+        
         areaIncludingRadius.forEachCell {(y: Int, x: Int) in
             guard let currentValue = self[y, x] else {
+                errorWhileRemoving = StatisticsLayerError.CannotRemoveBecauseAlreadyEmpty
                 return
             }
             
@@ -46,6 +50,10 @@ struct StatisticsLayer: StatisticsLayering {
             }
             
             self[y, x] = newValue
+        }
+        
+        if let error = errorWhileRemoving {
+            throw error
         }
     }
 }

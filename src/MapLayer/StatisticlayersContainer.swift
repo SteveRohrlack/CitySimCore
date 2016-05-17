@@ -37,13 +37,13 @@ struct StatisticlayersContainer {
         }
     }
     
-    mutating func removeStatistics(at location: Locateable, statistical: MapStatistical) {
+    mutating func removeStatistics(at location: Locateable, statistical: MapStatistical) throws {
         for statistic in statistical.statistics {
             switch statistic {
             case .Landvalue(let radius, let value):
-                landvalueLayer.remove(at: location, radius: radius, value: value)
+                try landvalueLayer.remove(at: location, radius: radius, value: value)
             case .Noise(let radius, let value):
-                noiseLayer.remove(at: location, radius: radius, value: value)
+                try noiseLayer.remove(at: location, radius: radius, value: value)
             default:
                 break
             }

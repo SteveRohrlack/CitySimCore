@@ -11,5 +11,5 @@ import Foundation
 protocol StatisticsLayering: Array2DMapping {
     mutating func add(at location: Locateable, radius: Int, value: ValueType)
     
-    mutating func remove(at location: Locateable, radius: Int, value: ValueType)
+    mutating func remove(at location: Locateable, radius: Int, value: ValueType) throws
 }

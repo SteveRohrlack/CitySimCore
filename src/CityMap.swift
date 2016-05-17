@@ -86,12 +86,12 @@ class CityMap {
     
     // MARK: remove, info
     
-    func removeAt(location location: Locateable) {
+    func removeAt(location location: Locateable) throws {
         let tilesToRemove = tileLayer.usedByTilesAt(location: location)
         
         for tile in tilesToRemove {
             if tile is MapStatistical {
-                statisticsLayerContainer.removeStatistics(at: tile, statistical: tile as! MapStatistical)
+                try statisticsLayerContainer.removeStatistics(at: tile, statistical: tile as! MapStatistical)
             }
             
             tileLayer.remove(tile: tile)
