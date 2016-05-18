@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol Ploppable: Tileable, MapStatistical {
+protocol Ploppable {
     var name: String { get set }
+    var description: String { get }
+    var cost: Int { get }
 }

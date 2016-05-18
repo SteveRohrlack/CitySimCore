@@ -65,19 +65,19 @@ class CityMap {
     
     // MARK: zone, plopp, prop
     
-    func zone(zone zone: Zoneable) throws {
-        try add(tile: zone as Tileable)
+    func zone(zone zone: TileableZoneable) throws {
+        try add(tile: zone)
     }
     
-    func plopp(plopp plopp: Ploppable) throws {
+    func plopp(plopp plopp: TileablePloppable) throws {
         try add(tile: plopp)
         
         if plopp is MapStatistical {
-            statisticsLayerContainer.addStatistics(at: plopp, statistical: plopp)
+            statisticsLayerContainer.addStatistics(at: plopp, statistical: plopp as! MapStatistical)
         }
     }
     
-    func prop(prop prop: Prop) throws {
+    func prop(prop prop: TileablePropable) throws {
         try add(tile: prop)
     }
 }

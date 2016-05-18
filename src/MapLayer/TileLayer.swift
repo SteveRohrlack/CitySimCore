@@ -46,8 +46,9 @@ struct TileLayer: Array2DMapping {
             }
             
             if !(tiles.contains {(element: ValueType) in
-                element.type == tile.type
-                }) {
+                return (element.origin == tile.origin && element.type == tile.type)
+                })
+            {
                 tiles.append(tile)
             }
         }

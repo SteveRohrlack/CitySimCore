@@ -9,14 +9,14 @@
 import Foundation
 
 enum TileType: Equatable {
-    case Prop(PropType)
+    case Propable(PropType)
     case Zoneable(ZoneableType)
     case Ploppable(PloppableType)
 }
 
 func == (type1: TileType, type2: TileType) -> Bool {
     switch (type1, type2) {
-    case (.Prop(let a), .Prop(let b)) where a == b:
+    case (.Propable(let a), .Propable(let b)) where a == b:
         return true
     case (.Zoneable(let a), .Zoneable(let b)) where a == b:
         return true

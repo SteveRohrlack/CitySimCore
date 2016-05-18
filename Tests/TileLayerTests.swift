@@ -24,18 +24,18 @@ class TileMapTests: XCTestCase {
     }
     
     func testSubscriptGet() {
-        let content = subject![0,0]
+        let content = subject![0, 0]
         XCTAssertNil(content)
     }
     
     func testSubscriptSet() {
-        subject![0,0] = Zone(origin: (0,0), height: 1, width: 1, type: .Zoneable(.Residential))
-        XCTAssertNotNil(subject![0,0])
-        XCTAssertNil(subject![1,0])
+        subject![0,0] = SmallResidentialZone(origin: (0, 0))
+        XCTAssertNotNil(subject![0, 0])
+        XCTAssertNil(subject![1, 0])
     }
     
     func testAddTile() {
-        let tile = Zone(origin: (1,1), height: 2, width: 2, type: .Zoneable(.Residential))
+        let tile = SmallResidentialZone(origin: (1, 1))
         
         do {
             try subject!.addTile(tile: tile)
@@ -53,22 +53,22 @@ class TileMapTests: XCTestCase {
             }
         }
         
-        XCTAssertNil(subject![0,0])
-        XCTAssertNil(subject![0,1])
-        XCTAssertNil(subject![1,0])
+        XCTAssertNil(subject![0, 0])
+        XCTAssertNil(subject![0, 1])
+        XCTAssertNil(subject![1, 0])
         
-        XCTAssertNil(subject![3,0])
-        XCTAssertNil(subject![3,1])
-        XCTAssertNil(subject![3,2])
-        XCTAssertNil(subject![3,3])
+        XCTAssertNil(subject![3, 0])
+        XCTAssertNil(subject![3, 1])
+        XCTAssertNil(subject![3, 2])
+        XCTAssertNil(subject![3, 3])
         
-        XCTAssertNil(subject![0,3])
-        XCTAssertNil(subject![1,3])
-        XCTAssertNil(subject![2,3])
+        XCTAssertNil(subject![0, 3])
+        XCTAssertNil(subject![1, 3])
+        XCTAssertNil(subject![2, 3])
     }
     
     func testAddTileFails() {
-        let tile = Zone(origin: (4,4), height: 2, width: 2, type: .Zoneable(.Residential))
+        let tile = SmallResidentialZone(origin: (4, 4))
         var errorOccured = false
         
         do {
@@ -88,8 +88,8 @@ class TileMapTests: XCTestCase {
     }
     
     func testUsedByTilesAt() {
-        let tile1 = Zone(origin: (0,0), height: 1, width: 1, type: .Zoneable(.Residential))
-        let tile2 = Zone(origin: (1,1), height: 1, width: 1, type: .Zoneable(.Commercial))
+        let tile1 = SmallResidentialZone(origin: (0, 0))
+        let tile2 = SmallResidentialZone(origin: (2, 2))
         
         do {
             try subject!.addTile(tile: tile1)
@@ -98,7 +98,7 @@ class TileMapTests: XCTestCase {
             XCTFail("should not fail")
         }
         
-        let tiles = subject!.usedByTilesAt(location: Location(origin: (0,0), height: 2, width: 2))
+        let tiles = subject!.usedByTilesAt(location: Location(origin: (0, 0), height: 3, width: 3))
         
         XCTAssertEqual(2, tiles.count)
     }

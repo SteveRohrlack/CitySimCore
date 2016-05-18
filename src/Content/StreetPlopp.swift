@@ -8,10 +8,17 @@
 
 import Foundation
 
-struct Street: Buildable {
-    let name = "Street"
+struct StreetPlopp: TileablePloppable, MapStatistical {
+    let origin: (Int, Int)
+    let height: Int = 1
+    let width: Int = 1
+    var name = "Street"
     let description = "Street"
     let cost = 20
-    let type: PloppableType = .Street
+    let type: TileType = .Ploppable(.Street)
     let statistics: [MapStatistic] = [.Noise(radius: 0, value: 1)]
+    
+    init(origin: (Int, Int)) {
+        self.origin = origin
+    }
 }

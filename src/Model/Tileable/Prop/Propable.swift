@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Propable: Tileable {
+protocol Propable {
     var content: Int { get }
 }
