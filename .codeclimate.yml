@@ -13,3 +13,4 @@ engines:
 ratings:
   paths:
   - "**.swift"
+  - "Gemfile.lock"
