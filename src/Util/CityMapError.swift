@@ -10,9 +10,5 @@ import Foundation
 
 enum CityMapError: ErrorType {
     case TileCantFit
-    case UsePropOnly
-    case UseZoneableOnly
-    case UsePloppableOnly
-    case PloppableCannotOverzonePloppable
-    case ZoneableCanOnlyOverzoneZoneable
+    case CannotAddBecauseNotEmpty
 }

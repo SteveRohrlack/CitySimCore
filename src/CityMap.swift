@@ -30,47 +30,8 @@ class CityMap {
         
         let locationUsedByTiles = tileLayer.usedByTilesAt(location: newTile)
         
-        guard locationUsedByTiles.count > 0 else {
-            return
-        }
-        
-        //overzoning
-        var overzoningError: CityMapError?
-        
-        let _ = locationUsedByTiles.contains({ (element: Tileable) in
-            //overzoning anything on water
-            if case .Prop(let proptype) = element.type where proptype == .Water {
-                overzoningError = CityMapError.PloppableCannotOverzonePloppable
-                return true
-            }
-            
-            //overzoning ploppables on ploppables
-            if case .Ploppable = newTile.type {
-                if case .Ploppable = element.type {
-                    overzoningError = .PloppableCannotOverzonePloppable
-                    return true
-                }
-            }
-            
-            //overzoning zoneable on anything
-            if case .Zoneable = newTile.type {
-                switch element.type {
-                case .Ploppable:
-                    overzoningError = .ZoneableCanOnlyOverzoneZoneable
-                    return true
-                case .Prop:
-                    overzoningError = .ZoneableCanOnlyOverzoneZoneable
-                    return true
-                default:
-                    break;
-                }
-            }
-            
-            return false
-        })
-        
-        if let error = overzoningError {
-            throw error
+        guard locationUsedByTiles.count == 0 else {
+            throw CityMapError.CannotAddBecauseNotEmpty
         }
     }
     
@@ -105,17 +66,15 @@ class CityMap {
     // MARK: zone, plopp, prop
     
     func zone(zone zone: Zoneable) throws {
-        guard case .Zoneable = zone.type else {
-            throw CityMapError.UseZoneableOnly
-        }
-        
         try add(tile: zone as Tileable)
     }
     
     func plopp(plopp plopp: Ploppable) throws {
         try add(tile: plopp)
         
-        statisticsLayerContainer.addStatistics(at: plopp, statistical: plopp)
+        if plopp is MapStatistical {
+            statisticsLayerContainer.addStatistics(at: plopp, statistical: plopp)
+        }
     }
     
     func prop(prop prop: Prop) throws {
