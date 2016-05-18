@@ -23,7 +23,7 @@ struct StatisticsLayer: StatisticsLayering {
     
     mutating func add(at location: Locateable, radius: Int, value: ValueType) {
         let areaIncludingRadius = location + radius
-        areaIncludingRadius.forEachCell {(y: Int, x: Int) in
+        areaIncludingRadius.forEachCell { (y: Int, x: Int) in
             var newValue = value
             if let currentValue = self[y, x] {
                 newValue += currentValue
@@ -37,7 +37,7 @@ struct StatisticsLayer: StatisticsLayering {
         
         let areaIncludingRadius = location + radius
         
-        areaIncludingRadius.forEachCell {(y: Int, x: Int) in
+        areaIncludingRadius.forEachCell { (y: Int, x: Int) in
             guard let currentValue = self[y, x] else {
                 errorWhileRemoving = StatisticsLayerError.CannotRemoveBecauseAlreadyEmpty
                 return
@@ -56,4 +56,5 @@ struct StatisticsLayer: StatisticsLayering {
             throw error
         }
     }
+    
 }

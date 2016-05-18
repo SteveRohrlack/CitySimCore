@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 # Swift Sourcecode Documentation Generator
 # spec: see http://nshipster.com/swift-documentation/

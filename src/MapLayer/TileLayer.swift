@@ -26,13 +26,13 @@ struct TileLayer: Array2DMapping {
             throw TileableMapError.TileCantFit
         }
         
-        tile.forEachCell {(y: Int, x: Int) in
-            self[y,x] = tile
+        tile.forEachCell { (y: Int, x: Int) in
+            self[y, x] = tile
         }
     }
     
     mutating func remove(tile tile: ValueType) {
-        tile.forEachCell {(y: Int, x: Int) in
+        tile.forEachCell { (y: Int, x: Int) in
             self[y, x] = nil
         }
     }
@@ -40,12 +40,12 @@ struct TileLayer: Array2DMapping {
     func usedByTilesAt(location location: Locateable) -> [ValueType] {
         var tiles: [ValueType] = []
         
-        location.forEachCell {(y: Int, x: Int) in
-            guard let tile = self[y,x] else {
+        location.forEachCell { (y: Int, x: Int) in
+            guard let tile = self[y, x] else {
                 return
             }
             
-            if !(tiles.contains {(element: ValueType) in
+            if !(tiles.contains { (element: ValueType) in
                 return (element.origin == tile.origin && element.type == tile.type)
                 })
             {
@@ -55,4 +55,5 @@ struct TileLayer: Array2DMapping {
         
         return tiles
     }
+    
 }

@@ -11,7 +11,7 @@ import Foundation
 /// Locateable
 
 protocol Locateable {
-    var origin: (Int,Int) { get }
+    var origin: (Int, Int) { get }
     var height: Int { get }
     var width: Int { get }
     var maxY: Int { get }
@@ -44,6 +44,7 @@ extension Locateable {
      - returns: function
     */
     var forEachCell: ((((Int, Int) -> Void)) -> Void) {
+
         func forEach(callback: ((y: Int, x: Int) -> Void)) -> Void {
             for y in (originY...maxY) {
                 for x in (originX...maxX) {

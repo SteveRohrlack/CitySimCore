@@ -20,7 +20,7 @@ class LocationTests: XCTestCase {
     }
     
     func testOperatorAddInt() {
-        let location = Location(origin: (5,5), height: 1, width: 1)
+        let location = Location(origin: (5, 5), height: 1, width: 1)
         
         let radius = 1
         
@@ -31,4 +31,5 @@ class LocationTests: XCTestCase {
         XCTAssertEqual(newLocation.height, location.height + (radius * 2))
         XCTAssertEqual(newLocation.width, location.width + (radius * 2))
     }
+    
 }

@@ -20,7 +20,7 @@ struct Location: Locateable {
     }
 }
 
-func +(location: Locateable, radius: Int) -> Locateable {
+func + (location: Locateable, radius: Int) -> Locateable {
     let newOrigin = (location.originY - radius, location.originX - radius)
     let newHeight = location.height + (radius * 2)
     let newWidth = location.width + (radius * 2)

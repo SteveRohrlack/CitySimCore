@@ -25,4 +25,5 @@ class TileTypeTests: XCTestCase {
         
         XCTAssertEqual(true, tileType1 == tileType2)
     }
+    
 }

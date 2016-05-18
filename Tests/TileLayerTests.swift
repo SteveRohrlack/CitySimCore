@@ -29,7 +29,7 @@ class TileMapTests: XCTestCase {
     }
     
     func testSubscriptSet() {
-        subject![0,0] = SmallResidentialZone(origin: (0, 0))
+        subject![0, 0] = SmallResidentialZone(origin: (0, 0))
         XCTAssertNotNil(subject![0, 0])
         XCTAssertNil(subject![1, 0])
     }
@@ -46,7 +46,7 @@ class TileMapTests: XCTestCase {
         
         for y in 1...2 {
             for x in 1...2 {
-                guard let _ = subject![y,x] else {
+                guard let _ = subject![y, x] else {
                     XCTFail("tile missing")
                     continue
                 }
@@ -102,4 +102,5 @@ class TileMapTests: XCTestCase {
         
         XCTAssertEqual(2, tiles.count)
     }
+    
 }
