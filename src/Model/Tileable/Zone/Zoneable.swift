@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Zoneable {
+protocol Zoneable: Tileable {
     var content: Int? { get set }
 }

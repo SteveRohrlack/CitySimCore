@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SmallParkPlopp: TileablePloppable, MapStatistical {
+struct SmallParkPlopp: Ploppable, MapStatistical {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 3

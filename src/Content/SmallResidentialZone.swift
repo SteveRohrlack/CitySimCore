@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SmallResidentialZone: TileableZoneable {
+struct SmallResidentialZone: Zoneable {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 2

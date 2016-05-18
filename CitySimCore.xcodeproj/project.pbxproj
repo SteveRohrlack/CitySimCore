@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		E20066611CEC7EE700E55D4B /* WaterProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066601CEC7EE700E55D4B /* WaterProp.swift */; };
 		E20066631CEC7EF700E55D4B /* SmallResidentialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066621CEC7EF700E55D4B /* SmallResidentialZone.swift */; };
-		E20066651CEC7F7300E55D4B /* TileablePloppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066641CEC7F7300E55D4B /* TileablePloppable.swift */; };
-		E20066671CEC7F8B00E55D4B /* TileableZoneable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066661CEC7F8B00E55D4B /* TileableZoneable.swift */; };
-		E20066691CEC7FB200E55D4B /* TileablePropable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066681CEC7FB200E55D4B /* TileablePropable.swift */; };
 		E20B14451CE5EF160067BC91 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14441CE5EC420067BC91 /* LocationTests.swift */; };
 		E20B14461CE5EF1C0067BC91 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14441CE5EC420067BC91 /* LocationTests.swift */; };
 		E20B14B61CE6108F0067BC91 /* Array2DMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B149F1CE6108F0067BC91 /* Array2DMapping.swift */; };
@@ -92,9 +89,6 @@
 /* Begin PBXFileReference section */
 		E20066601CEC7EE700E55D4B /* WaterProp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterProp.swift; sourceTree = "<group>"; };
 		E20066621CEC7EF700E55D4B /* SmallResidentialZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallResidentialZone.swift; sourceTree = "<group>"; };
-		E20066641CEC7F7300E55D4B /* TileablePloppable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileablePloppable.swift; sourceTree = "<group>"; };
-		E20066661CEC7F8B00E55D4B /* TileableZoneable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileableZoneable.swift; sourceTree = "<group>"; };
-		E20066681CEC7FB200E55D4B /* TileablePropable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileablePropable.swift; sourceTree = "<group>"; };
 		E20B14441CE5EC420067BC91 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		E20B149F1CE6108F0067BC91 /* Array2DMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2DMapping.swift; sourceTree = "<group>"; };
 		E20B14A41CE6108F0067BC91 /* Locateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locateable.swift; sourceTree = "<group>"; };
@@ -289,7 +283,6 @@
 			children = (
 				E2D86D081CEA44E2007EABD8 /* Ploppable.swift */,
 				E2D86D091CEA44E2007EABD8 /* PloppableType.swift */,
-				E20066641CEC7F7300E55D4B /* TileablePloppable.swift */,
 			);
 			path = Plopp;
 			sourceTree = "<group>";
@@ -299,7 +292,6 @@
 			children = (
 				E2D86D0C1CEA44E2007EABD8 /* Propable.swift */,
 				E2D86D0D1CEA44E2007EABD8 /* PropType.swift */,
-				E20066681CEC7FB200E55D4B /* TileablePropable.swift */,
 			);
 			path = Prop;
 			sourceTree = "<group>";
@@ -309,7 +301,6 @@
 			children = (
 				E2D86D101CEA44E2007EABD8 /* Zoneable.swift */,
 				E2D86D111CEA44E2007EABD8 /* ZoneableType.swift */,
-				E20066661CEC7F8B00E55D4B /* TileableZoneable.swift */,
 			);
 			path = Zone;
 			sourceTree = "<group>";
@@ -503,15 +494,12 @@
 				E20066631CEC7EF700E55D4B /* SmallResidentialZone.swift in Sources */,
 				E22D20831CEB341100E97894 /* StatisticlayersContainer.swift in Sources */,
 				E292B5D01CEB66E2001C4A23 /* StatisticsLayerError.swift in Sources */,
-				E20066651CEC7F7300E55D4B /* TileablePloppable.swift in Sources */,
 				E22D20741CEB336C00E97894 /* MapStatistic.swift in Sources */,
 				E2D86D031CEA4364007EABD8 /* TileLayer.swift in Sources */,
-				E20066671CEC7F8B00E55D4B /* TileableZoneable.swift in Sources */,
 				E20B14DC1CE6108F0067BC91 /* TileableMapError.swift in Sources */,
 				E20B14BE1CE6108F0067BC91 /* Location.swift in Sources */,
 				E22D20801CEB33FE00E97894 /* StatisticsLayer.swift in Sources */,
 				E20066611CEC7EE700E55D4B /* WaterProp.swift in Sources */,
-				E20066691CEC7FB200E55D4B /* TileablePropable.swift in Sources */,
 				E20B14DF1CE610CE0067BC91 /* CityMap.swift in Sources */,
 				E2A48B8C1CEB3688006D272B /* SmallParkPlopp.swift in Sources */,
 				E20B14BC1CE6108F0067BC91 /* Locateable.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WaterProp: TileablePropable {
+struct WaterProp: Propable {
     let origin: (Int, Int)
     let height: Int
     let width: Int
