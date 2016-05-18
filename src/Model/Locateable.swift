@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Locateable
+
 protocol Locateable {
     var origin: (Int,Int) { get }
     var height: Int { get }
@@ -36,6 +38,11 @@ extension Locateable {
         return origin.1 - 1 + width
     }
     
+    /**
+     return a function to call with another function as parameter to recieve y, x coordinates for each cell in the location
+     
+     - returns: function
+    */
     var forEachCell: ((((Int, Int) -> Void)) -> Void) {
         func forEach(callback: ((y: Int, x: Int) -> Void)) -> Void {
             for y in (originY...maxY) {

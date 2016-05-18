@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CitySimCoreiOS  Reference</title>
+    <title>Classes  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="CitySimCoreiOS  Reference"></a>
+    <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">CitySimCoreiOS Docs</a> (2% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="index.html">CitySimCoreiOS Reference</a>
         <img id="carat" src="img/carat.png" />
-        CitySimCoreiOS  Reference
+        Classes  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -144,84 +144,35 @@
       <article class="main-content">
         <section>
           <section class="section">
-            
-            <a href='#citysimcore' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='citysimcore'>CitySimCore</h1>
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
 
-<p>This is sort of my personal swift playground - nothing special.</p>
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C14CitySimCoreiOS7CityMap"></a>
+                    <a name="//apple_ref/swift/Class/CityMap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C14CitySimCoreiOS7CityMap">CityMap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
 
-<p>I&rsquo;ll be working on a simplistic city simulation. This repository is intended to only hold the simulation data and logic.</p>
-<a href='#data_structure' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='data_structure'>Data structure</h2>
-<a href='#map' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='map'>Map</h3>
-
-<p>The simulation is wokring on a 2D <q>map</q>. The map is to be seen as a top-down view of a city.</p>
-
-<p>The map is composed of multiple <q>layers</q>, each holding information regarding a different aspects of the map.</p>
-
-<p>A single address on a layer is called a <q>cell</q>.</p>
-
-<p>A layer may contain several <q>tiles</q>. A tile must cover at least one cell but can cover multiple cells.</p>
-<a href='#tile' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='tile'>Tile</h3>
-
-<p>All tiles are based on <q>Locateable</q>.</p>
-
-<p>There are currently three different tile types:</p>
-
-<p>Each tile type needs to function slightly different.</p>
-
-<ul>
-<li>Zoneable: may contain content</li>
-<li>Ploppable: name may be changed, holds statistical information</li>
-<li>Propable</li>
-</ul>
-<a href='#layer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='layer'>Layer</h3>
-
-<p>There are currently two different types of layers:</p>
-
-<ul>
-<li>TileLayer: contains tiles</li>
-<li>StatisticsLayer</li>
-</ul>
-
-<p>Tile types that hold statistical value must be handled accordingly.</p>
-<a href='#statisticlayer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='statisticlayer'>StatisticLayer</h3>
-
-<p>A StatisticLayer contains numeric values regarding statistics for a certain aspect of the map. Statistical (numeric) values add up.</p>
-
-<p>It is planned to implement numerous statistical layers, at least for the following map information:</p>
-
-<ul>
-<li>Air Pollution</li>
-<li>Noise</li>
-<li>Fire Hazzard</li>
-<li>Crime Probability</li>
-<li>Land Value</li>
-<li>etc.</li>
-</ul>
-
-<p>By combining the numeric values of all statistical layers for a defined location (cell or tile), a <q>quality</q> score can be calculated and used throughout the simulation.</p>
-<a href='#progress' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='progress'>Progress</h2>
-
-<p>I&rsquo;m currently working on the data structure, implementing routines to add and remove different tiles and tile types and updating the correspding statistical values accordingly.</p>
-<a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='setup'>setup</h2>
-<pre class="highlight plaintext"><code>bundle install
-</code></pre>
-<a href='#docs' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='docs'>Docs</h2>
-
-<p>Docs are generated using jazzy. To update, run:</p>
-<pre class="highlight plaintext"><code>bundle exec "jazzy"
-</code></pre>
-<a href='#qa' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='qa'>QA</h2>
-<a href='#travis' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='travis'>Travis</h3>
-
-<p><a href="https://travis-ci.org/SteveRohrlack/CitySimCore"><img src="https://travis-ci.org/SteveRohrlack/CitySimCore.svg?branch=master" alt="Build Status"></a></p>
-<a href='#codeclimate' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='codeclimate'>CodeClimate</h3>
-
-<p><a href="https://codeclimate.com/github/SteveRohrlack/CitySimCore"><img src="https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/gpa.svg" alt="Code Climate"></a></p>
-
-<p><a href="https://codeclimate.com/github/SteveRohrlack/CitySimCore/coverage"><img src="https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/coverage.svg" alt="Test Coverage"></a></p>
-
-<p><a href="https://codeclimate.com/github/SteveRohrlack/CitySimCore"><img src="https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/issue_count.svg" alt="Issue Count"></a></p>
-
+                        <a href="Classes/CityMap.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">

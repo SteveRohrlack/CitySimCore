@@ -1,0 +1,12 @@
+author: 'Steve Rohrlack'
+module: CitySimCoreiOS
+
+clean: true
+min_acl: internal
+swift_version: 2.2
+github_url: https://github.com/SteveRohrlack/CitySimCore
+
+#custom_categories:
+#  - name: Configuration
+#    children:
+#    - Config
