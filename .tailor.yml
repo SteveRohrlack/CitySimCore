@@ -1,3 +1,4 @@
 except:
   - trailing-whitespace
   - comment-whitespace
+  - terminating-newline
