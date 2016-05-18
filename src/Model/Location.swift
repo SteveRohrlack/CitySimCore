@@ -12,6 +12,12 @@ struct Location: Locateable {
     let origin: (Int,Int)
     let height: Int
     let width: Int
+    
+    init(origin: (Int, Int), height: Int = 1, width: Int = 1) {
+        self.origin = origin
+        self.height = height
+        self.width = width
+    }
 }
 
 func +(location: Locateable, radius: Int) -> Locateable {
