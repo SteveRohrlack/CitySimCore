@@ -11,9 +11,3 @@ import Foundation
 protocol MapStatistical {
     var statistics: [MapStatistic] { get }
 }
-
-extension MapStatistical {
-    var statistics: [MapStatistic] {
-        return []
-    }
-}

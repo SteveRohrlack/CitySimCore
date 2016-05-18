@@ -11,4 +11,5 @@ import Foundation
 enum CityMapError: ErrorType {
     case TileCantFit
     case CannotAddBecauseNotEmpty
+    case TileNotRemoveable
 }

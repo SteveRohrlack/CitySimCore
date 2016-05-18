@@ -51,6 +51,10 @@ class CityMap {
         let tilesToRemove = tileLayer.usedByTilesAt(location: location)
         
         for tile in tilesToRemove {
+            if tile is NotRemoveable {
+                throw CityMapError.TileNotRemoveable
+            }
+            
             if tile is MapStatistical {
                 try statisticsLayerContainer.removeStatistics(at: tile, statistical: tile as! MapStatistical)
             }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WaterProp: Propable {
+struct WaterProp: Propable, NotRemoveable {
     let origin: (Int, Int)
     let height: Int
     let width: Int
