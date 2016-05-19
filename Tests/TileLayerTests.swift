@@ -29,7 +29,7 @@ class TileMapTests: XCTestCase {
     }
     
     func testSubscriptSet() {
-        subject![0, 0] = SmallResidentialZone(origin: (0, 0))
+        subject![0, 0] = SmallResidentialZoneTestDouble(origin: (0, 0))
         XCTAssertNotNil(subject![0, 0])
         XCTAssertNil(subject![1, 0])
     }
@@ -68,7 +68,7 @@ class TileMapTests: XCTestCase {
     }
     
     func testAddTileFails() {
-        let tile = SmallResidentialZone(origin: (4, 4))
+        let tile = SmallResidentialZoneTestDouble(origin: (4, 4))
         var errorOccured = false
         
         do {
@@ -88,8 +88,8 @@ class TileMapTests: XCTestCase {
     }
     
     func testUsedByTilesAt() {
-        let tile1 = SmallResidentialZone(origin: (0, 0))
-        let tile2 = SmallResidentialZone(origin: (2, 2))
+        let tile1 = SmallResidentialZoneTestDouble(origin: (0, 0))
+        let tile2 = SmallResidentialZoneTestDouble(origin: (2, 2))
         
         do {
             try subject!.addTile(tile: tile1)

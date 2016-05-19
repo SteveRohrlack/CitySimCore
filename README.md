@@ -112,8 +112,6 @@ Examples include: residential zone, commercial zone, industrial zone
 The simulation is advanced in defined time intervals.
 Such an interval is called "tick".
 
-
-
 ### Statistic map data
 
 By combining the numeric values of all statistical layers for
