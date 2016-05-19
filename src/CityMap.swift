@@ -33,6 +33,23 @@ class CityMap {
         guard locationUsedByTiles.count == 0 else {
             throw CityMapError.CannotAddBecauseNotEmpty
         }
+        
+        if newTile is PlaceNearStreet {
+            let check = newTile + 1
+            
+            let checkLocationUsedByTiles = tileLayer.usedByTilesAt(location: check)
+            
+            let adjecantStreet = checkLocationUsedByTiles.contains { (tile: Tileable) in
+                guard case .Ploppable(let ploppType) = tile.type where ploppType == .Street else {
+                    return false
+                }
+                return true
+            }
+            
+            if !adjecantStreet {
+                throw CityMapError.PlaceNearStreet
+            }
+        }
     }
     
     private func add(tile tile: Tileable) throws {
@@ -56,7 +73,10 @@ class CityMap {
             }
             
             if tile is MapStatistical {
-                try statisticsLayerContainer.removeStatistics(at: tile, statistical: tile as! MapStatistical)
+                try statisticsLayerContainer.removeStatistics(
+                    at: tile,
+                    statistical: tile as! MapStatistical // tailor:disable
+                )
             }
             
             tileLayer.remove(tile: tile)
@@ -77,11 +97,15 @@ class CityMap {
         try add(tile: plopp)
         
         if plopp is MapStatistical {
-            statisticsLayerContainer.addStatistics(at: plopp, statistical: plopp as! MapStatistical)
+            statisticsLayerContainer.addStatistics(
+                at: plopp,
+                statistical: plopp as! MapStatistical // tailor:disable
+            )
         }
     }
     
     func prop(prop prop: Propable) throws {
         try add(tile: prop)
     }
+
 }

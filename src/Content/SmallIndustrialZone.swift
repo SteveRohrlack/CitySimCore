@@ -1,14 +1,14 @@
 //
-//  SmallResidentialZone.swift
+//  SmallIndustrialZone.swift
 //  CitySimCore
 //
-//  Created by Steve Rohrlack on 18.05.16.
+//  Created by Steve Rohrlack on 19.05.16.
 //  Copyright © 2016 Steve Rohrlack. All rights reserved.
 //
 
 import Foundation
 
-struct SmallResidentialZone: Zoneable, PlaceNearStreet {
+struct SmallIndustrialZone: Zoneable, PlaceNearStreet {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 2

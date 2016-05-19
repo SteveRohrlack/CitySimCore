@@ -15,6 +15,7 @@ struct StreetPlopp: Ploppable, MapStatistical {
     var name = "Street"
     let description = "Street"
     let cost = 20
+    let runningCost = 0
     let type: TileType = .Ploppable(.Street)
     let statistics: [MapStatistic] = [.Noise(radius: 0, value: 1)]
     
