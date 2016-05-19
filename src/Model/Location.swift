@@ -9,7 +9,7 @@
 import Foundation
 
 struct Location: Locateable {
-    let origin: (Int,Int)
+    let origin: (Int, Int)
     let height: Int
     let width: Int
     

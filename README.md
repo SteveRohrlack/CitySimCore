@@ -92,8 +92,7 @@ Examples include: water, tree, rock, mountain
 A "ploppable" is a predefined tile that can be added to the map.
 Most ploppables have statistical effects (for example: a park has
 a positive statistical value associated with the land value layer).
-A ploppable hast a cost for buying it and 
-ongoing cost to cover it's operation.
+A ploppable has a cost for buying it and ongoing cost to cover it's operation.
 
 Examples include: park, hospital, street
 
