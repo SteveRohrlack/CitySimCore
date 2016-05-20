@@ -39,7 +39,8 @@ extension Locateable {
     }
     
     /**
-     return a function to call with another function as parameter to recieve y, x coordinates for each cell in the location
+     return a function to call with another function as parameter to recieve 
+     y, x coordinates for each cell in the location
      
      - returns: function
     */

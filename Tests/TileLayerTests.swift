@@ -9,7 +9,7 @@
 import XCTest
 @testable import CitySimCoreiOS
 
-class TileMapTests: XCTestCase {
+class TileLayerTests: XCTestCase {
     
     var subject: TileLayer?
     
