@@ -14,12 +14,15 @@ protocol Containing {
     var containerContent: [ContentType] { get set }
     
     mutating func add(content newContent: ContentType)
+    
     mutating func remove(content existingContent: ContentType)
+    
     func has(content existingContent: ContentType) -> Bool
     
 }
 
 extension Containing {
+    
     mutating func add(content newContent: ContentType) {
         guard !has(content: newContent) else {
             return

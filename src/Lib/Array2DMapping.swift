@@ -19,6 +19,7 @@ protocol Array2DMapping {
 }
 
 extension Array2DMapping {
+    
     subscript(row: Int, column: Int) -> ValueType? {
         get {
             return values[(row * columns) + column]
@@ -27,4 +28,5 @@ extension Array2DMapping {
             values[(row * columns) + column] = newValue
         }
     }
+    
 }
