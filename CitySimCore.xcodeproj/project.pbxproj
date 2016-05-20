@@ -45,6 +45,8 @@
 		E2663E6C1CEF2D4200B179ED /* Containing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663E6A1CEF2D4200B179ED /* Containing.swift */; };
 		E2663E6F1CEF305900B179ED /* Acting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663E6E1CEF305900B179ED /* Acting.swift */; };
 		E2663E701CEF305900B179ED /* Acting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663E6E1CEF305900B179ED /* Acting.swift */; };
+		E2663E721CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663E711CEF328F00B179ED /* StatisticlayersContainerTests.swift */; };
+		E2663E731CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2663E711CEF328F00B179ED /* StatisticlayersContainerTests.swift */; };
 		E2782CA51CE5D72F00E5DF9A /* CitySimCoreiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2782C9A1CE5D72F00E5DF9A /* CitySimCoreiOS.framework */; };
 		E2782CC31CE5DBDA00E5DF9A /* CitySimCoreMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2782CB91CE5DBDA00E5DF9A /* CitySimCoreMacOS.framework */; };
 		E2782CD61CE5DD2300E5DF9A /* CitySimCore.h in Headers */ = {isa = PBXBuildFile; fileRef = E2782CD11CE5DD0D00E5DF9A /* CitySimCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,6 +139,7 @@
 		E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticlayersContainer.swift; sourceTree = "<group>"; };
 		E2663E6A1CEF2D4200B179ED /* Containing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Containing.swift; sourceTree = "<group>"; };
 		E2663E6E1CEF305900B179ED /* Acting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acting.swift; sourceTree = "<group>"; };
+		E2663E711CEF328F00B179ED /* StatisticlayersContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticlayersContainerTests.swift; sourceTree = "<group>"; };
 		E2782C9A1CE5D72F00E5DF9A /* CitySimCoreiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CitySimCoreiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2782CA41CE5D72F00E5DF9A /* CitySimCoreiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitySimCoreiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2782CB91CE5DBDA00E5DF9A /* CitySimCoreMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CitySimCoreMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +299,7 @@
 				E2EDA0571CEDD74C000464C5 /* TestDoubles */,
 				E20B14441CE5EC420067BC91 /* LocationTests.swift */,
 				E292B5CC1CEB6209001C4A23 /* StatisticsLayerTests.swift */,
+				E2663E711CEF328F00B179ED /* StatisticlayersContainerTests.swift */,
 				E20B14E61CE613F00067BC91 /* TileLayerTests.swift */,
 				E20B14E11CE611460067BC91 /* TileTypeTests.swift */,
 				E2782CD51CE5DD0D00E5DF9A /* Info.plist */,
@@ -596,6 +600,7 @@
 			files = (
 				E292B5CD1CEB6209001C4A23 /* StatisticsLayerTests.swift in Sources */,
 				E20B14E41CE611920067BC91 /* TileTypeTests.swift in Sources */,
+				E2663E721CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
 				E2EDA0631CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0651CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E2EDA05F1CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
@@ -653,6 +658,7 @@
 			files = (
 				E292B5CE1CEB6209001C4A23 /* StatisticsLayerTests.swift in Sources */,
 				E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */,
+				E2663E731CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
 				E2EDA0641CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0661CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E2EDA0601CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
