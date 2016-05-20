@@ -12,8 +12,8 @@ struct StatisticlayersContainer {
     private var height: Int
     private var width: Int
     
-    private var landvalueLayer: StatisticsLayer
-    private var noiseLayer: StatisticsLayer
+    var landvalueLayer: StatisticsLayer
+    var noiseLayer: StatisticsLayer
     
     init(height: Int, width: Int) {
         self.height = height
