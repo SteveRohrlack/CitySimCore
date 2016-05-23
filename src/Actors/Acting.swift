@@ -9,5 +9,7 @@
 import Foundation
 
 protocol Acting {
+    
     mutating func act(on map: CityMap)
+    
 }

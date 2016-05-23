@@ -18,7 +18,7 @@ struct SmallParkPlopp: Ploppable, MapStatistical, Conditionable, PlaceNearStreet
     let runningCost = 5
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: [MapStatistic] = [.Landvalue(radius: 3, value: 4)]
-    var containerContent: [Condition] = []
+    var conditions: ConditionContainer = ConditionContainer()
     
     init(origin: (Int, Int)) {
         self.origin = origin

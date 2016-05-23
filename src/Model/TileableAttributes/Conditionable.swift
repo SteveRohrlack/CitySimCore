@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Conditionable: Containing {
-    var containerContent: [Condition] { get set }
+protocol Conditionable {
+    var conditions: ConditionContainer { get set }
 }
