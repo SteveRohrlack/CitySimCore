@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// provides a set of specific prop types
 enum PropType {
     case Tree
     case Water

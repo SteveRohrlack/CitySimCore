@@ -8,11 +8,15 @@
 
 import Foundation
 
-class CityMap {
-    private var height: Int
-    private var width: Int
-    private var tileLayer: TileLayer
-    private var statisticsLayerContainer: StatisticlayersContainer
+class CityMap: EventEmitting {
+
+    typealias EventNameType = CityMapEvents
+    
+    internal var height: Int
+    internal var width: Int
+    internal var eventSubscribers: [EventNameType: [EventSubscribing]] = [:]
+    var tileLayer: TileLayer
+    var statisticsLayerContainer: StatisticlayersContainer
     
     init(height: Int, width: Int) {
         self.width = width
@@ -55,11 +59,9 @@ class CityMap {
     private func add(tile tile: Tileable) throws {
         try canAdd(tile: tile)
         
-        do {
-            try tileLayer.addTile(tile: tile)
-        } catch TileableMapError.TileCantFit {
-            // Fatal error
-        } catch {}
+        try tileLayer.addTile(tile: tile)
+        
+        try emit(event: CityMapEvents.AddTile, payload: tile)
     }
     
     // MARK: remove, info
@@ -80,6 +82,8 @@ class CityMap {
             }
             
             tileLayer.remove(tile: tile)
+            
+            try emit(event: CityMapEvents.RemoveTile, payload: tile)
         }
     }
     

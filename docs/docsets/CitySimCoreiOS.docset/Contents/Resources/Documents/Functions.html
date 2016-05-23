@@ -13,7 +13,7 @@
     <a title="Functions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (1% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -40,6 +40,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CityMapError.html">CityMapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CityMapEvents.html">CityMapEvents</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Condition.html">Condition</a>
@@ -206,8 +209,51 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>operator <q>==</q> to allow comparing tile types</p>
 
+<p>-returns: comparison result</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">type1</span><span class="p">:</span> <span class="kt">TileType</span><span class="p">,</span> <span class="nv">type2</span><span class="p">:</span> <span class="kt">TileType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type1</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>TileType</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type2</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>TileType</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -229,8 +275,51 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>operator <q>+</q> to allow adding a specified radius to a Locateable</p>
 
+<p>-returns: new Location instance that covers the given location including the given radius</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="o">+</span> <span class="p">(</span><span class="nv">location</span><span class="p">:</span> <span class="kt">Locateable</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Locateable</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the location the radius should be added to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>radius</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the radius to be added</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

@@ -8,6 +8,15 @@
 
 import Foundation
 
+/**
+ the StatisticsLayer is used to store statistical values
+ 
+ each instance represents a certain statistical aspect of the CityMap and 
+ is used to render a visual representation of that aspect
+ 
+ the StatisticsLayer encapsulates the interaction with the underlying data 
+ container (Array2DMapping) by providing a high level api to the raw data
+ */
 struct StatisticsLayer: StatisticsLayering {
     typealias ValueType = Int
     

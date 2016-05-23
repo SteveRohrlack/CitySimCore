@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// an Acting object is an object that can act on the CityMap
+/// Acting objects are the main drivers for advancing the simulation
 protocol Acting {
     
     mutating func act(on map: CityMap)

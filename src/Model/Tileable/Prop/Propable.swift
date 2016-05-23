@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// basic protocol describing a "Propable" Tile
+/// a Propable is a Tile because it is always "Tileable"
 protocol Propable: Tileable {
     var content: Int { get }
 }

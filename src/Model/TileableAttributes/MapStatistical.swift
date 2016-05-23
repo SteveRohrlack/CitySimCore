@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// a MapStatistical object contains a set of statistics
 protocol MapStatistical {
     var statistics: [MapStatistic] { get }
 }

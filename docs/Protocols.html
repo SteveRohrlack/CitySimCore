@@ -13,7 +13,7 @@
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (1% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -40,6 +40,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CityMapError.html">CityMapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CityMapEvents.html">CityMapEvents</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Condition.html">Condition</a>
@@ -206,9 +209,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>a MapStatistical object contains a set of statistics</p>
 
                         <a href="Protocols/MapStatistical.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">MapStatistical</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -254,9 +265,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>basic protocol describing a <q>Ploppable</q> Tile
+a Ploppable is a Tile because it is always <q>Tileable</q></p>
 
                         <a href="Protocols/Ploppable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Ploppable</span><span class="p">:</span> <span class="kt">Tileable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -302,9 +322,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>basic protocol describing a <q>Tile</q>
+Tiles are always <q>Locateable</q></p>
 
                         <a href="Protocols/Tileable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Tileable</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -350,9 +379,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>an Acting object is an object that can act on the CityMap
+Acting objects are the main drivers for advancing the simulation</p>
 
                         <a href="Protocols/Acting.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Acting</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -397,9 +435,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>basic protocol describing a <q>Zoneable</q> Tile
+a Zoneable is a Tile because it is always <q>Tileable</q></p>
 
                         <a href="Protocols/Zoneable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Zoneable</span><span class="p">:</span> <span class="kt">Tileable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -445,9 +492,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>basic protocol describing a <q>Propable</q> Tile
+a Propable is a Tile because it is always <q>Tileable</q></p>
 
                         <a href="Protocols/Propable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Propable</span><span class="p">:</span> <span class="kt">Tileable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -469,9 +525,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>a Budgetable is an object that has associated cost and running cost</p>
 
                         <a href="Protocols/Budgetable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Budgetable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -493,8 +557,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the PlaceNearStreet protocol is a purely decorative protocol</p>
 
+<p>it is used in the <q>CityMap.canAdd</q> method to determine if an adapting
+tile can be added to the TileLayer or not</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">PlaceNearStreet</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -540,9 +615,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>a Conditionable object contains a set of conditions</p>
 
                         <a href="Protocols/Conditionable.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">Conditionable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -564,8 +647,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the NotRemoveable protocol is a purely decorative protocol</p>
 
+<p>it is used in the <q>CityMap.canAdd</q> method to determine if an adapting
+tile can be removed from the TileLayer or not</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">NotRemoveable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -587,7 +681,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Locateable</p>
+                        <p>the Locateable protocol describes a location on a 2D map</p>
+
+<p>it proves several helpers for getting and calculating often needed values</p>
 
                         <a href="Protocols/Locateable.html" class="slightly-smaller">See more</a>
                       </div>

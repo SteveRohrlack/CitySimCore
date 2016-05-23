@@ -8,6 +8,12 @@
 
 import Foundation
 
+/**
+ default implementation for the Locateable protocol
+ 
+ - is needed for operator overloading (see below)
+ - should be used by framework users to specify locations
+*/
 struct Location: Locateable {
     let origin: (Int, Int)
     let height: Int
@@ -20,6 +26,14 @@ struct Location: Locateable {
     }
 }
 
+/**
+ operator "+" to allow adding a specified radius to a Locateable
+ 
+ - parameter location: the location the radius should be added to
+ - parameter radius: the radius to be added
+ 
+ -returns: new Location instance that covers the given location including the given radius
+*/
 func + (location: Locateable, radius: Int) -> Locateable {
     let newOrigin = (location.originY - radius, location.originX - radius)
     let newHeight = location.height + (radius * 2)

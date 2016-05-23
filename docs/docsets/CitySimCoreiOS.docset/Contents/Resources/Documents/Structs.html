@@ -13,7 +13,7 @@
     <a title="Structs  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (1% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -40,6 +40,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CityMapError.html">CityMapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CityMapEvents.html">CityMapEvents</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Condition.html">Condition</a>
@@ -206,9 +209,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the ConditionContainer encapsulates accessing a list of conditions by 
+adapting the <q>Containing</q> protocol</p>
 
                         <a href="Structs/ConditionContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">ConditionContainer</span><span class="p">:</span> <span class="kt">Containing</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -254,12 +266,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <ul>
-<li>manages budget</li>
+                        <p>the BudgetActor manages all aspects of the budget</p>
+
+<p>BudgetActor adopts the protocol <q>EventSubscribing</q></p>
+
+<ul>
 <li>holds list of budgetable objects</li>
 <li>event handler for <q>CityMap.add</q> and <q>CityMap.remove</q> for objects that are
 budgetable, subtracts cost to buy</li>
-<li>runningCosts of all budgetables are subtracted</li>
+<li>substracts running costs of all budgetables</li>
 </ul>
 
                         <a href="Structs/BudgetActor.html" class="slightly-smaller">See more</a>
@@ -268,7 +283,7 @@ budgetable, subtracts cost to buy</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
 
                         </div>
                       </div>
@@ -292,9 +307,18 @@ budgetable, subtracts cost to buy</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the StatisticlayersContainer provides a convenience api for working with
+different StatisticsLayer instances</p>
 
                         <a href="Structs/StatisticlayersContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">StatisticlayersContainer</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -316,9 +340,25 @@ budgetable, subtracts cost to buy</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>this is the main simulation object</p>
+
+<p>it is used to:</p>
+
+<ul>
+<li>advance the simulation</li>
+<li>hold the CityMap</li>
+<li>hold all active Actors</li>
+</ul>
 
                         <a href="Structs/Simulation.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Simulation</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -340,9 +380,23 @@ budgetable, subtracts cost to buy</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the TileLayer is used to store Tiles</p>
+
+<p>it represents the visible part of the CityMap and is used to render a visual
+representation of it</p>
+
+<p>the TileLayer encapsulates the interaction with the underlying data container
+(Array2DMapping) by providing a high level api to the raw data</p>
 
                         <a href="Structs/TileLayer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">TileLayer</span><span class="p">:</span> <span class="kt">Array2DMapping</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -364,9 +418,22 @@ budgetable, subtracts cost to buy</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>default implementation for the Locateable protocol</p>
+
+<ul>
+<li>is needed for operator overloading (see below)</li>
+<li>should be used by framework users to specify locations</li>
+</ul>
 
                         <a href="Structs/Location.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -388,9 +455,23 @@ budgetable, subtracts cost to buy</li>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the StatisticsLayer is used to store statistical values</p>
+
+<p>each instance represents a certain statistical aspect of the CityMap and 
+is used to render a visual representation of that aspect</p>
+
+<p>the StatisticsLayer encapsulates the interaction with the underlying data 
+container (Array2DMapping) by providing a high level api to the raw data</p>
 
                         <a href="Structs/StatisticsLayer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">StatisticsLayer</span><span class="p">:</span> <span class="kt">StatisticsLayering</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

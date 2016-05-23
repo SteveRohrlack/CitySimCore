@@ -8,6 +8,12 @@
 
 import Foundation
 
+/** 
+ the PlaceNearStreet protocol is a purely decorative protocol
+
+ it is used in the "CityMap.canAdd" method to determine if an adapting
+ tile can be added to the TileLayer or not
+ */
 protocol PlaceNearStreet {
     
 }

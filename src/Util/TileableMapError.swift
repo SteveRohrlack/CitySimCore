@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ error types for the TileableMap object
+ */
 enum TileableMapError: ErrorType {
     case TileCantFit
 }

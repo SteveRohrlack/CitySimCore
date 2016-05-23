@@ -8,6 +8,12 @@
 
 import Foundation
 
+/**
+ the NotRemoveable protocol is a purely decorative protocol
+ 
+ it is used in the "CityMap.canAdd" method to determine if an adapting
+ tile can be removed from the TileLayer or not
+ */
 protocol NotRemoveable {
     
 }

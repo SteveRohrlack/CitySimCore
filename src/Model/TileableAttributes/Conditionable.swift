@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// a Conditionable object contains a set of conditions
 protocol Conditionable {
     var conditions: ConditionContainer { get set }
 }

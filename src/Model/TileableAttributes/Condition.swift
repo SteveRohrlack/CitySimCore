@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// provides specific types of conditions
 enum Condition {
     case NotPowered
     case NotWatered

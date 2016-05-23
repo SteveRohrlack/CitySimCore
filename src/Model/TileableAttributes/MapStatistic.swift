@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// provides specific statistic types
 enum MapStatistic {
     case Landvalue(radius: Int, value: Int)
     case Noise(radius: Int, value: Int)

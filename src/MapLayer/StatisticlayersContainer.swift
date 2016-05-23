@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ the StatisticlayersContainer provides a convenience api for working with
+ different StatisticsLayer instances
+*/
 struct StatisticlayersContainer {
     private var height: Int
     private var width: Int

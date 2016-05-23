@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ error types for the CityMap object
+*/
 enum CityMapError: ErrorType {
     case TileCantFit
     case CannotAddBecauseNotEmpty

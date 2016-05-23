@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Location Struct Reference</title>
+    <title>CityMapEvents Enum Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Location" class="dashAnchor"></a>
-    <a title="Location Struct Reference"></a>
+    <a name="//apple_ref/swift/Enum/CityMapEvents" class="dashAnchor"></a>
+    <a title="CityMapEvents Enum Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">CitySimCoreiOS Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Location Struct Reference
+        CityMapEvents Enum Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -190,19 +190,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Location</h1>
+            <h1>CityMapEvents</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">CityMapEvents</span><span class="p">:</span> <span class="kt">EventNaming</span></code></pre>
 
                 </div>
               </div>
-            <p>default implementation for the Locateable protocol</p>
-
-<ul>
-<li>is needed for operator overloading (see below)</li>
-<li>should be used by framework users to specify locations</li>
-</ul>
+            <p>event names for the CityMap object</p>
 
           </section>
           <section class="section task-group-section">
@@ -211,9 +206,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV14CitySimCoreiOS8Location6originTSiSi_"></a>
-                    <a name="//apple_ref/swift/Property/origin" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV14CitySimCoreiOS8Location6originTSiSi_">origin</a>
+                    <a name="/s:FO14CitySimCoreiOS13CityMapEvents7AddTileFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/AddTile" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO14CitySimCoreiOS13CityMapEvents7AddTileFMS0_S0_">AddTile</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,19 +223,23 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">CityMapEvents</span><span class="p">:</span> <span class="kt">EventNaming</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV14CitySimCoreiOS8Location6heightSi"></a>
-                    <a name="//apple_ref/swift/Property/height" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV14CitySimCoreiOS8Location6heightSi">height</a>
+                    <a name="/s:FO14CitySimCoreiOS13CityMapEvents10RemoveTileFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/RemoveTile" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO14CitySimCoreiOS13CityMapEvents10RemoveTileFMS0_S0_">RemoveTile</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -255,61 +254,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV14CitySimCoreiOS8Location5widthSi"></a>
-                    <a name="//apple_ref/swift/Property/width" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV14CitySimCoreiOS8Location5widthSi">width</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FV14CitySimCoreiOS8LocationcFT6originTSiSi_6heightSi5widthSi_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(origin:height:width:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV14CitySimCoreiOS8LocationcFT6originTSiSi_6heightSi5widthSi_S0_">init(origin:height:width:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Location</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">CityMapEvents</span><span class="p">:</span> <span class="kt">EventNaming</span></code></pre>
 
                         </div>
                       </div>

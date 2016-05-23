@@ -14,7 +14,7 @@
     <a title="Locateable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CitySimCoreiOS Docs</a> (1% documented)</p>
+        <p><a href="../index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -41,6 +41,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CityMapError.html">CityMapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CityMapEvents.html">CityMapEvents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Condition.html">Condition</a>
@@ -194,7 +197,9 @@
 
                 </div>
               </div>
-            <p>Locateable</p>
+            <p>the Locateable protocol describes a location on a 2D map</p>
+
+<p>it proves several helpers for getting and calculating often needed values</p>
 
           </section>
           <section class="section task-group-section">
@@ -302,7 +307,7 @@
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>calculates Y coordinate based on the location&rsquo;s origin and it&rsquo;s height</p>
 
                       </div>
                       <div class="declaration">
@@ -337,7 +342,7 @@
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>calculates X coordinate based on the location&rsquo;s origin and it&rsquo;s width</p>
 
                       </div>
                       <div class="declaration">
@@ -372,7 +377,9 @@
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>since <q>origin</q> is a tuple, accessing the tuple&rsquo;s
+content is more convenient and readable using .originY instead of 
+.origin.0</p>
 
                       </div>
                       <div class="declaration">
@@ -407,7 +414,9 @@
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>since <q>origin</q> is a tuple, accessing the tuple&rsquo;s
+content is more convenient and readable using .originX instead of
+.origin.1</p>
 
                       </div>
                       <div class="declaration">

@@ -14,7 +14,7 @@
     <a title="BudgetActor Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CitySimCoreiOS Docs</a> (1% documented)</p>
+        <p><a href="../index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -41,6 +41,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CityMapError.html">CityMapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CityMapEvents.html">CityMapEvents</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Condition.html">Condition</a>
@@ -190,16 +193,19 @@
             <h1>BudgetActor</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
 
                 </div>
               </div>
-            <ul>
-<li>manages budget</li>
+            <p>the BudgetActor manages all aspects of the budget</p>
+
+<p>BudgetActor adopts the protocol <q>EventSubscribing</q></p>
+
+<ul>
 <li>holds list of budgetable objects</li>
 <li>event handler for <q>CityMap.add</q> and <q>CityMap.remove</q> for objects that are
 budgetable, subtracts cost to buy</li>
-<li>runningCosts of all budgetables are subtracted</li>
+<li>substracts running costs of all budgetables</li>
 </ul>
 
           </section>
@@ -226,7 +232,7 @@ budgetable, subtracts cost to buy</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
 
                         </div>
                       </div>
@@ -253,7 +259,61 @@ budgetable, subtracts cost to buy</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV14CitySimCoreiOS11BudgetActor17eventSubscriberIdSS"></a>
+                    <a name="//apple_ref/swift/Property/eventSubscriberId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14CitySimCoreiOS11BudgetActor17eventSubscriberIdSS">eventSubscriberId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV14CitySimCoreiOS11BudgetActor12recieveEventFzT5eventPS_11EventNaming_7payloadP__T_"></a>
+                    <a name="//apple_ref/swift/Method/recieveEvent(event:payload:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV14CitySimCoreiOS11BudgetActor12recieveEventFzT5eventPS_11EventNaming_7payloadP__T_">recieveEvent(event:payload:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Eventhandler for CityMapEvents</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">recieveEvent</span><span class="p">(</span><span class="n">event</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">EventNaming</span><span class="p">,</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -280,7 +340,7 @@ budgetable, subtracts cost to buy</li>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
 
                         </div>
                       </div>

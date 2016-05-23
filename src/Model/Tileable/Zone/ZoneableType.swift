@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// provides a set of specific zone types
 enum ZoneableType {
     case Residential
     case Commercial

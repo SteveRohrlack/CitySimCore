@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// the ConditionContainer encapsulates accessing a list of conditions by 
+/// adapting the "Containing" protocol
 struct ConditionContainer: Containing {
     var containerContent: [Condition] = []
 }

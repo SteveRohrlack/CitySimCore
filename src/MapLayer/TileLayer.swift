@@ -8,6 +8,15 @@
 
 import Foundation
 
+/**
+ the TileLayer is used to store Tiles
+ 
+ it represents the visible part of the CityMap and is used to render a visual
+ representation of it
+ 
+ the TileLayer encapsulates the interaction with the underlying data container
+ (Array2DMapping) by providing a high level api to the raw data
+*/
 struct TileLayer: Array2DMapping {
     typealias ValueType = Tileable
     
