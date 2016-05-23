@@ -11,5 +11,4 @@ import Foundation
 protocol Ploppable: Tileable {
     var name: String { get set }
     var description: String { get }
-    var cost: Int { get }
 }

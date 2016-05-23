@@ -8,14 +8,13 @@
 
 import Foundation
 
-struct StreetPlopp: Ploppable, MapStatistical {
+struct StreetPlopp: Ploppable, Budgetable, MapStatistical {
     let origin: (Int, Int)
     let height: Int = 1
     let width: Int = 1
     var name = "Street"
+    let cost = 10
     let description = "Street"
-    let cost = 20
-    let runningCost = 0
     let type: TileType = .Ploppable(.Street)
     let statistics: [MapStatistic] = [.Noise(radius: 0, value: 1)]
     
