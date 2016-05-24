@@ -13,7 +13,7 @@
     <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (18% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (49% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -57,13 +57,13 @@
                 <a href="Enums/PropType.html">PropType</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/StatisticsLayerError.html">StatisticsLayerError</a>
+                <a href="Enums.html#/s:O14CitySimCoreiOS20StatisticsLayerError">StatisticsLayerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TileLayerError.html">TileLayerError</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/TileType.html">TileType</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/TileableMapError.html">TileableMapError</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/ZoneableType.html">ZoneableType</a>
@@ -241,9 +241,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>protocol to describe statistical map layers</p>
 
                         <a href="Protocols/StatisticsLayering.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">protocol</span> <span class="kt">StatisticsLayering</span><span class="p">:</span> <span class="kt">Array2DMapping</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -683,7 +691,12 @@ tile can be removed from the TileLayer or not</p>
                       <div class="abstract">
                         <p>the Locateable protocol describes a location on a 2D map</p>
 
-<p>it proves several helpers for getting and calculating often needed values</p>
+<p>it provides several helpers for getting and calculating often needed values</p>
+
+<ul>
+<li>y = height</li>
+<li>x = width</li>
+</ul>
 
                         <a href="Protocols/Locateable.html" class="slightly-smaller">See more</a>
                       </div>
