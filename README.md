@@ -15,6 +15,10 @@ the simulation will use.
 This section is also meant to elaborate on and describe
 specific terms related to the data structure.
 
+### Overview
+
+![image](https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme-img/datastructure-v0.1.png)
+
 ### Map
 
 The "city" is represented as a 2D "map". The map is to be seen as a
@@ -64,7 +68,7 @@ All tiles are based on a protocol called "Locateable". It contains
 properties and functions that allow an object to be located on
 a layer.
 
-There are currently three different types of tiles:
+Three different types of tiles exist:
 
 * Propable
 * Ploppable
@@ -72,22 +76,14 @@ There are currently three different types of tiles:
 
 Each tile type needs to function slightly different.
 
-Tiles may also adopt one or more of the following behaviours.
-These behaviours are implemented using protocol composition.
-
-* not destructable: tile can not be removed from map
-* must be placed near street: tile must be adjacent to street
-* includes map statistics: tile contains statistic information
-* can have conditions: condition example: on fire
-
-#### Propable
+#### Tile Type: Propable
 
 This type of tile describes map objects that function as
 more or less decorative objects.
 
 Examples include: water, tree, rock, mountain
 
-#### Ploppable
+#### Tile Type: Ploppable
 
 A "ploppable" is a predefined tile that can be added to the map.
 Most ploppables have statistical effects (for example: a park has
@@ -96,13 +92,28 @@ A ploppable has a cost for buying it and ongoing cost to cover it's operation.
 
 Examples include: park, hospital, street
 
-#### Zoneable
+#### Tile Type: Zoneable
 
 Zoneables are tiles that are filled with buildings by the simulation.
 
 The act of filling a zoneable is called "growing".
 
 Examples include: residential zone, commercial zone, industrial zone
+
+#### Tile Attributes
+
+Tiles may also adopt one or more of the following behaviours.
+These behaviours are implemented using protocol composition.
+
+* **not destructable:** tile can not be removed from map
+* **must be placed near street:** tile must be adjacent to street
+* **includes map statistics:** tile contains statistic information
+* **can have conditions:** condition example: on fire
+* **contains cost / budget information:** either one time cost or running cost or both
+
+**Examples**
+
+![image](https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme-img/content.png)
 
 ## Simulation
 
