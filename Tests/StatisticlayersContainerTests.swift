@@ -60,15 +60,10 @@ class StatisticlayersContainerTests: XCTestCase {
         
         XCTAssertEqual(4, subject!.landvalueLayer[testLocationWithRadius.origin])
         
-        do {
-            try subject!.removeStatistics(
-                at: Location(origin: origin),
-                statistical: testDouble as MapStatistical
-            )
-        } catch {
-            XCTFail("should not fail")
-        }
-
+        subject!.removeStatistics(
+            at: Location(origin: origin),
+            statistical: testDouble as MapStatistical
+        )
         
         XCTAssertNil(subject!.landvalueLayer[testLocationWithRadius.origin])
     }

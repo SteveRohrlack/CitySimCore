@@ -15,8 +15,15 @@ import Foundation
  - should be used by framework users to specify locations
 */
 struct Location: Locateable {
+    
+    /// origin of the location
+    /// this is relative to the used coordinate system
     let origin: (Int, Int)
+    
+    /// height of the location, absolute value
     let height: Int
+    
+    /// width of the location, absolute value
     let width: Int
     
     init(origin: (Int, Int), height: Int = 1, width: Int = 1) {
@@ -32,7 +39,7 @@ struct Location: Locateable {
  - parameter location: the location the radius should be added to
  - parameter radius: the radius to be added
  
- -returns: new Location instance that covers the given location including the given radius
+ - returns: new Location instance that covers the given location including the given radius
 */
 func + (location: Locateable, radius: Int) -> Locateable {
     let newOrigin = (location.originY - radius, location.originX - radius)

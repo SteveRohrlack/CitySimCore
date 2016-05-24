@@ -9,8 +9,10 @@
 import Foundation
 
 /**
- error types for the TileableMap object
+ error types for the TileLayer object
  */
-enum TileableMapError: ErrorType {
+enum TileLayerError: ErrorType {
+    
+    /// a tile does not fit into the map, based on it's dimensions
     case TileCantFit
 }

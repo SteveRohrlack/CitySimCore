@@ -20,8 +20,13 @@ import Foundation
 */
 struct BudgetActor: Acting, EventSubscribing {
     
+    /// the current budget
     var currentBudget: Int
+    
+    /// list of budgetable objects
     var budgetables: [Budgetable]
+    
+    /// event subscriber id for referencing
     let eventSubscriberId = "BudgetActor"
     
     /// Eventhandler for CityMapEvents

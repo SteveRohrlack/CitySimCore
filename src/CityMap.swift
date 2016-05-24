@@ -75,7 +75,7 @@ class CityMap: EventEmitting {
             }
             
             if tile is MapStatistical {
-                try statisticsLayerContainer.removeStatistics(
+                statisticsLayerContainer.removeStatistics(
                     at: tile,
                     statistical: tile as! MapStatistical // tailor:disable
                 )

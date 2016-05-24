@@ -13,21 +13,33 @@ import Foundation
  different StatisticsLayer instances
 */
 struct StatisticlayersContainer {
-    private var height: Int
-    private var width: Int
     
+    /// layer for Landvalue
     var landvalueLayer: StatisticsLayer
+    
+    /// layer for Noise
     var noiseLayer: StatisticsLayer
     
+    /**
+     constructor
+     
+     - parameter height: needed to create specific map layers
+     - parameter width: needed to create specific map layers
+    */
     init(height: Int, width: Int) {
-        self.height = height
-        self.width = width
-        
         self.landvalueLayer = StatisticsLayer(rows: height, columns: width)
-        
         self.noiseLayer = StatisticsLayer(rows: height, columns: width)
     }
     
+    /**
+     add statistic values
+     
+     decides what layer the given statistics should be added to based on each
+     statistics type
+     
+     - parameter at: location
+     - parameter statistical: container of type MapStatistical holding statistics
+    */
     mutating func addStatistics(at location: Locateable, statistical: MapStatistical) {
         for statistic in statistical.statistics {
             switch statistic {
@@ -41,13 +53,22 @@ struct StatisticlayersContainer {
         }
     }
     
-    mutating func removeStatistics(at location: Locateable, statistical: MapStatistical) throws {
+    /**
+     remove statistic values
+     
+     decides what layer the given statistics should be removed from based on each
+     statistics type
+     
+     - parameter at: location
+     - parameter statistical: container of type MapStatistical holding statistics
+    */
+    mutating func removeStatistics(at location: Locateable, statistical: MapStatistical) {
         for statistic in statistical.statistics {
             switch statistic {
             case .Landvalue(let radius, let value):
-                try landvalueLayer.remove(at: location, radius: radius, value: value)
+                landvalueLayer.remove(at: location, radius: radius, value: value)
             case .Noise(let radius, let value):
-                try noiseLayer.remove(at: location, radius: radius, value: value)
+                noiseLayer.remove(at: location, radius: radius, value: value)
             default:
                 break
             }

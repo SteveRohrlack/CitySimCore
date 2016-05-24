@@ -10,7 +10,13 @@ import Foundation
 
 /// provides a set of specific zone types
 enum ZoneableType {
+    
+    /// residential zone for citizens to live in
     case Residential
+    
+    /// commercial zone for businesses to sell things
     case Commercial
+    
+    /// industrial zone for businesses to produce things
     case Industrial
 }

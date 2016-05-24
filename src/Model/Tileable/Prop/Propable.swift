@@ -11,5 +11,7 @@ import Foundation
 /// basic protocol describing a "Propable" Tile
 /// a Propable is a Tile because it is always "Tileable"
 protocol Propable: Tileable {
+    
+    // every proppable should have a content
     var content: Int { get }
 }

@@ -20,16 +20,40 @@ import Foundation
 struct StatisticsLayer: StatisticsLayering {
     typealias ValueType = Int
     
+    /**
+     since StatisticsLayer adopts Array2DMapping, the number of rows must be
+     available
+    */
     let rows: Int
+    
+    /**
+     since StatisticsLayer adopts Array2DMapping, the number of columns must be
+     available
+    */
     let columns: Int
+    
+    /// container for values
     var values: [ValueType?]
     
+    /**
+     constructor
+     
+     - parameter rows: number of rows
+     - parameter columns: number of columns
+    */
     init(rows: Int, columns: Int) {
         self.rows = rows
         self.columns = columns
         self.values = [ValueType?](count: rows * columns, repeatedValue: nil)
     }
     
+    /**
+     adds a value
+     
+     - parameter at: where to add
+     - parameter radius: radius to apply to location before adding
+     - parameter value: what to add
+    */
     mutating func add(at location: Locateable, radius: Int, value: ValueType) {
         let areaIncludingRadius = location + radius
         areaIncludingRadius.forEachCell { (y: Int, x: Int) in
@@ -41,14 +65,20 @@ struct StatisticsLayer: StatisticsLayering {
         }
     }
     
-    mutating func remove(at location: Locateable, radius: Int, value: ValueType) throws {
-        var errorWhileRemoving: StatisticsLayerError?
-        
+    /**
+     removes a value
+     
+     - parameter at: where to remove
+     - parameter radius: radius to apply to location before removing
+     - parameter value: what to remove
+     
+     - throws: StatisticsLayerError.CannotRemoveBecauseAlreadyEmpty if the location is already empty
+    */
+    mutating func remove(at location: Locateable, radius: Int, value: ValueType) {
         let areaIncludingRadius = location + radius
         
         areaIncludingRadius.forEachCell { (y: Int, x: Int) in
             guard let currentValue = self[y, x] else {
-                errorWhileRemoving = StatisticsLayerError.CannotRemoveBecauseAlreadyEmpty
                 return
             }
             
@@ -59,10 +89,6 @@ struct StatisticsLayer: StatisticsLayering {
             }
             
             self[y, x] = newValue
-        }
-        
-        if let error = errorWhileRemoving {
-            throw error
         }
     }
     

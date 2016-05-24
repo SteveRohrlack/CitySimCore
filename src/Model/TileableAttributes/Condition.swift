@@ -10,9 +10,19 @@ import Foundation
 
 /// provides specific types of conditions
 enum Condition {
+    
+    /// does not recieve power (electricity)
     case NotPowered
+    
+    /// does not recieve water
     case NotWatered
+    
+    /// is on fire
     case OnFire
+    
+    /// a crimes takes place
     case CrimeScene
+    
+    /// is abandoned
     case Abandoned
 }

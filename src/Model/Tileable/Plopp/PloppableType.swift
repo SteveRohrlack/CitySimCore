@@ -10,6 +10,10 @@ import Foundation
 
 /// provides a set of specific plop types
 enum PloppableType {
+    
+    /// small park
     case ParkSmall
+    
+    /// street
     case Street
 }

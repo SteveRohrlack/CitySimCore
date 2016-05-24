@@ -10,6 +10,10 @@ import Foundation
 
 /// provides a set of specific prop types
 enum PropType {
+    
+    /// tree
     case Tree
+    
+    /// water
     case Water
 }

@@ -25,8 +25,8 @@
 		E20B14BF1CE6108F0067BC91 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14A51CE6108F0067BC91 /* Location.swift */; };
 		E20B14D81CE6108F0067BC91 /* CityMapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14B31CE6108F0067BC91 /* CityMapError.swift */; };
 		E20B14D91CE6108F0067BC91 /* CityMapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14B31CE6108F0067BC91 /* CityMapError.swift */; };
-		E20B14DC1CE6108F0067BC91 /* TileableMapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14B51CE6108F0067BC91 /* TileableMapError.swift */; };
-		E20B14DD1CE6108F0067BC91 /* TileableMapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14B51CE6108F0067BC91 /* TileableMapError.swift */; };
+		E20B14DC1CE6108F0067BC91 /* TileLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14B51CE6108F0067BC91 /* TileLayerError.swift */; };
+		E20B14DD1CE6108F0067BC91 /* TileLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14B51CE6108F0067BC91 /* TileLayerError.swift */; };
 		E20B14DF1CE610CE0067BC91 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14DE1CE610CE0067BC91 /* CityMap.swift */; };
 		E20B14E01CE610CE0067BC91 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14DE1CE610CE0067BC91 /* CityMap.swift */; };
 		E20B14E41CE611920067BC91 /* TileTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E11CE611460067BC91 /* TileTypeTests.swift */; };
@@ -145,7 +145,7 @@
 		E20B14A41CE6108F0067BC91 /* Locateable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locateable.swift; sourceTree = "<group>"; };
 		E20B14A51CE6108F0067BC91 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E20B14B31CE6108F0067BC91 /* CityMapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMapError.swift; sourceTree = "<group>"; };
-		E20B14B51CE6108F0067BC91 /* TileableMapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileableMapError.swift; sourceTree = "<group>"; };
+		E20B14B51CE6108F0067BC91 /* TileLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerError.swift; sourceTree = "<group>"; };
 		E20B14DE1CE610CE0067BC91 /* CityMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
 		E20B14E11CE611460067BC91 /* TileTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTypeTests.swift; sourceTree = "<group>"; };
 		E20B14E61CE613F00067BC91 /* TileLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerTests.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 				E20B14B31CE6108F0067BC91 /* CityMapError.swift */,
 				E2A9A8041CF30C7600054A83 /* CityMapEvents.swift */,
 				E292B5CF1CEB66E2001C4A23 /* StatisticsLayerError.swift */,
-				E20B14B51CE6108F0067BC91 /* TileableMapError.swift */,
+				E20B14B51CE6108F0067BC91 /* TileLayerError.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -624,7 +624,7 @@
 				E260413A1CF2DD2A00773A73 /* Budgetable.swift in Sources */,
 				E2EDA0551CEDD361000464C5 /* PlaceNearStreet.swift in Sources */,
 				E2D86D031CEA4364007EABD8 /* TileLayer.swift in Sources */,
-				E20B14DC1CE6108F0067BC91 /* TileableMapError.swift in Sources */,
+				E20B14DC1CE6108F0067BC91 /* TileLayerError.swift in Sources */,
 				E2663E6B1CEF2D4200B179ED /* Containing.swift in Sources */,
 				E20B14BE1CE6108F0067BC91 /* Location.swift in Sources */,
 				E2EDA0521CEDD330000464C5 /* Conditionable.swift in Sources */,
@@ -696,7 +696,7 @@
 				E292B5D11CEB66E2001C4A23 /* StatisticsLayerError.swift in Sources */,
 				E20066701CEC8B9000E55D4B /* MapStatistical.swift in Sources */,
 				E2D86D041CEA4364007EABD8 /* TileLayer.swift in Sources */,
-				E20B14DD1CE6108F0067BC91 /* TileableMapError.swift in Sources */,
+				E20B14DD1CE6108F0067BC91 /* TileLayerError.swift in Sources */,
 				E20066731CEC8BA500E55D4B /* NotRemoveable.swift in Sources */,
 				E20B14BF1CE6108F0067BC91 /* Location.swift in Sources */,
 				E22D20811CEB33FE00E97894 /* StatisticsLayer.swift in Sources */,

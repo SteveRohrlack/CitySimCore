@@ -11,16 +11,36 @@ import Foundation
 /**
  the Locateable protocol describes a location on a 2D map
  
- it proves several helpers for getting and calculating often needed values
+ it provides several helpers for getting and calculating often needed values
+ 
+ - y = height
+ - x = width
 */
 protocol Locateable {
+    
+    /// origin of the location
+    /// this is relative to the used coordinate system
     var origin: (Int, Int) { get }
+    
+    /// height of the location, absolute value
     var height: Int { get }
+    
+    /// width of the location, absolute value
     var width: Int { get }
+    
+    /// relative maximum Y value
     var maxY: Int { get }
+    
+    /// relative maximum X value
     var maxX: Int { get }
+    
+    /// origin's Y value
     var originY: Int { get }
+    
+    /// origin's X value
     var originX: Int { get }
+    
+    /// helper to iterate over each cell
     var forEachCell: ((((Int, Int) -> Void)) -> Void) { get }
 }
 

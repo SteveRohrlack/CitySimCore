@@ -57,15 +57,11 @@ class StatisticsLayerTests: XCTestCase {
             value: 5
         )
         
-        do {
-            try subject!.remove(
-                at: Location(origin: (1, 1), height: 1, width: 1),
-                radius: 1,
-                value: 5
-            )
-        } catch {
-            XCTFail("should not fail")
-        }
+        subject!.remove(
+            at: Location(origin: (1, 1), height: 1, width: 1),
+            radius: 1,
+            value: 5
+        )
         
         XCTAssertNil(subject![0, 0])
     }
@@ -83,38 +79,13 @@ class StatisticsLayerTests: XCTestCase {
             value: 2
         )
         
-        do {
-            try subject!.remove(
-                at: Location(origin: (1, 1), height: 1, width: 1),
-                radius: 1,
-                value: 4
-            )
-        } catch {
-            XCTFail("should not fail")
-        }
+        subject!.remove(
+            at: Location(origin: (1, 1), height: 1, width: 1),
+            radius: 1,
+            value: 4
+        )
         
         XCTAssertEqual(3, subject![0, 0])
-    }
-    
-    func testRemoveFails() {
-        var errorOccured = false
-        
-        do {
-            try subject!.remove(
-                at: Location(origin: (1, 1), height: 1, width: 1),
-                radius: 1,
-                value: 5
-            )
-        } catch let e as StatisticsLayerError {
-            XCTAssertEqual(e, StatisticsLayerError.CannotRemoveBecauseAlreadyEmpty)
-            errorOccured = true
-        } catch {
-            XCTFail("wrong error")
-        }
-        
-        if !errorOccured {
-            XCTFail("should fail")
-        }
     }
     
 }

@@ -73,8 +73,8 @@ class TileLayerTests: XCTestCase {
         
         do {
             try subject!.addTile(tile: tile)
-        } catch let e as TileableMapError {
-            XCTAssertEqual(e, TileableMapError.TileCantFit)
+        } catch let e as TileLayerError {
+            XCTAssertEqual(e, TileLayerError.TileCantFit)
             errorOccured = true
         } catch {
             XCTFail("wrong error")

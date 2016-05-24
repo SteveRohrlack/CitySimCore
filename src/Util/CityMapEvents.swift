@@ -12,6 +12,10 @@ import Foundation
  event names for the CityMap object
 */
 enum CityMapEvents: EventNaming {
+    
+    /// a tile was added
     case AddTile
+    
+    /// a tile was removed
     case RemoveTile
 }
