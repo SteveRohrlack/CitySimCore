@@ -1,6 +1,6 @@
 # project specific
 /vendor/bundle
-/docs/undocumented.json
+/docs/jazzy/undocumented.json
 
 # see https://gist.github.com/muhasturk/df28ec9d2cc18bf1cfc8
 # see https://github.com/github/gitignore/blob/master/Swift.gitignore
