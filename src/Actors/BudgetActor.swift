@@ -50,9 +50,9 @@ class BudgetActor: Acting, EventSubscribing {
         
         switch event {
             case .AddTile:
-                stage.totalRunningCost += budgetable.runningCost
+                stage.budget.runningCost += budgetable.runningCost
             case .RemoveTile:
-                stage.totalRunningCost -= budgetable.runningCost
+                stage.budget.runningCost -= budgetable.runningCost
         }
     }
     
@@ -61,8 +61,7 @@ class BudgetActor: Acting, EventSubscribing {
      */
     func act() {
         //subtract running cost
-        stage.budget -= stage.totalRunningCost
-        
+        stage.budget.amount -= stage.budget.runningCost
     }
     
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// the sinulation's main data container
+/// the simulation's main data container
 class City {
     
     /// CityMap, regards all layers of the map
@@ -17,16 +17,19 @@ class City {
     /// current population count
     var population: Int
     
-    /// current budget
-    var budget: Int
+    /// City budget
+    var budget: Budget
     
-    /// current total of running cost
-    var totalRunningCost: Int
-    
-    init(map: CityMap, population: Int, budget: Int = 0, totalRunningCost: Int = 0) {
+    /**
+     constructor
+     
+     - parameter map: CityMap
+     - parameter budget: city budget
+     - parameter population: city population
+    */
+    init(map: CityMap, budget: Budget, population: Int) {
         self.map = map
         self.population = population
         self.budget = budget
-        self.totalRunningCost = totalRunningCost
     }
 }
