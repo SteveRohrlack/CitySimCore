@@ -111,7 +111,7 @@ These behaviours are implemented using protocol composition.
 * **can have conditions:** condition example: on fire
 * **contains cost / budget information:** either one time cost or running cost or both
 
-![image](https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme/content-objects-examples.png)
+![image](https://raw.githubusercontent.com/SteveRohrlack/CitySimCore/master/docs/readme/content-objects-examples.png)
 
 ## Simulation
 
