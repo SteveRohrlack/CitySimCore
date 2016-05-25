@@ -10,9 +10,27 @@ import Foundation
 
 /// provides a set of specific plop types
 enum PloppableType {
-    
+
     /// small park
     case ParkSmall
+    
+    /// fire department
+    case FireDepartment
+    
+    /// clinic
+    case Clinic
+    
+    /// police station
+    case PoliceStation
+    
+    /// wind turbine power plant
+    case WindTurbine
+    
+    /// water pumping station
+    case WaterPumpingStation
+
+    /// school
+    case School
     
     /// street
     case Street
