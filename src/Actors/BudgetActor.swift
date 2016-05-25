@@ -24,6 +24,11 @@ class BudgetActor: Acting, EventSubscribing {
     /// simulation's main data container
     var stage: City
     
+    /**
+     constructor
+     
+     - parameter stage: City object work work with
+    */
     init(stage: City) {
         self.stage = stage
     }

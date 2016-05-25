@@ -42,8 +42,8 @@ enum TileType: Equatable {
  
  - returns: comparison result
  */
-func == (type1: TileType, type2: TileType) -> Bool {
-    switch (type1, type2) {
+func == (lhs: TileType, rhs: TileType) -> Bool {
+    switch (lhs, rhs) {
     case (.Propable(let a), .Propable(let b)) where a == b:
         return true
     case (.Zoneable(let a), .Zoneable(let b)) where a == b:
