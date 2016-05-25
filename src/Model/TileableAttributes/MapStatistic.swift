@@ -27,3 +27,20 @@ enum MapStatistic {
     /// regards the Firehazzard statistic layer
     case Firehazzard(radius: Int, value: Int)
 }
+
+extension MapStatistic: Equatable {
+    
+}
+
+func == (lhs: MapStatistic, rhs: MapStatistic) -> Bool {
+    switch (lhs, rhs) {
+    case (.Landvalue(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
+        return true
+    case (.Noise(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
+        return true
+    case (.Firehazzard(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
+        return true
+    default:
+        return false
+    }
+}

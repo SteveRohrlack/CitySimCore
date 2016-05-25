@@ -16,7 +16,7 @@ struct StreetPlopp: Ploppable, Budgetable, MapStatistical {
     let cost = 10
     let description = "Street"
     let type: TileType = .Ploppable(.Street)
-    let statistics: [MapStatistic] = [.Noise(radius: 0, value: 1)]
+    let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Noise(radius: 0, value: 1))
     
     init(origin: (Int, Int)) {
         self.origin = origin
