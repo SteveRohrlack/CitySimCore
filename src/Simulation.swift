@@ -19,14 +19,14 @@ import Foundation
 */
 struct Simulation {
     
-    var map: CityMap
+    var city: City
     var ticks = 0
     var actors: [Acting] = []
     
     /// advances the simulation by calling every active Actor
     mutating func advance() {
         for (index, _) in actors.enumerate() {
-            actors[index].act(on: map)
+            actors[index].act(stage: city)
         }
     }
     

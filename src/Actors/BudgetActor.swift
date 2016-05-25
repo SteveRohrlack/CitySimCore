@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- the BudgetActor manages all aspects of the budget
+ The BudgetActor manages all aspects of the budget but the current budget value.
 
  BudgetActor adopts the protocol "EventSubscribing"
  
@@ -19,38 +19,46 @@ import Foundation
  - substracts running costs of all budgetables
 */
 struct BudgetActor: Acting, EventSubscribing {
-    
-    /// the current budget
-    var currentBudget: Int
-    
+   
     /// list of budgetable objects
     var budgetables: [Budgetable]
     
     /// event subscriber id for referencing
     let eventSubscriberId = "BudgetActor"
     
-    /// Eventhandler for CityMapEvents
+    /**
+     Eventhandler for CityMapEvents
+     
+     - parameter event: the event type
+     - parameter payload: the event data
+    */
     func recieveEvent(event event: EventNaming, payload: Any) throws {
         guard let event = event as? CityMapEvents else {
             return
         }
         
-        guard payload is Budgetable else {
+        guard let budgetable = payload as? Budgetable else {
             return
         }
         
         switch event {
             case .AddTile:
-                break
+                break //budgetables.append(budgetable)
             case .RemoveTile:
                 break
         }
     }
     
-    mutating func act(on map: CityMap) {
+    /**
+     the BudgetActor subtracts the running cost of all registered budgetables
+     from the overall budget
+     
+     - parameter stage: City object
+     */
+    mutating func act(stage city: City) {
         //subtract running cost
         for budgetable in budgetables {
-            currentBudget -= budgetable.runningCost
+            city.budget -= budgetable.runningCost
         }
         
     }
