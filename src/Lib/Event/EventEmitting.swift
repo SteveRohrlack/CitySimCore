@@ -17,10 +17,6 @@ protocol EventEmitting {
     
     mutating func subscribe(subscriber subscriber: EventSubscribing, to event: EventNameType)
     
-    mutating func unsubscribe(subscriber subscriber: EventSubscribing, from event: EventNameType)
-    
-    func isSubscribed(subscriber subscriber: EventSubscribing, to event: EventNameType) -> Bool
-    
 }
 
 extension EventEmitting {
@@ -37,34 +33,12 @@ extension EventEmitting {
     
     mutating func subscribe(subscriber subscriber: EventSubscribing, to event: EventNameType) {
         defer {
-            if !isSubscribed(subscriber: subscriber, to: event) {
-                eventSubscribers[event]?.append(subscriber)
-            }
+            eventSubscribers[event]?.append(subscriber)
         }
         
         guard let _ = eventSubscribers[event] else {
             eventSubscribers[event] = []
             return
-        }
-    }
-    
-    mutating func unsubscribe(subscriber subscriber: EventSubscribing, from event: EventNameType) {
-        guard let subscribers = eventSubscribers[event] else {
-            return
-        }
-        
-        eventSubscribers[event] = subscribers.filter {
-            $0.eventSubscriberId != subscriber.eventSubscriberId
-        }
-    }
-    
-    func isSubscribed(subscriber subscriber: EventSubscribing, to event: EventNameType) -> Bool {
-        guard let subscribers = eventSubscribers[event] else {
-            return false
-        }
-        
-        return subscribers.contains {
-            $0.eventSubscriberId == subscriber.eventSubscriberId
         }
     }
     

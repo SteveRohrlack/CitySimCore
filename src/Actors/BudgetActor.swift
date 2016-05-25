@@ -13,18 +13,20 @@ import Foundation
 
  BudgetActor adopts the protocol "EventSubscribing"
  
- - holds list of budgetable objects
+ - holds sum of current running cost
  - event handler for "CityMap.add" and "CityMap.remove" for objects that are
    budgetable, subtracts cost to buy
- - substracts running costs of all budgetables
+ - substracts running cost
 */
-struct BudgetActor: Acting, EventSubscribing {
+class BudgetActor: Acting, EventSubscribing {
    
-    /// list of budgetable objects
-    var budgetables: [Budgetable]
+    /// actor stage
+    /// simulation's main data container
+    var stage: City
     
-    /// event subscriber id for referencing
-    let eventSubscriberId = "BudgetActor"
+    init(stage: City) {
+        self.stage = stage
+    }
     
     /**
      Eventhandler for CityMapEvents
@@ -43,23 +45,18 @@ struct BudgetActor: Acting, EventSubscribing {
         
         switch event {
             case .AddTile:
-                break //budgetables.append(budgetable)
+                stage.totalRunningCost += budgetable.runningCost
             case .RemoveTile:
-                break
+                stage.totalRunningCost -= budgetable.runningCost
         }
     }
     
     /**
-     the BudgetActor subtracts the running cost of all registered budgetables
-     from the overall budget
-     
-     - parameter stage: City object
+     the BudgetActor subtracts the current total running cost from the budget
      */
-    mutating func act(stage city: City) {
+    func act() {
         //subtract running cost
-        for budgetable in budgetables {
-            city.budget -= budgetable.runningCost
-        }
+        stage.budget -= stage.totalRunningCost
         
     }
     

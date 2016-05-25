@@ -26,7 +26,7 @@ struct Simulation {
     /// advances the simulation by calling every active Actor
     mutating func advance() {
         for (index, _) in actors.enumerate() {
-            actors[index].act(stage: city)
+            actors[index].act()
         }
     }
     

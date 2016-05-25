@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol EventSubscribing {
-    var eventSubscriberId: String { get }
-    
+protocol EventSubscribing: class {
     func recieveEvent(event event: EventNaming, payload: Any) throws
 }

@@ -111,9 +111,7 @@ These behaviours are implemented using protocol composition.
 * **can have conditions:** condition example: on fire
 * **contains cost / budget information:** either one time cost or running cost or both
 
-**Examples**
-
-![image](https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme-img/content.png)
+![image](https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme/content-objects-examples.png)
 
 ## Simulation
 
@@ -133,14 +131,13 @@ This allows, for example, to choose fitting locations for
 
 ### Actors
 
-Actors are objects that handle simluation state and actually advance
-the simulation.
+Actors are lightweight objects that advance the simluation state. They should,
+however, not contain any stateful information.
 
-They are run periodically but at most once per tick.
-
-For example: The "budget" actor contains the currently available budget.
-It runs every 10 ticks and subtracts the ongoing cost of active ploppables
-from - and adds collected taxes to the available budget.
+Actors are added to the simulation as needed. For example, you may not want to
+add the FireActor, responsible for starting fires, right away but later on when
+the player can handle such events - thus allowing a smoother learning curve for the
+player.
 
 It is planned to implement numerous actors, for example:
 
@@ -148,15 +145,15 @@ It is planned to implement numerous actors, for example:
 * FireActor
 * CrimeActor
 * ZoneDevelopmentActor
-* etc.
+
+Example: The "Budget" actor updates the currently available budget.
+It runs every 10 ticks and subtracts the current total ongoing cost 
+from the budget and adds collected taxes to it.
 
 ## Progress
 
-I'm currently working on the map layers and data structure,
-implementing routines to add and remove different tiles
-and tile types and updating the correspding statistical values.
-
-The next task at hand is the creation all
+I'm currently extending the data model for non-map related statistics.
+Also, the "Actor" api is beeing created and tested by implementing simple examples.
 
 ## setup
 

@@ -12,13 +12,13 @@ import Foundation
 /// Acting objects are the main drivers for advancing the simulation
 protocol Acting {
     
+    /// actor stage
+    /// simulation's main data container
+    var stage: City { get set }
+    
     /**
      Actors gonna act
-     
-     an Actor recieves a "City" object and may manipulate it
-     
-     - parameter stage: City object
     */
-    mutating func act(stage city: City)
+    mutating func act()
     
 }

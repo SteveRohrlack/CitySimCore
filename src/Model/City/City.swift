@@ -20,9 +20,13 @@ class City {
     /// current budget
     var budget: Int
     
-    init(map: CityMap, population: Int, budget: Int) {
+    /// current total of running cost
+    var totalRunningCost: Int
+    
+    init(map: CityMap, population: Int, budget: Int = 0, totalRunningCost: Int = 0) {
         self.map = map
         self.population = population
         self.budget = budget
+        self.totalRunningCost = totalRunningCost
     }
 }
