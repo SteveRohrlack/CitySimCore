@@ -20,6 +20,15 @@ struct StatisticlayersContainer {
     /// layer for Noise
     var noiseLayer: StatisticsLayer
     
+    /// layer for Firesafety
+    var firesafetyLayer: StatisticsLayer
+    
+    /// layer for Crime
+    var crimeLayer: StatisticsLayer
+    
+    /// layer for Crime
+    var healthLayer: StatisticsLayer
+    
     /**
      constructor
      
@@ -29,6 +38,9 @@ struct StatisticlayersContainer {
     init(height: Int, width: Int) {
         self.landvalueLayer = StatisticsLayer(rows: height, columns: width)
         self.noiseLayer = StatisticsLayer(rows: height, columns: width)
+        self.firesafetyLayer = StatisticsLayer(rows: height, columns: width)
+        self.crimeLayer = StatisticsLayer(rows: height, columns: width)
+        self.healthLayer = StatisticsLayer(rows: height, columns: width)
     }
     
     /**
@@ -47,8 +59,12 @@ struct StatisticlayersContainer {
                 landvalueLayer.add(at: location, radius: radius, value: value)
             case .Noise(let radius, let value):
                 noiseLayer.add(at: location, radius: radius, value: value)
-            default:
-                break
+            case .Firesafety(let radius, let value):
+                firesafetyLayer.add(at: location, radius: radius, value: value)
+            case .Crime(let radius, let value):
+                crimeLayer.add(at: location, radius: radius, value: value)
+            case .Health(let radius, let value):
+                healthLayer.add(at: location, radius: radius, value: value)
             }
         }
     }
@@ -69,8 +85,12 @@ struct StatisticlayersContainer {
                 landvalueLayer.remove(at: location, radius: radius, value: value)
             case .Noise(let radius, let value):
                 noiseLayer.remove(at: location, radius: radius, value: value)
-            default:
-                break
+            case .Firesafety(let radius, let value):
+                firesafetyLayer.remove(at: location, radius: radius, value: value)
+            case .Crime(let radius, let value):
+                crimeLayer.remove(at: location, radius: radius, value: value)
+            case .Health(let radius, let value):
+                healthLayer.remove(at: location, radius: radius, value: value)
             }
         }
     }

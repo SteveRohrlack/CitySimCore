@@ -24,8 +24,14 @@ enum MapStatistic {
     /// regards the Noise statistic layer
     case Noise(radius: Int, value: Int)
     
-    /// regards the Firehazzard statistic layer
-    case Firehazzard(radius: Int, value: Int)
+    /// regards the Firesafety statistic layer
+    case Firesafety(radius: Int, value: Int)
+    
+    /// regards the Crime statistic layer
+    case Crime(radius: Int, value: Int)
+    
+    /// regards the Health statistic layer
+    case Health(radius: Int, value: Int)
 }
 
 extension MapStatistic: Equatable {
@@ -38,7 +44,11 @@ func == (lhs: MapStatistic, rhs: MapStatistic) -> Bool {
         return true
     case (.Noise(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
         return true
-    case (.Firehazzard(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
+    case (.Firesafety(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
+        return true
+    case (.Crime(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
+        return true
+    case (.Health(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
         return true
     default:
         return false
