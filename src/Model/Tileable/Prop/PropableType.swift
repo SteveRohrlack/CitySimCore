@@ -1,5 +1,5 @@
 //
-//  PropType.swift
+//  PropableType.swift
 //  CitySimCore
 //
 //  Created by Steve Rohrlack on 13.05.16.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// provides a set of specific prop types
-enum PropType {
+enum PropableType {
     
     /// tree
     case Tree

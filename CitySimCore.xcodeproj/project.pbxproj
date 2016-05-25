@@ -89,8 +89,8 @@
 		E2D86D191CEA44E2007EABD8 /* PloppableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D091CEA44E2007EABD8 /* PloppableType.swift */; };
 		E2D86D1C1CEA44E2007EABD8 /* Propable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D0C1CEA44E2007EABD8 /* Propable.swift */; };
 		E2D86D1D1CEA44E2007EABD8 /* Propable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D0C1CEA44E2007EABD8 /* Propable.swift */; };
-		E2D86D1E1CEA44E2007EABD8 /* PropType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D0D1CEA44E2007EABD8 /* PropType.swift */; };
-		E2D86D1F1CEA44E2007EABD8 /* PropType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D0D1CEA44E2007EABD8 /* PropType.swift */; };
+		E2D86D1E1CEA44E2007EABD8 /* PropableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D0D1CEA44E2007EABD8 /* PropableType.swift */; };
+		E2D86D1F1CEA44E2007EABD8 /* PropableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D0D1CEA44E2007EABD8 /* PropableType.swift */; };
 		E2D86D221CEA44E2007EABD8 /* Zoneable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D101CEA44E2007EABD8 /* Zoneable.swift */; };
 		E2D86D231CEA44E2007EABD8 /* Zoneable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D101CEA44E2007EABD8 /* Zoneable.swift */; };
 		E2D86D241CEA44E2007EABD8 /* ZoneableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D111CEA44E2007EABD8 /* ZoneableType.swift */; };
@@ -184,7 +184,7 @@
 		E2D86D081CEA44E2007EABD8 /* Ploppable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ploppable.swift; sourceTree = "<group>"; };
 		E2D86D091CEA44E2007EABD8 /* PloppableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PloppableType.swift; sourceTree = "<group>"; };
 		E2D86D0C1CEA44E2007EABD8 /* Propable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Propable.swift; sourceTree = "<group>"; };
-		E2D86D0D1CEA44E2007EABD8 /* PropType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropType.swift; sourceTree = "<group>"; };
+		E2D86D0D1CEA44E2007EABD8 /* PropableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropableType.swift; sourceTree = "<group>"; };
 		E2D86D101CEA44E2007EABD8 /* Zoneable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zoneable.swift; sourceTree = "<group>"; };
 		E2D86D111CEA44E2007EABD8 /* ZoneableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneableType.swift; sourceTree = "<group>"; };
 		E2EDA04B1CEDD2DA000464C5 /* TreeProp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeProp.swift; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				E2D86D0C1CEA44E2007EABD8 /* Propable.swift */,
-				E2D86D0D1CEA44E2007EABD8 /* PropType.swift */,
+				E2D86D0D1CEA44E2007EABD8 /* PropableType.swift */,
 			);
 			path = Prop;
 			sourceTree = "<group>";
@@ -609,7 +609,7 @@
 				E200666D1CEC8B9000E55D4B /* MapStatistic.swift in Sources */,
 				E2D86D161CEA44E2007EABD8 /* Ploppable.swift in Sources */,
 				E20B14B61CE6108F0067BC91 /* Array2DMapping.swift in Sources */,
-				E2D86D1E1CEA44E2007EABD8 /* PropType.swift in Sources */,
+				E2D86D1E1CEA44E2007EABD8 /* PropableType.swift in Sources */,
 				E2D86CEB1CEA4247007EABD8 /* Tileable.swift in Sources */,
 				E222DD4D1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */,
 				E227B9331CEF62200052918B /* EventEmitting.swift in Sources */,
@@ -686,7 +686,7 @@
 				E2EDA0561CEDD361000464C5 /* PlaceNearStreet.swift in Sources */,
 				E227B9371CEF624C0052918B /* EventSubscribing.swift in Sources */,
 				E26041381CF2DCC200773A73 /* BudgetActor.swift in Sources */,
-				E2D86D1F1CEA44E2007EABD8 /* PropType.swift in Sources */,
+				E2D86D1F1CEA44E2007EABD8 /* PropableType.swift in Sources */,
 				E2D86CEC1CEA4247007EABD8 /* Tileable.swift in Sources */,
 				E276E5D81CF4633A003E310D /* CityMap.swift in Sources */,
 				E2EDA04D1CEDD2DA000464C5 /* TreeProp.swift in Sources */,

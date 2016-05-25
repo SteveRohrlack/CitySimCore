@@ -16,7 +16,7 @@ enum TileType: Equatable {
      This type of tile describes map objects that function as more or less 
      decorative objects.
     */
-    case Propable(PropType)
+    case Propable(PropableType)
     
     /**
      Zoneables are tiles that are filled with buildings (growables)
