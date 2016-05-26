@@ -17,12 +17,12 @@ specific terms related to the data structure.
 
 ### Overview
 
-![image](https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme-img/datastructure-v0.1.png)
+### City
 
-### Map
+The "City" is composed of a multi-layerd map (CityMap) and
+multiple statistical information.
 
-The "city" is represented as a 2D "map". The map is to be seen as a
-top-down view of a city.
+### CityMap
 
 The map is composed of multiple "layers", each holding information
 regarding a different aspects of the map (for example: land value).
@@ -109,7 +109,9 @@ These behaviours are implemented using protocol composition.
 * **must be placed near street:** tile must be adjacent to street
 * **includes map statistics:** tile contains statistic information
 * **can have conditions:** condition example: on fire
-* **contains cost / budget information:** either one time cost or running cost or both
+* **contains budget information:** one time cost and/or running cost
+
+##### example content objects with tile attributes
 
 ![image](https://raw.githubusercontent.com/SteveRohrlack/CitySimCore/master/docs/readme/content-objects-examples.png)
 
@@ -147,7 +149,7 @@ It is planned to implement numerous actors, for example:
 * ZoneDevelopmentActor
 
 Example: The "Budget" actor updates the currently available budget.
-It runs every 10 ticks and subtracts the current total ongoing cost 
+It runs every 10 ticks and subtracts the current total ongoing cost
 from the budget and adds collected taxes to it.
 
 ## Progress
