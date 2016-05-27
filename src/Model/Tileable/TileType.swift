@@ -37,8 +37,8 @@ enum TileType: Equatable {
 /**
  operator "==" to allow comparing tile types
  
- - parameter type1: TileType
- - parameter type2: TileType
+ - parameter lhs: TileType
+ - parameter rhs: TileType
  
  - returns: comparison result
  */
