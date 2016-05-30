@@ -22,7 +22,7 @@ class BudgetActor: Acting, EventSubscribing {
    
     /// actor stage
     /// simulation's main data container
-    var stage: City
+    internal var stage: City
     
     /**
      constructor
@@ -31,6 +31,8 @@ class BudgetActor: Acting, EventSubscribing {
     */
     init(stage: City) {
         self.stage = stage
+        self.stage.map.subscribe(subscriber: self, to: .AddTile)
+        self.stage.map.subscribe(subscriber: self, to: .RemoveTile)
     }
     
     /**
@@ -39,7 +41,7 @@ class BudgetActor: Acting, EventSubscribing {
      - parameter event: the event type
      - parameter payload: the event data
     */
-    func recieveEvent(event event: EventNaming, payload: Any) throws {
+    internal func recieveEvent(event event: EventNaming, payload: Any) throws {
         guard let event = event as? CityMapEvents else {
             return
         }
@@ -59,7 +61,7 @@ class BudgetActor: Acting, EventSubscribing {
     /**
      the BudgetActor subtracts the current total running cost from the budget
      */
-    func act() {
+    internal func act() {
         //subtract running cost
         stage.budget.amount -= stage.budget.runningCost
     }

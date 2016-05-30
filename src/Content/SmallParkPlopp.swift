@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SmallParkPlopp: Ploppable, Budgetable, MapStatistical, Conditionable, PlaceNearStreet {
+struct SmallParkPlopp: Ploppable, Budgetable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 3
@@ -19,6 +19,7 @@ struct SmallParkPlopp: Ploppable, Budgetable, MapStatistical, Conditionable, Pla
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: MapStatisticContainer = MapStatisticContainer()
     var conditions: ConditionContainer = ConditionContainer()
+    let ressources: [RessourceType] = [.Electricity(100), .Water(10)]
     
     init(origin: (Int, Int)) {
         self.origin = origin

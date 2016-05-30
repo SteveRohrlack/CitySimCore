@@ -39,6 +39,8 @@
 		E21EC75B1CF827FC001F328B /* RessourceConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EC7591CF827FC001F328B /* RessourceConsuming.swift */; };
 		E222DD4D1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */; };
 		E222DD4E1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */; };
+		E22512E31CFC195B00DE5E7F /* ElectricityActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */; };
+		E22512E41CFC195B00DE5E7F /* ElectricityActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */; };
 		E227B9301CEF62120052918B /* EventNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227B92F1CEF62120052918B /* EventNaming.swift */; };
 		E227B9311CEF62120052918B /* EventNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227B92F1CEF62120052918B /* EventNaming.swift */; };
 		E227B9331CEF62200052918B /* EventEmitting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227B9321CEF62200052918B /* EventEmitting.swift */; };
@@ -164,6 +166,7 @@
 		E21EC7561CF827B2001F328B /* RessourceProducing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceProducing.swift; sourceTree = "<group>"; };
 		E21EC7591CF827FC001F328B /* RessourceConsuming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceConsuming.swift; sourceTree = "<group>"; };
 		E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallIndustrialZone.swift; sourceTree = "<group>"; };
+		E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricityActor.swift; sourceTree = "<group>"; };
 		E227B92F1CEF62120052918B /* EventNaming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNaming.swift; sourceTree = "<group>"; };
 		E227B9321CEF62200052918B /* EventEmitting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitting.swift; sourceTree = "<group>"; };
 		E227B9351CEF624C0052918B /* EventSubscribing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSubscribing.swift; sourceTree = "<group>"; };
@@ -325,6 +328,7 @@
 			children = (
 				E2663E6E1CEF305900B179ED /* Acting.swift */,
 				E26041361CF2DCC200773A73 /* BudgetActor.swift */,
+				E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */,
 			);
 			path = Actors;
 			sourceTree = "<group>";
@@ -645,6 +649,7 @@
 				E2663E6F1CEF305900B179ED /* Acting.swift in Sources */,
 				E21EC7571CF827B2001F328B /* RessourceProducing.swift in Sources */,
 				E227B9301CEF62120052918B /* EventNaming.swift in Sources */,
+				E22512E31CFC195B00DE5E7F /* ElectricityActor.swift in Sources */,
 				E2EDA04F1CEDD325000464C5 /* Condition.swift in Sources */,
 				E2D86D221CEA44E2007EABD8 /* Zoneable.swift in Sources */,
 				E227B9361CEF624C0052918B /* EventSubscribing.swift in Sources */,
@@ -717,6 +722,7 @@
 				E2663E701CEF305900B179ED /* Acting.swift in Sources */,
 				E21EC7581CF827B2001F328B /* RessourceProducing.swift in Sources */,
 				E227B9311CEF62120052918B /* EventNaming.swift in Sources */,
+				E22512E41CFC195B00DE5E7F /* ElectricityActor.swift in Sources */,
 				E20B14B71CE6108F0067BC91 /* Array2DMapping.swift in Sources */,
 				E2EDA0561CEDD361000464C5 /* PlaceNearStreet.swift in Sources */,
 				E227B9371CEF624C0052918B /* EventSubscribing.swift in Sources */,
