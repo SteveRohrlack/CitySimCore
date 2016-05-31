@@ -142,7 +142,7 @@ Each event is given a payload.
 
 Actors (see "Actors") heavily make use of the event system.
 
-### CityMap
+### CityMapEvents
 
 * Event "AddTile", payload of type "Tileable"
 * Event "RemoveTile", payload of type "Tileable"

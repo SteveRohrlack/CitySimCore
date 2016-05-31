@@ -13,7 +13,7 @@
     <a title="CitySimCoreiOS  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (56% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (65% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -31,7 +31,13 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/City.html">City</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -54,7 +60,10 @@
                 <a href="Enums/PloppableType.html">PloppableType</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/PropType.html">PropType</a>
+                <a href="Enums/PropableType.html">PropableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RessourceType.html">RessourceType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums.html#/s:O14CitySimCoreiOS20StatisticsLayerError">StatisticsLayerError</a>
@@ -78,6 +87,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_12MapStatisticS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -127,6 +142,12 @@
                 <a href="Protocols/Propable.html">Propable</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/RessourceConsuming.html">RessourceConsuming</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RessourceProducing.html">RessourceProducing</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/StatisticsLayering.html">StatisticsLayering</a>
               </li>
               <li class="nav-group-task">
@@ -141,7 +162,7 @@
             <a href="Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/BudgetActor.html">BudgetActor</a>
+                <a href="Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/CityMap.html">CityMap</a>
@@ -151,6 +172,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Location.html">Location</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Ressources.html">Ressources</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Simulation.html">Simulation</a>
@@ -208,17 +235,25 @@ the simulation will use.</p>
 <p>This section is also meant to elaborate on and describe
 specific terms related to the data structure.</p>
 <a href='#overview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='overview'>Overview</h3>
+<a href='#city' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='city'>City</h3>
 
-<p><img src="https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme-img/datastructure-v0.1.png" alt="image"></p>
-<a href='#map' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='map'>Map</h3>
+<p>The <q>City</q> is composed of a multi-layerd map (see CityMap) and
+multiple statistical information.</p>
 
-<p>The <q>city</q> is represented as a 2D <q>map</q>. The map is to be seen as a
-top-down view of a city.</p>
+<p>These information include:</p>
+
+<ul>
+<li><strong>Budget:</strong> current budget and ongoing cost</li>
+<li><strong>Ressources:</strong> current supply and demand for ressources</li>
+<li><strong>Population:</strong> current population count</li>
+</ul>
+<a href='#citymap' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='citymap'>CityMap</h3>
 
 <p>The map is composed of multiple <q>layers</q>, each holding information
 regarding a different aspects of the map (for example: land value).</p>
+<a href='#cell' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cell'>Cell</h3>
 
-<p>A single address on a layer is called a <q>cell</q>.</p>
+<p>A single address (1x1) on a layer is called a <q>cell</q>.</p>
 <a href='#layer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='layer'>Layer</h3>
 
 <p>There are currently two different types of layers:</p>
@@ -299,12 +334,36 @@ These behaviours are implemented using protocol composition.</p>
 <li><strong>must be placed near street:</strong> tile must be adjacent to street</li>
 <li><strong>includes map statistics:</strong> tile contains statistic information</li>
 <li><strong>can have conditions:</strong> condition example: on fire</li>
-<li><strong>contains cost / budget information:</strong> either one time cost or running cost or both</li>
+<li><strong>contains budget information:</strong> one time cost and/or running cost</li>
+<li><strong>produces one ressource:</strong> see <q>Ressources</q></li>
+<li><strong>consumes one or more ressources:</strong> see <q>Ressources</q></li>
 </ul>
+<a href='#example_content_objects_with_attributes' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='example_content_objects_with_attributes'>example content objects with attributes</h5>
 
-<p><strong>Examples</strong></p>
+<p><img src="https://raw.githubusercontent.com/SteveRohrlack/CitySimCore/master/docs/readme/content-objects-examples.png" alt="image"></p>
+<a href='#ressources' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='ressources'>Ressources</h3>
 
-<p><img src="https://github.com/SteveRohrlack/CitySimCore/tree/master/docs/readme-img/content.png" alt="image"></p>
+<p>There will be two distinct ressources in the simulation that can be
+produced and consumed.</p>
+
+<ul>
+<li>electricity</li>
+<li>water</li>
+</ul>
+<a href='#event_system' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='event_system'>Event system</h2>
+
+<p>The following objects are emitting events by adopting the <q>EventEmitting</q>
+protocol.</p>
+
+<p>Each event is given a payload.</p>
+
+<p>Actors (see <q>Actors</q>) heavily make use of the event system.</p>
+<a href='#citymapevents' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='citymapevents'>CityMapEvents</h3>
+
+<ul>
+<li>Event <q>AddTile</q>, payload of type <q>Tileable</q></li>
+<li>Event <q>RemoveTile</q>, payload of type <q>Tileable</q></li>
+</ul>
 <a href='#simulation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='simulation'>Simulation</h2>
 <a href='#timeframe' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='timeframe'>Timeframe</h3>
 
@@ -320,31 +379,51 @@ calculated and used throughout the simulation.</p>
 <q>growing</q> buildings in zoneables.</p>
 <a href='#actors' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='actors'>Actors</h3>
 
-<p>Actors are objects that handle simluation state and actually advance
-the simulation.</p>
+<p>Actors are lightweight objects that advance the simluation state. They should,
+however, not contain any state themself.</p>
 
-<p>They are run periodically but at most once per tick.</p>
+<p>Actors are added to the simulation as needed. For example, you may not want to
+add the FireActor, responsible for starting fires, right away but later on when
+the player can handle such events - thus allowing a smoother learning curve for the
+player.</p>
 
-<p>For example: The <q>budget</q> actor contains the currently available budget.
-It runs every 10 ticks and subtracts the ongoing cost of active ploppables
-from - and adds collected taxes to the available budget.</p>
+<p>Actors make use of the event system so they can react to certain situations.</p>
 
 <p>It is planned to implement numerous actors, for example:</p>
 
 <ul>
-<li>BudgetActor</li>
-<li>FireActor</li>
-<li>CrimeActor</li>
-<li>ZoneDevelopmentActor</li>
-<li>etc.</li>
+<li><strong>BudgetActor:</strong> manages budget</li>
+<li><strong>ElectricityActor:</strong> manages electricity</li>
+<li><strong>WaterActor:</strong> manages water</li>
+<li><strong>FireActor:</strong> manages fires</li>
+<li><strong>CrimeActor:</strong> manages crimes</li>
+<li><strong>ZoneDevelopmentActor:</strong> manages zone development</li>
 </ul>
+<a href='#budget' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='budget'>Budget</h4>
+
+<p>The <q>Budget</q> actor updates the currently available budget.</p>
+
+<p>It subscribes to the <q>AddTile</q> and <q>RemoveTile</q> events of the CityMap.</p>
+
+<p>When adding or removing a tile to/from the TileLayer that contain cost,
+(are <q>Budgetable</q>) they will be handled by this actor.</p>
+
+<p>It runs every 10 ticks and subtracts the current total ongoing cost
+from the budget and adds collected taxes to it.</p>
+<a href='#electricity' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='electricity'>Electricity</h4>
+
+<p>The <q>Electricity</q> actor manages the current state of production and
+consumption of electricity.</p>
+
+<p>It subscribes to the <q>AddTile</q> and <q>RemoveTile</q> events of the CityMap.</p>
+
+<p>When adding or removing a tile to/from the TileLayer that produce or
+consume ressources (are <q>RessourceProducing</q> or <q>RessourceConsuming</q>),
+they will be handled by this actor.</p>
 <a href='#progress' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='progress'>Progress</h2>
 
-<p>I&rsquo;m currently working on the map layers and data structure,
-implementing routines to add and remove different tiles
-and tile types and updating the correspding statistical values.</p>
-
-<p>The next task at hand is the creation all</p>
+<p>I&rsquo;m currently extending the data model for non-map related statistics.
+Also, the <q>Actor</q> api is beeing created and tested by implementing actors.</p>
 <a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='setup'>setup</h2>
 <pre class="highlight plaintext"><code>bundle install
 </code></pre>
@@ -366,7 +445,7 @@ and tile types and updating the correspding statistical values.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-25)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

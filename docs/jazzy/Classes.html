@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (56% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (65% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -31,7 +31,13 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/City.html">City</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -54,7 +60,10 @@
                 <a href="Enums/PloppableType.html">PloppableType</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/PropType.html">PropType</a>
+                <a href="Enums/PropableType.html">PropableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RessourceType.html">RessourceType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums.html#/s:O14CitySimCoreiOS20StatisticsLayerError">StatisticsLayerError</a>
@@ -78,6 +87,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_12MapStatisticS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -127,6 +142,12 @@
                 <a href="Protocols/Propable.html">Propable</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/RessourceConsuming.html">RessourceConsuming</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RessourceProducing.html">RessourceProducing</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/StatisticsLayering.html">StatisticsLayering</a>
               </li>
               <li class="nav-group-task">
@@ -141,7 +162,7 @@
             <a href="Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/BudgetActor.html">BudgetActor</a>
+                <a href="Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/CityMap.html">CityMap</a>
@@ -151,6 +172,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Location.html">Location</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Ressources.html">Ressources</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Simulation.html">Simulation</a>
@@ -202,6 +229,79 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:C14CitySimCoreiOS16ElectricityActor"></a>
+                    <a name="//apple_ref/swift/Class/ElectricityActor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C14CitySimCoreiOS16ElectricityActor">ElectricityActor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The ElectricityActor</p>
+
+                        <a href="Classes/ElectricityActor.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">ElectricityActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C14CitySimCoreiOS11BudgetActor"></a>
+                    <a name="//apple_ref/swift/Class/BudgetActor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C14CitySimCoreiOS11BudgetActor">BudgetActor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The BudgetActor manages all aspects of the budget but the current budget value.</p>
+
+<p>BudgetActor adopts the protocol <q>EventSubscribing</q></p>
+
+<ul>
+<li>holds sum of current running cost</li>
+<li>event handler for <q>CityMap.add</q> and <q>CityMap.remove</q> for objects that are
+budgetable, subtracts cost to buy</li>
+<li>substracts running cost</li>
+</ul>
+
+                        <a href="Classes/BudgetActor.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:C14CitySimCoreiOS4City"></a>
                     <a name="//apple_ref/swift/Class/City" class="dashAnchor"></a>
                     <a class="token" href="#/s:C14CitySimCoreiOS4City">City</a>
@@ -212,7 +312,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the sinulation&rsquo;s main data container</p>
+                        <p>the simulation&rsquo;s main data container</p>
 
                         <a href="Classes/City.html" class="slightly-smaller">See more</a>
                       </div>
@@ -232,7 +332,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-25)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

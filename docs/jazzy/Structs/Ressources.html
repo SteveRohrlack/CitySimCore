@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PropType Enum Reference</title>
+    <title>Ressources Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,11 +10,11 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/PropType" class="dashAnchor"></a>
-    <a title="PropType Enum Reference"></a>
+    <a name="//apple_ref/swift/Struct/Ressources" class="dashAnchor"></a>
+    <a title="Ressources Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CitySimCoreiOS Docs</a> (56% documented)</p>
+        <p><a href="../index.html">CitySimCoreiOS Docs</a> (65% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">CitySimCoreiOS Reference</a>
         <img id="carat" src="../img/carat.png" />
-        PropType Enum Reference
+        Ressources Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -32,7 +32,13 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Classes/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/City.html">City</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -55,7 +61,10 @@
                 <a href="../Enums/PloppableType.html">PloppableType</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/PropType.html">PropType</a>
+                <a href="../Enums/PropableType.html">PropableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RessourceType.html">RessourceType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums.html#/s:O14CitySimCoreiOS20StatisticsLayerError">StatisticsLayerError</a>
@@ -79,6 +88,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_12MapStatisticS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -128,6 +143,12 @@
                 <a href="../Protocols/Propable.html">Propable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/RessourceConsuming.html">RessourceConsuming</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RessourceProducing.html">RessourceProducing</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/StatisticsLayering.html">StatisticsLayering</a>
               </li>
               <li class="nav-group-task">
@@ -142,7 +163,7 @@
             <a href="../Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/BudgetActor.html">BudgetActor</a>
+                <a href="../Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/CityMap.html">CityMap</a>
@@ -152,6 +173,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Location.html">Location</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ressources.html">Ressources</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Simulation.html">Simulation</a>
@@ -193,14 +220,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>PropType</h1>
+            <h1>Ressources</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">enum</span> <span class="kt">PropType</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Ressources</span></code></pre>
 
                 </div>
               </div>
-            <p>provides a set of specific prop types</p>
+            <p>handles city ressources</p>
 
           </section>
           <section class="section task-group-section">
@@ -209,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO14CitySimCoreiOS8PropType4TreeFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Tree" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO14CitySimCoreiOS8PropType4TreeFMS0_S0_">Tree</a>
+                    <a name="/s:vV14CitySimCoreiOS10Ressources17electricityDemandSi"></a>
+                    <a name="//apple_ref/swift/Property/electricityDemand" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14CitySimCoreiOS10Ressources17electricityDemandSi">electricityDemand</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -219,30 +246,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>tree</p>
+                        <p>demand for electricity, sum of all electricity consumer&rsquo;s ressource value</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Tree</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">electricityDemand</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO14CitySimCoreiOS8PropType5WaterFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Water" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO14CitySimCoreiOS8PropType5WaterFMS0_S0_">Water</a>
+                    <a name="/s:vV14CitySimCoreiOS10Ressources17electricitySupplySi"></a>
+                    <a name="//apple_ref/swift/Property/electricitySupply" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV14CitySimCoreiOS10Ressources17electricitySupplySi">electricitySupply</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -250,14 +273,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>water</p>
+                        <p>supply of electricity, sum of all electricity producers</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Water</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">electricitySupply</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -269,7 +292,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-25)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

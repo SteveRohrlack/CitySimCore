@@ -14,7 +14,7 @@
     <a title="City Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CitySimCoreiOS Docs</a> (56% documented)</p>
+        <p><a href="../index.html">CitySimCoreiOS Docs</a> (65% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -32,7 +32,13 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Classes/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/City.html">City</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -55,7 +61,10 @@
                 <a href="../Enums/PloppableType.html">PloppableType</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/PropType.html">PropType</a>
+                <a href="../Enums/PropableType.html">PropableType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RessourceType.html">RessourceType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums.html#/s:O14CitySimCoreiOS20StatisticsLayerError">StatisticsLayerError</a>
@@ -79,6 +88,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_12MapStatisticS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -128,6 +143,12 @@
                 <a href="../Protocols/Propable.html">Propable</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/RessourceConsuming.html">RessourceConsuming</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RessourceProducing.html">RessourceProducing</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/StatisticsLayering.html">StatisticsLayering</a>
               </li>
               <li class="nav-group-task">
@@ -142,7 +163,7 @@
             <a href="../Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/BudgetActor.html">BudgetActor</a>
+                <a href="../Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/CityMap.html">CityMap</a>
@@ -152,6 +173,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Location.html">Location</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ressources.html">Ressources</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Simulation.html">Simulation</a>
@@ -200,7 +227,7 @@
 
                 </div>
               </div>
-            <p>the sinulation&rsquo;s main data container</p>
+            <p>the simulation&rsquo;s main data container</p>
 
           </section>
           <section class="section task-group-section">
@@ -263,9 +290,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC14CitySimCoreiOS4City6budgetSi"></a>
+                    <a name="/s:vC14CitySimCoreiOS4City6budgetVS_6Budget"></a>
                     <a name="//apple_ref/swift/Property/budget" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC14CitySimCoreiOS4City6budgetSi">budget</a>
+                    <a class="token" href="#/s:vC14CitySimCoreiOS4City6budgetVS_6Budget">budget</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -273,14 +300,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>current budget</p>
+                        <p>City budget</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">budget</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">budget</span><span class="p">:</span> <span class="kt">Budget</span></code></pre>
 
                         </div>
                       </div>
@@ -290,9 +317,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap10populationSi6budgetSi_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(map:population:budget:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap10populationSi6budgetSi_S0_">init(map:population:budget:)</a>
+                    <a name="/s:vC14CitySimCoreiOS4City10ressourcesVS_10Ressources"></a>
+                    <a name="//apple_ref/swift/Property/ressources" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14CitySimCoreiOS4City10ressourcesVS_10Ressources">ressources</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -300,16 +327,149 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>City Ressources</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">City</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">ressources</span><span class="p">:</span> <span class="kt">Ressources</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap6budgetVS_6Budget10ressourcesVS_10Ressources10populationSi_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(map:budget:ressources:population:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap6budgetVS_6Budget10ressourcesVS_10Ressources10populationSi_S0_">init(map:budget:ressources:population:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">CityMap</span><span class="p">,</span> <span class="nv">budget</span><span class="p">:</span> <span class="kt">Budget</span><span class="p">,</span> <span class="nv">ressources</span><span class="p">:</span> <span class="kt">Ressources</span><span class="p">,</span> <span class="nv">population</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>map</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CityMap</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>budget</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>city budget</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>population</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>city population</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap14startingBudgetSi_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(map:startingBudget:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap14startingBudgetSi_S0_">init(map:startingBudget:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>convenience initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">CityMap</span><span class="p">,</span> <span class="nv">startingBudget</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>map</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CityMap</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startingBudget</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>starting budget</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -319,7 +479,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-25)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-05-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
