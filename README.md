@@ -19,15 +19,23 @@ specific terms related to the data structure.
 
 ### City
 
-The "City" is composed of a multi-layerd map (CityMap) and
+The "City" is composed of a multi-layerd map (see CityMap) and
 multiple statistical information.
+
+These information include:
+
+* **Budget:** current budget and ongoing cost
+* **Ressources:** current supply and demand for ressources
+* **Population:** current population count
 
 ### CityMap
 
 The map is composed of multiple "layers", each holding information
 regarding a different aspects of the map (for example: land value).
 
-A single address on a layer is called a "cell".
+### Cell
+
+A single address (1x1) on a layer is called a "cell".
 
 ### Layer
 
@@ -110,10 +118,34 @@ These behaviours are implemented using protocol composition.
 * **includes map statistics:** tile contains statistic information
 * **can have conditions:** condition example: on fire
 * **contains budget information:** one time cost and/or running cost
+* **produces one ressource:** see "Ressources"
+* **consumes one or more ressources:** see "Ressources"
 
-##### example content objects with tile attributes
+##### example content objects with attributes
 
 ![image](https://raw.githubusercontent.com/SteveRohrlack/CitySimCore/master/docs/readme/content-objects-examples.png)
+
+### Ressources
+
+There will be two distinct ressources in the simulation that can be
+produced and consumed.
+
+* electricity
+* water
+
+## Event system
+
+The following objects are emitting events by adopting the "EventEmitting"
+protocol.
+
+Each event is given a payload.
+
+Actors (see "Actors") heavily make use of the event system.
+
+### CityMap
+
+* Event "AddTile", payload of type "Tileable"
+* Event "RemoveTile", payload of type "Tileable"
 
 ## Simulation
 
@@ -134,28 +166,51 @@ This allows, for example, to choose fitting locations for
 ### Actors
 
 Actors are lightweight objects that advance the simluation state. They should,
-however, not contain any stateful information.
+however, not contain any state themself.
 
 Actors are added to the simulation as needed. For example, you may not want to
 add the FireActor, responsible for starting fires, right away but later on when
 the player can handle such events - thus allowing a smoother learning curve for the
 player.
 
+Actors make use of the event system so they can react to certain situations.
+
 It is planned to implement numerous actors, for example:
 
-* BudgetActor
-* FireActor
-* CrimeActor
-* ZoneDevelopmentActor
+* **BudgetActor:** manages budget
+* **ElectricityActor:** manages electricity
+* **WaterActor:** manages water
+* **FireActor:** manages fires
+* **CrimeActor:** manages crimes
+* **ZoneDevelopmentActor:** manages zone development
 
-Example: The "Budget" actor updates the currently available budget.
+#### Budget
+
+The "Budget" actor updates the currently available budget.
+
+It subscribes to the "AddTile" and "RemoveTile" events of the CityMap.
+
+When adding or removing a tile to/from the TileLayer that contain cost,
+(are "Budgetable") they will be handled by this actor.
+
 It runs every 10 ticks and subtracts the current total ongoing cost
 from the budget and adds collected taxes to it.
+
+#### Electricity
+
+The "Electricity" actor manages the current state of production and
+consumption of electricity.
+
+It subscribes to the "AddTile" and "RemoveTile" events of the CityMap.
+
+When adding or removing a tile to/from the TileLayer that produce or
+consume ressources (are "RessourceProducing" or "RessourceConsuming"),
+they will be handled by this actor.
 
 ## Progress
 
 I'm currently extending the data model for non-map related statistics.
-Also, the "Actor" api is beeing created and tested by implementing simple examples.
+Also, the "Actor" api is beeing created and tested by implementing actors.
 
 ## setup
 
