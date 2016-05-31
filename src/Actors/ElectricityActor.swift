@@ -18,7 +18,7 @@ class ElectricityActor: Acting, EventSubscribing {
     internal var stage: City
     
     /**
-     constructor
+     initializer
      
      - parameter stage: City object work work with
      */
@@ -35,17 +35,49 @@ class ElectricityActor: Acting, EventSubscribing {
      - parameter payload: the event data
      */
     internal func recieveEvent(event event: EventNaming, payload: Any) throws {
-        guard let _ = event as? CityMapEvents else {
+        guard let event = event as? CityMapEvents else {
             return
         }
         
+        /// consumers
         if let consumer = payload as? RessourceConsuming {
-            /// add city.ressources consumptions
-            recalculateElectricityConsumption()
+            let electricityRessources = consumer.ressources.filter { (ressource) in
+                guard case .Electricity = ressource else {
+                    return false
+                }
+                
+                return true
+            }
+            
+            guard electricityRessources.count > 0 else {
+                return
+            }
+            
+            for ressource in electricityRessources {
+                if case .AddTile = event {
+                    stage.ressources.electricityDemand += ressource.value()
+                }
+                        
+                if case .RemoveTile = event {
+                    stage.ressources.electricityDemand -= ressource.value()
+                }
+            }
         }
         
+        /// producers
         if let producer = payload as? RessourceProducing {
-            /// add city.ressources productions
+            guard case .Electricity(let value) = producer.ressource else {
+                return
+            }
+            
+            if case .AddTile = event {
+                stage.ressources.electricitySupply += value
+            }
+                
+            if case .RemoveTile = event {
+                stage.ressources.electricitySupply -= value
+            }
+                
             recalculateElectricityConsumption()
         }
         
@@ -57,6 +89,7 @@ class ElectricityActor: Acting, EventSubscribing {
         
     }
     
+    /// the ElectricityActor doesn't act, it just handles events
     internal func act() {
         
     }

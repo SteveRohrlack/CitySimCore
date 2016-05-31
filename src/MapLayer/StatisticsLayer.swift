@@ -36,7 +36,7 @@ struct StatisticsLayer: StatisticsLayering {
     var values: [ValueType?]
     
     /**
-     constructor
+     initializer
      
      - parameter rows: number of rows
      - parameter columns: number of columns

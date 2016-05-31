@@ -36,7 +36,7 @@ struct TileLayer: Array2DMapping {
     var values: [ValueType?]
     
     /**
-     constructor
+     initializer
      
      - parameter rows: number of rows
      - parameter columns: number of columns
@@ -79,6 +79,8 @@ struct TileLayer: Array2DMapping {
      retrieve a list of tiles that are located at the given location
      
      - parameter location: the location to search
+     
+     - returns: list of tiles
     */
     func usedByTilesAt(location location: Locateable) -> [ValueType] {
         var tiles: [ValueType] = []

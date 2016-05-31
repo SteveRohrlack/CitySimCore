@@ -30,7 +30,7 @@ struct StatisticlayersContainer {
     var healthLayer: StatisticsLayer
     
     /**
-     constructor
+     initializer
      
      - parameter height: needed to create specific map layers
      - parameter width: needed to create specific map layers

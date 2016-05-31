@@ -25,7 +25,7 @@ class BudgetActor: Acting, EventSubscribing {
     internal var stage: City
     
     /**
-     constructor
+     initializer
      
      - parameter stage: City object work work with
     */

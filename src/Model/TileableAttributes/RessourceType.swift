@@ -18,4 +18,18 @@ enum RessourceType {
     
     /// Water
     case Water(Int)
+    
+    /**
+     getter for value
+     
+     - returns: ressource value
+    */
+    func value() -> Int {
+        switch self {
+        case .Electricity(let value):
+            return value
+        case .Water(let value):
+            return value
+        }
+    }
 }
