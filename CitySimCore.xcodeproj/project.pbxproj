@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E20066611CEC7EE700E55D4B /* WaterProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066601CEC7EE700E55D4B /* WaterProp.swift */; };
-		E20066631CEC7EF700E55D4B /* SmallResidentialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066621CEC7EF700E55D4B /* SmallResidentialZone.swift */; };
 		E200666D1CEC8B9000E55D4B /* MapStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200666B1CEC8B9000E55D4B /* MapStatistic.swift */; };
 		E200666E1CEC8B9000E55D4B /* MapStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200666B1CEC8B9000E55D4B /* MapStatistic.swift */; };
 		E200666F1CEC8B9000E55D4B /* MapStatistical.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200666C1CEC8B9000E55D4B /* MapStatistical.swift */; };
@@ -39,8 +37,6 @@
 		E21EC7581CF827B2001F328B /* RessourceProducing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EC7561CF827B2001F328B /* RessourceProducing.swift */; };
 		E21EC75A1CF827FC001F328B /* RessourceConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EC7591CF827FC001F328B /* RessourceConsuming.swift */; };
 		E21EC75B1CF827FC001F328B /* RessourceConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EC7591CF827FC001F328B /* RessourceConsuming.swift */; };
-		E222DD4D1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */; };
-		E222DD4E1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */; };
 		E22512E31CFC195B00DE5E7F /* ElectricityActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */; };
 		E22512E41CFC195B00DE5E7F /* ElectricityActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */; };
 		E227B9301CEF62120052918B /* EventNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227B92F1CEF62120052918B /* EventNaming.swift */; };
@@ -85,10 +81,6 @@
 		E2A286271CF6251F0094ECB4 /* MapStatisticContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A286251CF6251F0094ECB4 /* MapStatisticContainer.swift */; };
 		E2A286291CF62A0A0094ECB4 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A286281CF62A0A0094ECB4 /* Budget.swift */; };
 		E2A2862A1CF62A0A0094ECB4 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A286281CF62A0A0094ECB4 /* Budget.swift */; };
-		E2A48B8C1CEB3688006D272B /* SmallParkPlopp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8B1CEB3688006D272B /* SmallParkPlopp.swift */; };
-		E2A48B8D1CEB3688006D272B /* SmallParkPlopp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8B1CEB3688006D272B /* SmallParkPlopp.swift */; };
-		E2A48B8F1CEB36A1006D272B /* StreetPlopp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8E1CEB36A1006D272B /* StreetPlopp.swift */; };
-		E2A48B901CEB36A1006D272B /* StreetPlopp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A48B8E1CEB36A1006D272B /* StreetPlopp.swift */; };
 		E2A9A8051CF30C7600054A83 /* CityMapEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9A8041CF30C7600054A83 /* CityMapEvents.swift */; };
 		E2A9A8061CF30C7600054A83 /* CityMapEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A9A8041CF30C7600054A83 /* CityMapEvents.swift */; };
 		E2D86CEB1CEA4247007EABD8 /* Tileable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86CD61CEA4247007EABD8 /* Tileable.swift */; };
@@ -109,8 +101,6 @@
 		E2D86D231CEA44E2007EABD8 /* Zoneable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D101CEA44E2007EABD8 /* Zoneable.swift */; };
 		E2D86D241CEA44E2007EABD8 /* ZoneableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D111CEA44E2007EABD8 /* ZoneableType.swift */; };
 		E2D86D251CEA44E2007EABD8 /* ZoneableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D86D111CEA44E2007EABD8 /* ZoneableType.swift */; };
-		E2EDA04C1CEDD2DA000464C5 /* TreeProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA04B1CEDD2DA000464C5 /* TreeProp.swift */; };
-		E2EDA04D1CEDD2DA000464C5 /* TreeProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA04B1CEDD2DA000464C5 /* TreeProp.swift */; };
 		E2EDA04F1CEDD325000464C5 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA04E1CEDD325000464C5 /* Condition.swift */; };
 		E2EDA0501CEDD325000464C5 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA04E1CEDD325000464C5 /* Condition.swift */; };
 		E2EDA0521CEDD330000464C5 /* Conditionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA0511CEDD330000464C5 /* Conditionable.swift */; };
@@ -127,10 +117,8 @@
 		E2EDA0641CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA05B1CEDD74C000464C5 /* TreePropTestDouble.swift */; };
 		E2EDA0651CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA05C1CEDD74C000464C5 /* WaterPropTestDouble.swift */; };
 		E2EDA0661CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA05C1CEDD74C000464C5 /* WaterPropTestDouble.swift */; };
-		E2EDA06A1CEDD898000464C5 /* SmallCommercialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA0671CEDD874000464C5 /* SmallCommercialZone.swift */; };
-		E2EDA06B1CEDD89F000464C5 /* WaterProp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066601CEC7EE700E55D4B /* WaterProp.swift */; };
-		E2EDA06C1CEDD89F000464C5 /* SmallCommercialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EDA0671CEDD874000464C5 /* SmallCommercialZone.swift */; };
-		E2EDA06D1CEDD89F000464C5 /* SmallResidentialZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066621CEC7EF700E55D4B /* SmallResidentialZone.swift */; };
+		E2F1DD6C1CFED3AB00E347A2 /* CityMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1DD6B1CFED3AB00E347A2 /* CityMapTests.swift */; };
+		E2F1DD6D1CFED3AB00E347A2 /* CityMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1DD6B1CFED3AB00E347A2 /* CityMapTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,8 +139,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E20066601CEC7EE700E55D4B /* WaterProp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterProp.swift; sourceTree = "<group>"; };
-		E20066621CEC7EF700E55D4B /* SmallResidentialZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallResidentialZone.swift; sourceTree = "<group>"; };
 		E200666B1CEC8B9000E55D4B /* MapStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatistic.swift; sourceTree = "<group>"; };
 		E200666C1CEC8B9000E55D4B /* MapStatistical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatistical.swift; sourceTree = "<group>"; };
 		E20066711CEC8BA500E55D4B /* NotRemoveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotRemoveable.swift; sourceTree = "<group>"; };
@@ -168,7 +154,6 @@
 		E21EC7531CF8273E001F328B /* RessourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceType.swift; sourceTree = "<group>"; };
 		E21EC7561CF827B2001F328B /* RessourceProducing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceProducing.swift; sourceTree = "<group>"; };
 		E21EC7591CF827FC001F328B /* RessourceConsuming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceConsuming.swift; sourceTree = "<group>"; };
-		E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallIndustrialZone.swift; sourceTree = "<group>"; };
 		E22512E21CFC195B00DE5E7F /* ElectricityActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricityActor.swift; sourceTree = "<group>"; };
 		E227B92F1CEF62120052918B /* EventNaming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNaming.swift; sourceTree = "<group>"; };
 		E227B9321CEF62200052918B /* EventEmitting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitting.swift; sourceTree = "<group>"; };
@@ -196,8 +181,6 @@
 		E292B5CF1CEB66E2001C4A23 /* StatisticsLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLayerError.swift; sourceTree = "<group>"; };
 		E2A286251CF6251F0094ECB4 /* MapStatisticContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatisticContainer.swift; sourceTree = "<group>"; };
 		E2A286281CF62A0A0094ECB4 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
-		E2A48B8B1CEB3688006D272B /* SmallParkPlopp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallParkPlopp.swift; sourceTree = "<group>"; };
-		E2A48B8E1CEB36A1006D272B /* StreetPlopp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreetPlopp.swift; sourceTree = "<group>"; };
 		E2A9A8041CF30C7600054A83 /* CityMapEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMapEvents.swift; sourceTree = "<group>"; };
 		E2D86CD61CEA4247007EABD8 /* Tileable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tileable.swift; sourceTree = "<group>"; };
 		E2D86CD71CEA4247007EABD8 /* TileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileType.swift; sourceTree = "<group>"; };
@@ -208,7 +191,6 @@
 		E2D86D0D1CEA44E2007EABD8 /* PropableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropableType.swift; sourceTree = "<group>"; };
 		E2D86D101CEA44E2007EABD8 /* Zoneable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zoneable.swift; sourceTree = "<group>"; };
 		E2D86D111CEA44E2007EABD8 /* ZoneableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneableType.swift; sourceTree = "<group>"; };
-		E2EDA04B1CEDD2DA000464C5 /* TreeProp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeProp.swift; sourceTree = "<group>"; };
 		E2EDA04E1CEDD325000464C5 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		E2EDA0511CEDD330000464C5 /* Conditionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conditionable.swift; sourceTree = "<group>"; };
 		E2EDA0541CEDD361000464C5 /* PlaceNearStreet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceNearStreet.swift; sourceTree = "<group>"; };
@@ -217,7 +199,14 @@
 		E2EDA05A1CEDD74C000464C5 /* StreetPloppTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreetPloppTestDouble.swift; sourceTree = "<group>"; };
 		E2EDA05B1CEDD74C000464C5 /* TreePropTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreePropTestDouble.swift; sourceTree = "<group>"; };
 		E2EDA05C1CEDD74C000464C5 /* WaterPropTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterPropTestDouble.swift; sourceTree = "<group>"; };
-		E2EDA0671CEDD874000464C5 /* SmallCommercialZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallCommercialZone.swift; sourceTree = "<group>"; };
+		E2F1DD641CFED27700E347A2 /* SmallCommercialZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCommercialZone.swift; sourceTree = "<group>"; };
+		E2F1DD651CFED27700E347A2 /* SmallIndustrialZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallIndustrialZone.swift; sourceTree = "<group>"; };
+		E2F1DD661CFED27700E347A2 /* SmallParkPlopp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallParkPlopp.swift; sourceTree = "<group>"; };
+		E2F1DD671CFED27700E347A2 /* SmallResidentialZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallResidentialZone.swift; sourceTree = "<group>"; };
+		E2F1DD681CFED27700E347A2 /* StreetPlopp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetPlopp.swift; sourceTree = "<group>"; };
+		E2F1DD691CFED27700E347A2 /* TreeProp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeProp.swift; sourceTree = "<group>"; };
+		E2F1DD6A1CFED27700E347A2 /* WaterProp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProp.swift; sourceTree = "<group>"; };
+		E2F1DD6B1CFED3AB00E347A2 /* CityMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMapTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +332,7 @@
 				E2782CD01CE5DD0D00E5DF9A /* src */,
 				E2782CD31CE5DD0D00E5DF9A /* Tests */,
 				E2782C9B1CE5D72F00E5DF9A /* Products */,
+				E2F1DD621CFED27700E347A2 /* examples */,
 			);
 			sourceTree = "<group>";
 		};
@@ -361,7 +351,6 @@
 			isa = PBXGroup;
 			children = (
 				E2663E6D1CEF304C00B179ED /* Actors */,
-				E2A48B8A1CEB3678006D272B /* Content */,
 				E20B149E1CE6108F0067BC91 /* Lib */,
 				E2D86CFE1CEA4364007EABD8 /* MapLayer */,
 				E20B14A01CE6108F0067BC91 /* Model */,
@@ -377,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EDA0571CEDD74C000464C5 /* TestDoubles */,
+				E2F1DD6B1CFED3AB00E347A2 /* CityMapTests.swift */,
 				E20B14441CE5EC420067BC91 /* LocationTests.swift */,
 				E292B5CC1CEB6209001C4A23 /* StatisticsLayerTests.swift */,
 				E2663E711CEF328F00B179ED /* StatisticlayersContainerTests.swift */,
@@ -385,20 +375,6 @@
 				E2782CD51CE5DD0D00E5DF9A /* Info.plist */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		E2A48B8A1CEB3678006D272B /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				E2A48B8B1CEB3688006D272B /* SmallParkPlopp.swift */,
-				E2A48B8E1CEB36A1006D272B /* StreetPlopp.swift */,
-				E20066601CEC7EE700E55D4B /* WaterProp.swift */,
-				E2EDA0671CEDD874000464C5 /* SmallCommercialZone.swift */,
-				E222DD4C1CEDD9AF0040F55A /* SmallIndustrialZone.swift */,
-				E20066621CEC7EF700E55D4B /* SmallResidentialZone.swift */,
-				E2EDA04B1CEDD2DA000464C5 /* TreeProp.swift */,
-			);
-			path = Content;
 			sourceTree = "<group>";
 		};
 		E2D86CCD1CEA4247007EABD8 /* Tileable */ = {
@@ -461,6 +437,28 @@
 				E2EDA05C1CEDD74C000464C5 /* WaterPropTestDouble.swift */,
 			);
 			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		E2F1DD621CFED27700E347A2 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				E2F1DD631CFED27700E347A2 /* Contentobjects */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		E2F1DD631CFED27700E347A2 /* Contentobjects */ = {
+			isa = PBXGroup;
+			children = (
+				E2F1DD641CFED27700E347A2 /* SmallCommercialZone.swift */,
+				E2F1DD651CFED27700E347A2 /* SmallIndustrialZone.swift */,
+				E2F1DD661CFED27700E347A2 /* SmallParkPlopp.swift */,
+				E2F1DD671CFED27700E347A2 /* SmallResidentialZone.swift */,
+				E2F1DD681CFED27700E347A2 /* StreetPlopp.swift */,
+				E2F1DD691CFED27700E347A2 /* TreeProp.swift */,
+				E2F1DD6A1CFED27700E347A2 /* WaterProp.swift */,
+			);
+			path = Contentobjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -648,7 +646,6 @@
 				E20B14B61CE6108F0067BC91 /* Array2DMapping.swift in Sources */,
 				E2D86D1E1CEA44E2007EABD8 /* PropableType.swift in Sources */,
 				E2D86CEB1CEA4247007EABD8 /* Tileable.swift in Sources */,
-				E222DD4D1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */,
 				E227B9331CEF62200052918B /* EventEmitting.swift in Sources */,
 				E21A16E31CFD68F800C8CEAD /* Ressources.swift in Sources */,
 				E2663E6F1CEF305900B179ED /* Acting.swift in Sources */,
@@ -681,12 +678,6 @@
 				E22D20801CEB33FE00E97894 /* StatisticsLayer.swift in Sources */,
 				E20B14BC1CE6108F0067BC91 /* Locateable.swift in Sources */,
 				E2D86D181CEA44E2007EABD8 /* PloppableType.swift in Sources */,
-				E20066631CEC7EF700E55D4B /* SmallResidentialZone.swift in Sources */,
-				E2EDA06A1CEDD898000464C5 /* SmallCommercialZone.swift in Sources */,
-				E2A48B8F1CEB36A1006D272B /* StreetPlopp.swift in Sources */,
-				E20066611CEC7EE700E55D4B /* WaterProp.swift in Sources */,
-				E2EDA04C1CEDD2DA000464C5 /* TreeProp.swift in Sources */,
-				E2A48B8C1CEB3688006D272B /* SmallParkPlopp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F1DD6C1CFED3AB00E347A2 /* CityMapTests.swift in Sources */,
 				E292B5CD1CEB6209001C4A23 /* StatisticsLayerTests.swift in Sources */,
 				E20B14E41CE611920067BC91 /* TileTypeTests.swift in Sources */,
 				E2663E721CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
@@ -711,18 +703,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2EDA06B1CEDD89F000464C5 /* WaterProp.swift in Sources */,
-				E2EDA06D1CEDD89F000464C5 /* SmallResidentialZone.swift in Sources */,
 				E2A9A8061CF30C7600054A83 /* CityMapEvents.swift in Sources */,
 				E26041351CF2D96300773A73 /* ConditionContainer.swift in Sources */,
-				E2EDA06C1CEDD89F000464C5 /* SmallCommercialZone.swift in Sources */,
-				E2A48B901CEB36A1006D272B /* StreetPlopp.swift in Sources */,
 				E2A286271CF6251F0094ECB4 /* MapStatisticContainer.swift in Sources */,
 				E2D86CEE1CEA4247007EABD8 /* TileType.swift in Sources */,
 				E22D207B1CEB33D700E97894 /* StatisticsLayering.swift in Sources */,
 				E2EDA0531CEDD330000464C5 /* Conditionable.swift in Sources */,
 				E2D86D171CEA44E2007EABD8 /* Ploppable.swift in Sources */,
-				E222DD4E1CEDD9AF0040F55A /* SmallIndustrialZone.swift in Sources */,
 				E227B9341CEF62200052918B /* EventEmitting.swift in Sources */,
 				E21A16E41CFD68F800C8CEAD /* Ressources.swift in Sources */,
 				E2663E701CEF305900B179ED /* Acting.swift in Sources */,
@@ -737,7 +724,6 @@
 				E2D86CEC1CEA4247007EABD8 /* Tileable.swift in Sources */,
 				E24C44C21CF5D617006B9425 /* CityMap.swift in Sources */,
 				E24C44C01CF5D617006B9425 /* City.swift in Sources */,
-				E2EDA04D1CEDD2DA000464C5 /* TreeProp.swift in Sources */,
 				E200666E1CEC8B9000E55D4B /* MapStatistic.swift in Sources */,
 				E2D86D231CEA44E2007EABD8 /* Zoneable.swift in Sources */,
 				E26041321CF2D7C100773A73 /* Simulation.swift in Sources */,
@@ -758,7 +744,6 @@
 				E20B14BF1CE6108F0067BC91 /* Location.swift in Sources */,
 				E22D20811CEB33FE00E97894 /* StatisticsLayer.swift in Sources */,
 				E2EDA0501CEDD325000464C5 /* Condition.swift in Sources */,
-				E2A48B8D1CEB3688006D272B /* SmallParkPlopp.swift in Sources */,
 				E20B14BD1CE6108F0067BC91 /* Locateable.swift in Sources */,
 				E2D86D191CEA44E2007EABD8 /* PloppableType.swift in Sources */,
 			);
@@ -768,6 +753,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F1DD6D1CFED3AB00E347A2 /* CityMapTests.swift in Sources */,
 				E292B5CE1CEB6209001C4A23 /* StatisticsLayerTests.swift in Sources */,
 				E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */,
 				E2663E731CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,

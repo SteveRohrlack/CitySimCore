@@ -21,4 +21,5 @@ struct WaterPropTestDouble: Propable, NotRemoveable {
         self.width = width
         self.content = content
     }
+    
 }

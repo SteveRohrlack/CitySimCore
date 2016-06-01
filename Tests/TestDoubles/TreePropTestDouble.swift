@@ -19,4 +19,5 @@ struct TreePropTestDouble: Tileable {
         self.origin = origin
         self.content = content
     }
+    
 }

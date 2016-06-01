@@ -18,4 +18,5 @@ struct SmallResidentialZoneTestDouble: Zoneable, PlaceNearStreet {
     init(origin: (Int, Int)) {
         self.origin = origin
     }
+    
 }

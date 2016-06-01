@@ -35,7 +35,7 @@ class TileLayerTests: XCTestCase {
     }
     
     func testAddTile() {
-        let tile = SmallResidentialZone(origin: (1, 1))
+        let tile = SmallResidentialZoneTestDouble(origin: (1, 1))
         
         do {
             try subject!.addTile(tile: tile)
@@ -84,7 +84,7 @@ class TileLayerTests: XCTestCase {
             XCTFail("should fail")
         }
     }
-    
+       
     func testUsedByTilesAt() {
         let tile1 = SmallResidentialZoneTestDouble(origin: (0, 0))
         let tile2 = SmallResidentialZoneTestDouble(origin: (2, 2))

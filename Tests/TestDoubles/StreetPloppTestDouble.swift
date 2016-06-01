@@ -22,4 +22,5 @@ struct StreetPloppTestDouble: Ploppable, MapStatistical {
     init(origin: (Int, Int)) {
         self.origin = origin
     }
+    
 }
