@@ -42,7 +42,16 @@ struct Location: Locateable {
  - returns: new Location instance that covers the given location including the given radius
 */
 func + (location: Locateable, radius: Int) -> Locateable {
-    let newOrigin = (location.originY - radius, location.originX - radius)
+    var newOrigin = (location.originY - radius, location.originX - radius)
+    
+    if newOrigin.0 < 0 {
+       newOrigin.0 = 0
+    }
+    
+    if newOrigin.1 < 0 {
+        newOrigin.1 = 0
+    }
+    
     let newHeight = location.height + (radius * 2)
     let newWidth = location.width + (radius * 2)
     
