@@ -54,7 +54,7 @@ struct TileLayer: Array2DMapping {
      
      - throws TileableLayerError.TileCantFit if the given tile is out of  the layer bounds
     */
-    mutating func addTile(tile tile: ValueType) throws {
+    mutating internal func addTile(tile tile: ValueType) throws {
         guard tile.originY >= 0 && tile.originX >= 0 && tile.maxY < rows &&  tile.maxX < columns else {
             throw TileLayerError.TileCantFit
         }
@@ -69,7 +69,7 @@ struct TileLayer: Array2DMapping {
      
      - parameter tile: the value to remove
     */
-    mutating func remove(tile tile: ValueType) {
+    mutating internal func remove(tile tile: ValueType) {
         tile.forEachCell { (y: Int, x: Int) in
             self[y, x] = nil
         }
@@ -82,7 +82,7 @@ struct TileLayer: Array2DMapping {
      
      - returns: list of tiles
     */
-    func usedByTilesAt(location location: Locateable) -> [ValueType] {
+    internal func usedByTilesAt(location location: Locateable) -> [ValueType] {
         var tiles: [ValueType] = []
         
         location.forEachCell { (y: Int, x: Int) in

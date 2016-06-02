@@ -52,7 +52,7 @@ struct StatisticlayersContainer {
      - parameter at: location
      - parameter statistical: container of type MapStatistical holding statistics
     */
-    mutating func addStatistics(at location: Locateable, statistical: MapStatistical) {
+    mutating internal func addStatistics(at location: Locateable, statistical: MapStatistical) {
         for statistic in statistical.statistics.containerContent {
             switch statistic {
             case .Landvalue(let radius, let value):
@@ -78,7 +78,7 @@ struct StatisticlayersContainer {
      - parameter at: location
      - parameter statistical: container of type MapStatistical holding statistics
     */
-    mutating func removeStatistics(at location: Locateable, statistical: MapStatistical) {
+    mutating internal func removeStatistics(at location: Locateable, statistical: MapStatistical) {
         for statistic in statistical.statistics.containerContent {
             switch statistic {
             case .Landvalue(let radius, let value):
