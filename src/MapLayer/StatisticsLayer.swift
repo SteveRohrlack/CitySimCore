@@ -24,13 +24,13 @@ struct StatisticsLayer: StatisticsLayering {
      since StatisticsLayer adopts Array2DMapping, the number of rows must be
      available
     */
-    let rows: Int
+    internal let rows: Int
     
     /**
      since StatisticsLayer adopts Array2DMapping, the number of columns must be
      available
     */
-    let columns: Int
+    internal let columns: Int
     
     /// container for values
     var values: [ValueType?]
