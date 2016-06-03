@@ -15,7 +15,7 @@ struct StreetPloppTestDouble: Ploppable, MapStatistical {
     var name = "Street"
     let description = "Street"
     let cost = 20
-    let runningCost = 0
+    let runningCost: Int? = nil
     let type: TileType = .Ploppable(.Street)
     let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Noise(radius: 0, value: 1))
     

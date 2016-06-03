@@ -8,14 +8,14 @@
 
 @testable import CitySimCoreiOS
 
-struct SmallParkPloppTestDouble: Ploppable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming {
+struct SmallParkPloppTestDouble: Ploppable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming, Budgetable {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 3
     var name = "Small Park"
     let description = "just a small park"
-    let cost = 100
-    let runningCost = 5
+    let cost: Int? = 100
+    let runningCost: Int? = 5
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Landvalue(radius: 3, value: 4))
     var conditions: ConditionContainer = ConditionContainer()

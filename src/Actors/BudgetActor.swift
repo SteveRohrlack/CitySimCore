@@ -50,11 +50,21 @@ class BudgetActor: Acting, EventSubscribing {
             return
         }
         
-        switch event {
+        /// aggregate running cost in City.Budget
+        if let runningCost = budgetable.runningCost {
+            switch event {
             case .AddTile:
-                stage.budget.runningCost += budgetable.runningCost
+                stage.budget.runningCost += runningCost
             case .RemoveTile:
-                stage.budget.runningCost -= budgetable.runningCost
+                stage.budget.runningCost -= runningCost
+            }
+        }
+        
+        /// subtract one-time cost from budget
+        if let cost = budgetable.cost {
+            if case .AddTile = event {
+                stage.budget.amount -= cost
+            }
         }
     }
     
@@ -62,7 +72,7 @@ class BudgetActor: Acting, EventSubscribing {
      the BudgetActor subtracts the current total running cost from the budget
      */
     internal func act() {
-        //subtract running cost
+        /// subtract running cost
         stage.budget.amount -= stage.budget.runningCost
     }
     
