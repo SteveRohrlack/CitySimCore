@@ -115,6 +115,23 @@ struct CityMap: EventEmitting {
     // MARK: remove, info
     
     /**
+     checks if removing all tiles specified by the given location is possible
+     
+     - parameter location: location
+     
+     throws CityMapError.TileNotRemoveable if a tile requested to be removed is of type "TileNotRemoveable"
+     */
+    func canRemoveAt(location location: Locateable) throws {
+        let tilesToRemove = tileLayer.usedByTilesAt(location: location)
+        
+        for tile in tilesToRemove {
+            if tile is NotRemoveable {
+                throw CityMapError.TileNotRemoveable
+            }
+        }
+    }
+    
+    /**
      removes all tiles specified by the given location
      
      - parameter location: location
