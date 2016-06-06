@@ -29,6 +29,8 @@
 		E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E11CE611460067BC91 /* TileTypeTests.swift */; };
 		E20B14E71CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
 		E20B14E81CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
+		E217F7701D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */; };
+		E217F7711D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */; };
 		E21A16E31CFD68F800C8CEAD /* Ressources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A16E21CFD68F800C8CEAD /* Ressources.swift */; };
 		E21A16E41CFD68F800C8CEAD /* Ressources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A16E21CFD68F800C8CEAD /* Ressources.swift */; };
 		E21EC7541CF8273E001F328B /* RessourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21EC7531CF8273E001F328B /* RessourceType.swift */; };
@@ -152,6 +154,7 @@
 		E20B14B51CE6108F0067BC91 /* TileLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerError.swift; sourceTree = "<group>"; };
 		E20B14E11CE611460067BC91 /* TileTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTypeTests.swift; sourceTree = "<group>"; };
 		E20B14E61CE613F00067BC91 /* TileLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerTests.swift; sourceTree = "<group>"; };
+		E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotRemoveableTestDouble.swift; sourceTree = "<group>"; };
 		E21A16E21CFD68F800C8CEAD /* Ressources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ressources.swift; sourceTree = "<group>"; };
 		E21EC7531CF8273E001F328B /* RessourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceType.swift; sourceTree = "<group>"; };
 		E21EC7561CF827B2001F328B /* RessourceProducing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceProducing.swift; sourceTree = "<group>"; };
@@ -439,6 +442,7 @@
 				E2EDA05B1CEDD74C000464C5 /* TreePropTestDouble.swift */,
 				E2EDA05C1CEDD74C000464C5 /* WaterPropTestDouble.swift */,
 				E2D1CD5D1CFEFD1000B64364 /* PlaceNearStreetTestDouble.swift */,
+				E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */,
 			);
 			path = TestDoubles;
 			sourceTree = "<group>";
@@ -696,6 +700,7 @@
 				E2663E721CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
 				E2EDA0631CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0651CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
+				E217F7701D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */,
 				E2EDA05F1CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
 				E2EDA05D1CEDD74C000464C5 /* SmallParkPloppTestDouble.swift in Sources */,
 				E2EDA0611CEDD74C000464C5 /* StreetPloppTestDouble.swift in Sources */,
@@ -765,6 +770,7 @@
 				E2663E731CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
 				E2EDA0641CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0661CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
+				E217F7711D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */,
 				E2EDA0601CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
 				E2EDA05E1CEDD74C000464C5 /* SmallParkPloppTestDouble.swift in Sources */,
 				E2EDA0621CEDD74C000464C5 /* StreetPloppTestDouble.swift in Sources */,

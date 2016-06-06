@@ -74,4 +74,88 @@ class CityMapTests: XCTestCase {
             XCTFail("wrong error")
         }
     }
+    
+    func testInfoAt() {
+        let testLocation = Location(origin: (0, 0), width: 3, height: 3)
+        
+        var tiles = subject!.infoAt(location: testLocation)
+        XCTAssertEqual(0, tiles.count)
+        
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 2), height: 1, width: 3))
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (1, 1), height: 1, width: 1))
+            try subject!.prop(prop: WaterPropTestDouble(origin: (2, 2), height: 1, width: 1, content: 1))
+            
+            //out of location
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (3, 3), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        tiles = subject!.infoAt(location: testLocation)
+        XCTAssertEqual(3, tiles.count)
+    }
+    
+    func testZone() {
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
+            try subject!.zone(zone: SmallResidentialZoneTestDouble(origin: (1, 1)))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        XCTAssertNotNil(subject!.tileLayer[1, 1])
+    }
+    
+    func testPlopp() {
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        XCTAssertNotNil(subject!.tileLayer[0, 0])
+    }
+    
+    func testProp() {
+        do {
+            try subject!.prop(prop: WaterPropTestDouble(origin: (0, 0), height: 1, width: 1, content: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        XCTAssertNotNil(subject!.tileLayer[0, 0])
+    }
+    
+    func testRemoveAt() {
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        do {
+            try subject!.removeAt(location: Location(origin: (0, 0), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        XCTAssertNil(subject!.tileLayer[0, 0])
+    }
+    
+    func testCanRemoveAt() {
+        do {
+            try subject!.prop(prop: NotRemoveableTestDouble(origin: (0, 0)))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        do {
+            try subject!.canRemoveAt(location: Location(origin: (0, 0), height: 1, width: 1))
+        } catch let e as CityMapError {
+            XCTAssertEqual(e, CityMapError.TileNotRemoveable)
+        } catch {
+            XCTFail("wrong error")
+        }
+    }
 }
