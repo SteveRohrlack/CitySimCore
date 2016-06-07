@@ -57,6 +57,8 @@
 		E24C44C01CF5D617006B9425 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C44BD1CF5D617006B9425 /* City.swift */; };
 		E24C44C11CF5D617006B9425 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C44BE1CF5D617006B9425 /* CityMap.swift */; };
 		E24C44C21CF5D617006B9425 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C44BE1CF5D617006B9425 /* CityMap.swift */; };
+		E24C65F81D05D3C700E73E91 /* SimulationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C65F71D05D3C700E73E91 /* SimulationTests.swift */; };
+		E24C65F91D05D3C700E73E91 /* SimulationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C65F71D05D3C700E73E91 /* SimulationTests.swift */; };
 		E26041311CF2D7C100773A73 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26041301CF2D7C100773A73 /* Simulation.swift */; };
 		E26041321CF2D7C100773A73 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26041301CF2D7C100773A73 /* Simulation.swift */; };
 		E26041341CF2D96300773A73 /* ConditionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26041331CF2D96300773A73 /* ConditionContainer.swift */; };
@@ -168,6 +170,7 @@
 		E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticlayersContainer.swift; sourceTree = "<group>"; };
 		E24C44BD1CF5D617006B9425 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		E24C44BE1CF5D617006B9425 /* CityMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
+		E24C65F71D05D3C700E73E91 /* SimulationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulationTests.swift; sourceTree = "<group>"; };
 		E26041301CF2D7C100773A73 /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		E26041331CF2D96300773A73 /* ConditionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionContainer.swift; sourceTree = "<group>"; };
 		E26041361CF2DCC200773A73 /* BudgetActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetActor.swift; sourceTree = "<group>"; };
@@ -374,6 +377,7 @@
 				E2EDA0571CEDD74C000464C5 /* TestDoubles */,
 				E2F1DD6B1CFED3AB00E347A2 /* CityMapTests.swift */,
 				E20B14441CE5EC420067BC91 /* LocationTests.swift */,
+				E24C65F71D05D3C700E73E91 /* SimulationTests.swift */,
 				E292B5CC1CEB6209001C4A23 /* StatisticsLayerTests.swift */,
 				E2663E711CEF328F00B179ED /* StatisticlayersContainerTests.swift */,
 				E20B14E61CE613F00067BC91 /* TileLayerTests.swift */,
@@ -701,6 +705,7 @@
 				E2EDA0631CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0651CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E217F7701D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */,
+				E24C65F81D05D3C700E73E91 /* SimulationTests.swift in Sources */,
 				E2EDA05F1CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
 				E2EDA05D1CEDD74C000464C5 /* SmallParkPloppTestDouble.swift in Sources */,
 				E2EDA0611CEDD74C000464C5 /* StreetPloppTestDouble.swift in Sources */,
@@ -771,6 +776,7 @@
 				E2EDA0641CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0661CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E217F7711D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */,
+				E24C65F91D05D3C700E73E91 /* SimulationTests.swift in Sources */,
 				E2EDA0601CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
 				E2EDA05E1CEDD74C000464C5 /* SmallParkPloppTestDouble.swift in Sources */,
 				E2EDA0621CEDD74C000464C5 /* StreetPloppTestDouble.swift in Sources */,

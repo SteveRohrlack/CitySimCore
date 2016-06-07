@@ -13,4 +13,19 @@ protocol RessourceConsuming {
     
     /// list of ressources consumed
     var ressources: [RessourceType] { get }
+    
+    func consumes(ressource ressource: RessourceType) -> Bool
+}
+
+extension RessourceConsuming {
+    
+    /**
+     
+    */
+    func consumes(ressource ressourceSearch: RessourceType) -> Bool {
+        return ressources.contains { (ressource) in
+            ressource == ressourceSearch
+        }
+    }
+    
 }

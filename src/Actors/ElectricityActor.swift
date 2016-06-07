@@ -54,19 +54,25 @@ class ElectricityActor: Acting, EventSubscribing {
             }
             
             for ressource in electricityRessources {
+                guard let value = ressource.value() else {
+                    continue
+                }
+                
                 if case .AddTile = event {
-                    stage.ressources.electricityDemand += ressource.value()
+                    stage.ressources.electricityDemand += value
                 }
                         
                 if case .RemoveTile = event {
-                    stage.ressources.electricityDemand -= ressource.value()
+                    stage.ressources.electricityDemand -= value
                 }
             }
+            
+            updateConsumers()
         }
         
         /// producers
         if let producer = payload as? RessourceProducing {
-            guard case .Electricity(let value) = producer.ressource else {
+            guard case .Electricity(let ressourceValue) = producer.ressource, let value = ressourceValue else {
                 return
             }
             
@@ -78,15 +84,34 @@ class ElectricityActor: Acting, EventSubscribing {
                 stage.ressources.electricitySupply -= value
             }
                 
-            recalculateElectricityConsumption()
+            updateConsumers()
         }
         
         /// recalculate if streetplopp is added
     }
     
     /// calculates the current consumption of electricity
-    internal func recalculateElectricityConsumption() {
+    internal func updateConsumers() {
+        /// no consumption
+        guard stage.ressources.electricityDemand > 0 else {
+            return
+        }
         
+        /// no production, every consumer should change state to "not powered"
+        guard stage.ressources.electricitySupply > 0 else {
+            let allElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
+                guard let tile = tile as? RessourceConsuming where tile.consumes(ressource: .Electricity(nil)) else {
+                    return false
+                }
+                
+                return true
+            }
+            
+            /// update tile status to "not powered"
+            
+            return
+        }
+
     }
     
     /// the ElectricityActor doesn't act, it just handles events

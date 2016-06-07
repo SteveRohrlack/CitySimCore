@@ -23,10 +23,32 @@ struct Simulation {
     var city: City
     
     /// number of "ticks" the simulation is already running
-    var ticks = 0
+    var ticks: Int
     
     /// list of actors
-    var actors: [Acting] = []
+    var actors: [Acting]
+    
+    /**
+     initializer
+     
+     - parameter city: city object
+     - parameter ticks: number of ticks
+     - parameter actors: array of actors
+     */
+    init(city: City, ticks: Int, actors: [Acting]) {
+        self.city = city
+        self.ticks = ticks
+        self.actors = actors
+    }
+    
+    /**
+     convenience initializer
+     
+     - parameter city: city object
+    */
+    init(city: City) {
+        self.init(city: city, ticks: 0, actors: [])
+    }
     
     /// advances the simulation by calling every actor
     mutating func advance() {
@@ -36,5 +58,5 @@ struct Simulation {
         
         ticks += 1
     }
-    
+
 }

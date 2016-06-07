@@ -10,7 +10,7 @@ import Foundation
 
 /// provides a set of basic tile types
 /// TileType is also "Equatable"
-enum TileType: Equatable {
+enum TileType {
     
     /**
      This type of tile describes map objects that function as more or less 
@@ -32,6 +32,11 @@ enum TileType: Equatable {
      cover it’s operation.
     */
     case Ploppable(PloppableType)
+}
+
+/// TileType is Equatable
+extension TileType: Equatable {
+    
 }
 
 /**
