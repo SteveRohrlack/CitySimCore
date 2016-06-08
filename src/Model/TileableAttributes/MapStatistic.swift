@@ -34,10 +34,19 @@ public enum MapStatistic {
     case Health(radius: Int, value: Int)
 }
 
+/// MapStatistic is Equatable
 extension MapStatistic: Equatable {
     
 }
 
+/**
+ operator "==" to allow comparing MapStatistics
+ 
+ - parameter lhs: MapStatistic
+ - parameter rhs: MapStatistic
+ 
+ - returns: comparison result
+ */
 public func == (lhs: MapStatistic, rhs: MapStatistic) -> Bool {
     switch (lhs, rhs) {
     case (.Landvalue(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
