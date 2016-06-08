@@ -20,24 +20,24 @@ import Foundation
  
  CityMap emits different events
 */
-struct CityMap: EventEmitting {
+public struct CityMap: EventEmitting {
 
     typealias EventNameType = CityMapEvents
 
     /// Container holding event subscribers
-    internal var eventSubscribers: [EventNameType: [EventSubscribing]] = [:]
+    var eventSubscribers: [EventNameType: [EventSubscribing]] = [:]
     
     /// height of the map / height of all layers
-    internal var height: Int
+    public var height: Int
     
     /// width of the map / width of all layers
-    internal var width: Int
+    public var width: Int
     
     /// the tile layer
-    var tileLayer: TileLayer
+    public var tileLayer: TileLayer
     
     /// Container holding statistical layers
-    var statisticsLayerContainer: StatisticlayersContainer
+    public var statisticsLayerContainer: StatisticlayersContainer
     
     /**
      Constructur
@@ -95,7 +95,7 @@ struct CityMap: EventEmitting {
     }
     
     /**
-     internal method to add a tile
+     private method to add a tile
      
      - parameter tile: the tile to be added
      
@@ -104,7 +104,7 @@ struct CityMap: EventEmitting {
      throws: TileLayerError if there was a problem
      throws: unspecified error if the event "AddTile" throws
     */
-    internal mutating func add(tile tile: Tileable) throws {
+    private mutating func add(tile tile: Tileable) throws {
         try canAdd(tile: tile)
         
         try tileLayer.addTile(tile: tile)
@@ -121,7 +121,7 @@ struct CityMap: EventEmitting {
      
      throws CityMapError.TileNotRemoveable if a tile requested to be removed is of type "TileNotRemoveable"
      */
-    func canRemoveAt(location location: Locateable) throws {
+    public func canRemoveAt(location location: Locateable) throws {
         let tilesToRemove = tileLayer.usedByTilesAt(location: location)
         
         for tile in tilesToRemove {
@@ -141,7 +141,7 @@ struct CityMap: EventEmitting {
      throws CityMapError.TileNotRemoveable if a tile requested to be removed is of type "TileNotRemoveable"
      throws: unspecified error if the event "RemoveTile" throws
     */
-    mutating func removeAt(location location: Locateable) throws {
+    public mutating func removeAt(location location: Locateable) throws {
         let tilesToRemove = tileLayer.usedByTilesAt(location: location)
         
         for tile in tilesToRemove {
@@ -169,7 +169,7 @@ struct CityMap: EventEmitting {
      
      - returns: list of tiles contained in location
     */
-    func infoAt(location location: Locateable) -> [Tileable] {
+    public func infoAt(location location: Locateable) -> [Tileable] {
         return tileLayer.usedByTilesAt(location: location)
     }
     
@@ -182,7 +182,7 @@ struct CityMap: EventEmitting {
      
      throws: TileLayerError if there was a problem
     */
-    mutating func zone(zone zone: Zoneable) throws {
+    public mutating func zone(zone zone: Zoneable) throws {
         try add(tile: zone)
     }
     
@@ -193,7 +193,7 @@ struct CityMap: EventEmitting {
      
      throws: TileLayerError if there was a problem
     */
-    mutating func plopp(plopp plopp: Ploppable) throws {
+    public mutating func plopp(plopp plopp: Ploppable) throws {
         try add(tile: plopp)
         
         if plopp is MapStatistical {
@@ -211,7 +211,7 @@ struct CityMap: EventEmitting {
      
      throws: TileLayerError if there was a problem
     */
-    mutating func prop(prop prop: Propable) throws {
+    public mutating func prop(prop prop: Propable) throws {
         try add(tile: prop)
     }
 

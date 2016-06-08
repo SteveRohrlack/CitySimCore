@@ -10,7 +10,7 @@ import Foundation
 
 /// an adopting object is seen as producing a fixed amount of one
 /// specific ressource
-protocol RessourceProducing {
+public protocol RessourceProducing {
     
     /// ressource produced
     var ressource: RessourceType { get }

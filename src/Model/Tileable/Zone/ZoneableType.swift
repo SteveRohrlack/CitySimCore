@@ -9,7 +9,7 @@
 import Foundation
 
 /// provides a set of specific zone types
-enum ZoneableType {
+public enum ZoneableType {
     
     /// residential zone for citizens to live in
     case Residential

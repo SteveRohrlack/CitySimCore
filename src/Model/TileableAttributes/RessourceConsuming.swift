@@ -9,7 +9,7 @@
 import Foundation
 
 /// an adopting object may consume specific amounts of one or more ressources 
-protocol RessourceConsuming {
+public protocol RessourceConsuming {
     
     /// list of ressources consumed
     var ressources: [RessourceType] { get }

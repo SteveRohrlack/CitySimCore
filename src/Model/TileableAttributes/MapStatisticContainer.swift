@@ -10,10 +10,10 @@ import Foundation
 
 /// the MapStatisticContainer encapsulates accessing a list of MapStatistics by
 /// adapting the "Containing" protocol
-struct MapStatisticContainer: Containing {
+public struct MapStatisticContainer: Containing {
     
     /// container for multiple MapStatistic elements
-    var containerContent: [MapStatistic] = []
+    public var containerContent: [MapStatistic] = []
     
     init(mapStatistics: MapStatistic...) {
         containerContent = mapStatistics

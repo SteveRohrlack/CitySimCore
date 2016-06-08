@@ -9,12 +9,12 @@
 import Foundation
 
 /// handles city ressources
-struct Ressources {
+public struct Ressources {
     
     /// demand for electricity, sum of all electricity consumer's ressource value
-    var electricityDemand: Int
+    public var electricityDemand: Int
     
     /// supply of electricity, sum of all electricity producers
-    var electricitySupply: Int
+    public var electricitySupply: Int
     
 }

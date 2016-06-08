@@ -17,13 +17,13 @@ import Foundation
  - hold the CityMap
  - hold all active Actors
 */
-struct Simulation {
+public struct Simulation {
     
     /// simulation's main data container
-    var city: City
+    public var city: City
     
     /// number of "ticks" the simulation is already running
-    var ticks: Int
+    public var ticks: Int
     
     /// list of actors
     var actors: [Acting]
@@ -51,7 +51,7 @@ struct Simulation {
     }
     
     /// advances the simulation by calling every actor
-    mutating func advance() {
+    public mutating func advance() {
         for (index, _) in actors.enumerate() {
             actors[index].act()
         }

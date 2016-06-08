@@ -12,22 +12,22 @@ import Foundation
  the StatisticlayersContainer provides a convenience api for working with
  different StatisticsLayer instances
 */
-struct StatisticlayersContainer {
+public struct StatisticlayersContainer {
     
     /// layer for Landvalue
-    var landvalueLayer: StatisticsLayer
+    public var landvalueLayer: StatisticsLayer
     
     /// layer for Noise
-    var noiseLayer: StatisticsLayer
+    public var noiseLayer: StatisticsLayer
     
     /// layer for Firesafety
-    var firesafetyLayer: StatisticsLayer
+    public var firesafetyLayer: StatisticsLayer
     
     /// layer for Crime
-    var crimeLayer: StatisticsLayer
+    public var crimeLayer: StatisticsLayer
     
     /// layer for Crime
-    var healthLayer: StatisticsLayer
+    public var healthLayer: StatisticsLayer
     
     /**
      initializer
@@ -52,7 +52,7 @@ struct StatisticlayersContainer {
      - parameter at: location
      - parameter statistical: container of type MapStatistical holding statistics
     */
-    mutating internal func addStatistics(at location: Locateable, statistical: MapStatistical) {
+    mutating func addStatistics(at location: Locateable, statistical: MapStatistical) {
         for statistic in statistical.statistics.containerContent {
             switch statistic {
             case .Landvalue(let radius, let value):
@@ -78,7 +78,7 @@ struct StatisticlayersContainer {
      - parameter at: location
      - parameter statistical: container of type MapStatistical holding statistics
     */
-    mutating internal func removeStatistics(at location: Locateable, statistical: MapStatistical) {
+    mutating func removeStatistics(at location: Locateable, statistical: MapStatistical) {
         for statistic in statistical.statistics.containerContent {
             switch statistic {
             case .Landvalue(let radius, let value):

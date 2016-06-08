@@ -11,7 +11,7 @@ import Foundation
 /**
  error types for the CityMap object
 */
-enum CityMapError: ErrorType {
+public enum CityMapError: ErrorType {
     
     /// a tile does not fit into the map, based on it's dimensions
     case TileCantFit

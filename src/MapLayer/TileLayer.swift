@@ -17,20 +17,20 @@ import Foundation
  the TileLayer encapsulates the interaction with the underlying data container
  (Array2DMapping) by providing a high level api to the raw data
 */
-struct TileLayer: Array2DMapping {
+public struct TileLayer: Array2DMapping {
     typealias ValueType = Tileable
     
     /**
      since TileLayer adopts Array2DMapping, the number of rows must be
      available
     */
-    internal let rows: Int
+    let rows: Int
     
     /**
      since TileLayer adopts Array2DMapping, the number of columns must be
      available
      */
-    internal let columns: Int
+    let columns: Int
     
     /// container for values
     var values: [ValueType?]
@@ -54,7 +54,7 @@ struct TileLayer: Array2DMapping {
      
      - throws TileableLayerError.TileCantFit if the given tile is out of  the layer bounds
     */
-    mutating internal func addTile(tile tile: ValueType) throws {
+    mutating func addTile(tile tile: ValueType) throws {
         guard tile.originY >= 0 && tile.originX >= 0 && tile.maxY < rows &&  tile.maxX < columns else {
             throw TileLayerError.TileCantFit
         }
@@ -69,7 +69,7 @@ struct TileLayer: Array2DMapping {
      
      - parameter tile: the value to remove
     */
-    mutating internal func remove(tile tile: ValueType) {
+    mutating func remove(tile tile: ValueType) {
         tile.forEachCell { (y: Int, x: Int) in
             self[y, x] = nil
         }
@@ -82,7 +82,7 @@ struct TileLayer: Array2DMapping {
      
      - returns: list of tiles
     */
-    internal func usedByTilesAt(location location: Locateable) -> [ValueType] {
+    func usedByTilesAt(location location: Locateable) -> [ValueType] {
         var tiles: [ValueType] = []
         
         location.forEachCell { (y: Int, x: Int) in

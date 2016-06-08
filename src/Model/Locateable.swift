@@ -16,7 +16,7 @@ import Foundation
  - y = height
  - x = width
 */
-protocol Locateable {
+public protocol Locateable {
     
     /// origin of the location
     /// this is relative to the used coordinate system
@@ -48,24 +48,24 @@ extension Locateable {
     /// since "origin" is a tuple, accessing the tuple's
     /// content is more convenient and readable using .originY instead of 
     /// .origin.0
-    var originY: Int {
+    public var originY: Int {
         return origin.0
     }
 
     /// since "origin" is a tuple, accessing the tuple's
     /// content is more convenient and readable using .originX instead of
     /// .origin.1
-    var originX: Int {
+    public var originX: Int {
         return origin.1
     }
     
     /// calculates Y coordinate based on the location's origin and it's height
-    var maxY: Int {
+    public var maxY: Int {
         return origin.0 - 1 + height
     }
     
     /// calculates X coordinate based on the location's origin and it's width
-    var maxX: Int {
+    public var maxX: Int {
         return origin.1 - 1 + width
     }
     
@@ -75,7 +75,7 @@ extension Locateable {
      
      - returns: function
     */
-    var forEachCell: ((((Int, Int) -> Void)) -> Void) {
+    public var forEachCell: ((((Int, Int) -> Void)) -> Void) {
 
         func forEach(callback: ((y: Int, x: Int) -> Void)) -> Void {
             for y in (originY...maxY) {

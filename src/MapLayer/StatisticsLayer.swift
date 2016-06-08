@@ -17,23 +17,23 @@ import Foundation
  the StatisticsLayer encapsulates the interaction with the underlying data 
  container (Array2DMapping) by providing a high level api to the raw data
  */
-struct StatisticsLayer: StatisticsLayering {
-    typealias ValueType = Int
+public struct StatisticsLayer: StatisticsLayering {
+    public typealias ValueType = Int
     
     /**
      since StatisticsLayer adopts Array2DMapping, the number of rows must be
      available
     */
-    internal let rows: Int
+    let rows: Int
     
     /**
      since StatisticsLayer adopts Array2DMapping, the number of columns must be
      available
     */
-    internal let columns: Int
+    let columns: Int
     
     /// container for values
-    var values: [ValueType?]
+    public var values: [ValueType?]
     
     /**
      initializer
@@ -54,7 +54,7 @@ struct StatisticsLayer: StatisticsLayering {
      - parameter radius: radius to apply to location before adding
      - parameter value: what to add
     */
-    mutating internal func add(at location: Locateable, radius: Int, value: ValueType) {
+    mutating func add(at location: Locateable, radius: Int, value: ValueType) {
         let areaIncludingRadius = location + radius
         areaIncludingRadius.forEachCell { (y: Int, x: Int) in
             var newValue = value
@@ -74,7 +74,7 @@ struct StatisticsLayer: StatisticsLayering {
      
      - throws: StatisticsLayerError.CannotRemoveBecauseAlreadyEmpty if the location is already empty
     */
-    mutating internal func remove(at location: Locateable, radius: Int, value: ValueType) {
+    mutating func remove(at location: Locateable, radius: Int, value: ValueType) {
         let areaIncludingRadius = location + radius
         
         areaIncludingRadius.forEachCell { (y: Int, x: Int) in

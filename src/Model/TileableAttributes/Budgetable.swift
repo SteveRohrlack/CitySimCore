@@ -9,7 +9,7 @@
 import Foundation
 
 /// a Budgetable is an object that has associated cost and running cost
-protocol Budgetable {
+public protocol Budgetable {
     
     /// cost have to be paid only once (example: buying a small park ploppable)
     var cost: Int? { get }

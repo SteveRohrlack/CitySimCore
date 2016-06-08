@@ -18,11 +18,11 @@ import Foundation
    budgetable, subtracts cost to buy
  - substracts running cost
 */
-class BudgetActor: Acting, EventSubscribing {
+public class BudgetActor: Acting, EventSubscribing {
    
     /// actor stage
     /// simulation's main data container
-    internal var stage: City
+    var stage: City
     
     /**
      initializer
@@ -41,7 +41,7 @@ class BudgetActor: Acting, EventSubscribing {
      - parameter event: the event type
      - parameter payload: the event data
     */
-    internal func recieveEvent(event event: EventNaming, payload: Any) throws {
+    public func recieveEvent(event event: EventNaming, payload: Any) throws {
         guard let event = event as? CityMapEvents else {
             return
         }
@@ -71,7 +71,7 @@ class BudgetActor: Acting, EventSubscribing {
     /**
      the BudgetActor subtracts the current total running cost from the budget
      */
-    internal func act() {
+    func act() {
         /// subtract running cost
         stage.budget.amount -= stage.budget.runningCost
     }

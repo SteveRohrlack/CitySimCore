@@ -14,17 +14,17 @@ import Foundation
  - is needed for operator overloading (see below)
  - should be used by framework users to specify locations
 */
-struct Location: Locateable {
+public struct Location: Locateable {
     
     /// origin of the location
     /// this is relative to the used coordinate system
-    let origin: (Int, Int)
+    public let origin: (Int, Int)
     
     /// height of the location, absolute value
-    let height: Int
+    public let height: Int
     
     /// width of the location, absolute value
-    let width: Int
+    public let width: Int
     
     init(origin: (Int, Int), height: Int = 1, width: Int = 1) {
         self.origin = origin
@@ -41,7 +41,7 @@ struct Location: Locateable {
  
  - returns: new Location instance that covers the given location including the given radius
 */
-func + (location: Locateable, radius: Int) -> Locateable {
+public func + (location: Locateable, radius: Int) -> Locateable {
     var newOrigin = (location.originY - radius, location.originX - radius)
     
     if newOrigin.0 < 0 {
@@ -66,6 +66,6 @@ func + (location: Locateable, radius: Int) -> Locateable {
  
  - returns: Bool
  */
-func == (lhs: Location, rhs: Location) -> Bool {
+public func == (lhs: Location, rhs: Location) -> Bool {
     return lhs.origin == rhs.origin && lhs.height == rhs.height && lhs.width == rhs.width
 }

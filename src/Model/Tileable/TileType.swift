@@ -10,7 +10,7 @@ import Foundation
 
 /// provides a set of basic tile types
 /// TileType is also "Equatable"
-enum TileType {
+public enum TileType {
     
     /**
      This type of tile describes map objects that function as more or less 
@@ -47,7 +47,7 @@ extension TileType: Equatable {
  
  - returns: comparison result
  */
-func == (lhs: TileType, rhs: TileType) -> Bool {
+public func == (lhs: TileType, rhs: TileType) -> Bool {
     switch (lhs, rhs) {
     case (.Propable(let a), .Propable(let b)) where a == b:
         return true

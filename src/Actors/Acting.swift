@@ -22,3 +22,14 @@ protocol Acting {
     mutating func act()
     
 }
+
+extension Acting {
+
+    /**
+     Actors gonna act
+     */
+    func act() {
+        
+    }
+
+}

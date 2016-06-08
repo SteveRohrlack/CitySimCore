@@ -9,19 +9,19 @@
 import Foundation
 
 /// the simulation's main data container
-class City {
+public class City {
     
     /// CityMap, regards all layers of the map
-    var map: CityMap
+    public var map: CityMap
     
     /// current population count
-    var population: Int
+    public var population: Int
     
     /// City budget
-    var budget: Budget
+    public var budget: Budget
     
     /// City Ressources
-    var ressources: Ressources
+    public var ressources: Ressources
     
     /**
      initializer

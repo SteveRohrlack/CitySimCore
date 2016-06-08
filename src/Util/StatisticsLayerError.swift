@@ -11,6 +11,6 @@ import Foundation
 /**
  error types for the StatisticsLayer object
 */
-enum StatisticsLayerError: ErrorType {
+public enum StatisticsLayerError: ErrorType {
     
 }

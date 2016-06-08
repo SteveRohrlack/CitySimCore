@@ -16,7 +16,7 @@ import Foundation
  - radius: Int
  - value: Int
 */
-enum MapStatistic {
+public enum MapStatistic {
     
     /// regards the Landvalue statistic layer
     case Landvalue(radius: Int, value: Int)
@@ -38,7 +38,7 @@ extension MapStatistic: Equatable {
     
 }
 
-func == (lhs: MapStatistic, rhs: MapStatistic) -> Bool {
+public func == (lhs: MapStatistic, rhs: MapStatistic) -> Bool {
     switch (lhs, rhs) {
     case (.Landvalue(let a1, let b1), .Landvalue(let a2, let b2)) where a1 == a2 && b1 == b2:
         return true

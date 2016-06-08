@@ -9,10 +9,10 @@
 import Foundation
 
 /// the City Budget encapsulates all Budget related values
-struct Budget {
+public struct Budget {
     /// current budget
-    var amount: Int
+    public var amount: Int
     
     /// current total of running cost
-    var runningCost: Int
+    public var runningCost: Int
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 /// provides a set of specific prop types
-enum PropableType {
+public enum PropableType {
     
     /// tree
     case Tree

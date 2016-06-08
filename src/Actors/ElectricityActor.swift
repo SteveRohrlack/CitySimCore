@@ -11,11 +11,11 @@ import Foundation
 /**
  The ElectricityActor
 */
-class ElectricityActor: Acting, EventSubscribing {
+public class ElectricityActor: Acting, EventSubscribing {
     
     /// actor stage
     /// simulation's main data container
-    internal var stage: City
+    var stage: City
     
     /**
      initializer
@@ -34,7 +34,7 @@ class ElectricityActor: Acting, EventSubscribing {
      - parameter event: the event type
      - parameter payload: the event data
      */
-    internal func recieveEvent(event event: EventNaming, payload: Any) throws {
+    public func recieveEvent(event event: EventNaming, payload: Any) throws {
         guard let event = event as? CityMapEvents else {
             return
         }
@@ -91,7 +91,7 @@ class ElectricityActor: Acting, EventSubscribing {
     }
     
     /// calculates the current consumption of electricity
-    internal func updateConsumers() {
+    private func updateConsumers() {
         /// no consumption
         guard stage.ressources.electricityDemand > 0 else {
             return
@@ -112,11 +112,6 @@ class ElectricityActor: Acting, EventSubscribing {
             return
         }
 
-    }
-    
-    /// the ElectricityActor doesn't act, it just handles events
-    internal func act() {
-        
     }
     
 }

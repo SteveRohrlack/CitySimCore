@@ -9,7 +9,7 @@
 import Foundation
 
 /// provides specific types of conditions
-enum Condition {
+public enum Condition {
     
     /// does not recieve power (electricity)
     case NotPowered

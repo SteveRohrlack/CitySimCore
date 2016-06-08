@@ -9,7 +9,7 @@
 import Foundation
 
 /// a MapStatistical object contains a set of statistics
-protocol MapStatistical {
+public protocol MapStatistical {
     
     /// container for multiple MapStatistic elements
     var statistics: MapStatisticContainer { get }

@@ -11,7 +11,7 @@ import Foundation
 /// Ressources in the simulation
 /// each has a Int parameter, depicting the actual value an adopting object 
 /// holds of a specific RessourceType
-enum RessourceType {
+public enum RessourceType {
     
     /// Electricity
     case Electricity(Int?)
@@ -48,7 +48,7 @@ extension RessourceType: Equatable {
  
  - returns: comparison result
  */
-func == (lhs: RessourceType, rhs: RessourceType) -> Bool {
+public func == (lhs: RessourceType, rhs: RessourceType) -> Bool {
     switch (lhs, rhs) {
     case (.Electricity(let a), .Electricity(let b)) where a == b:
         return true
@@ -67,7 +67,7 @@ func == (lhs: RessourceType, rhs: RessourceType) -> Bool {
  
  - returns: comparison result
  */
-func >= (lhs: RessourceType, rhs: RessourceType) -> Bool {
+public func >= (lhs: RessourceType, rhs: RessourceType) -> Bool {
     switch (lhs, rhs) {
     case (.Electricity(let a), .Electricity(let b)) where a >= b:
         return true
@@ -86,7 +86,7 @@ func >= (lhs: RessourceType, rhs: RessourceType) -> Bool {
  
  - returns: comparison result
  */
-func <= (lhs: RessourceType, rhs: RessourceType) -> Bool {
+public func <= (lhs: RessourceType, rhs: RessourceType) -> Bool {
     switch (lhs, rhs) {
     case (.Electricity(let a), .Electricity(let b)) where a <= b:
         return true

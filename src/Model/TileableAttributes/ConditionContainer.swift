@@ -10,8 +10,8 @@ import Foundation
 
 /// the ConditionContainer encapsulates accessing a list of conditions by 
 /// adapting the "Containing" protocol
-struct ConditionContainer: Containing {
+public struct ConditionContainer: Containing {
     
     /// container for multiple Condition elements
-    var containerContent: [Condition] = []
+    public var containerContent: [Condition] = []
 }

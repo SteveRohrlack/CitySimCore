@@ -9,7 +9,7 @@
 import Foundation
 
 /// provides a set of specific plop types
-enum PloppableType {
+public enum PloppableType {
 
     /// small park
     case ParkSmall
