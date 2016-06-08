@@ -58,3 +58,41 @@ func == (lhs: RessourceType, rhs: RessourceType) -> Bool {
         return false
     }
 }
+
+/**
+ operator ">=" to allow comparing ressource types types
+ 
+ - parameter lhs: RessourceType
+ - parameter rhs: RessourceType
+ 
+ - returns: comparison result
+ */
+func >= (lhs: RessourceType, rhs: RessourceType) -> Bool {
+    switch (lhs, rhs) {
+    case (.Electricity(let a), .Electricity(let b)) where a >= b:
+        return true
+    case (.Water(let a), .Water(let b)) where a >= b:
+        return true
+    default:
+        return false
+    }
+}
+
+/**
+ operator "<=" to allow comparing ressource types types
+ 
+ - parameter lhs: RessourceType
+ - parameter rhs: RessourceType
+ 
+ - returns: comparison result
+ */
+func <= (lhs: RessourceType, rhs: RessourceType) -> Bool {
+    switch (lhs, rhs) {
+    case (.Electricity(let a), .Electricity(let b)) where a <= b:
+        return true
+    case (.Water(let a), .Water(let b)) where a <= b:
+        return true
+    default:
+        return false
+    }
+}

@@ -14,17 +14,28 @@ protocol RessourceConsuming {
     /// list of ressources consumed
     var ressources: [RessourceType] { get }
     
+    /**
+     checks wether the given RessourceType is consumed, ignoring the value
+     
+     - parameter ressource: the RessourceType to search for
+     
+     - returns: Bool
+    */
     func consumes(ressource ressource: RessourceType) -> Bool
 }
 
 extension RessourceConsuming {
     
     /**
+     checks wether the given RessourceType is consumed, ignoring the value
      
-    */
-    func consumes(ressource ressourceSearch: RessourceType) -> Bool {
-        return ressources.contains { (ressource) in
-            ressource == ressourceSearch
+     - parameter ressource: the RessourceType to search for
+     
+     - returns: Bool
+     */
+    func consumes(ressource ressource: RessourceType) -> Bool {
+        return ressources.contains { (consumedRessource) in
+            return consumedRessource >= ressource
         }
     }
     
