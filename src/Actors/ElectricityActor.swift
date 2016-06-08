@@ -97,10 +97,10 @@ public class ElectricityActor: Acting, EventSubscribing {
             return
         }
         
-        /// no production, every consumer should change state to "not powered"
+        /// no production, every consumer should get condition "not powered"
         guard stage.ressources.electricitySupply > 0 else {
-            let allElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
-                guard let tile = tile as? RessourceConsuming where tile.consumes(ressource: .Electricity(nil)) else {
+            let allConditionableElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
+                guard let tile = tile as? RessourceConsuming where tile is Conditionable && tile.consumes(ressource: .Electricity(nil)) else {
                     return false
                 }
                 
@@ -108,6 +108,15 @@ public class ElectricityActor: Acting, EventSubscribing {
             }
             
             /// update tile status to "not powered"
+            allConditionableElectricityConsumers.forEach { (tile) in
+                guard let tile = tile else {
+                    return
+                }
+                
+                var conditionableTile = tile as! Conditionable  // tailor:disable
+                conditionableTile.conditions.add(content: .NotPowered)
+                stage.map.tileLayer[tile.origin] = conditionableTile as? TileLayer.ValueType
+            }
             
             return
         }
