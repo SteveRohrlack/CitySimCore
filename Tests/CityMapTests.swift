@@ -30,6 +30,8 @@ class CityMapTests: XCTestCase {
         super.tearDown()
     }
     
+    /// MARK: canAdd
+    
     func testCanAdd() {       
         let tile = SmallResidentialZoneTestDouble(origin: (1, 1))
         
@@ -82,26 +84,7 @@ class CityMapTests: XCTestCase {
         }
     }
     
-    func testInfoAt() {
-        let testLocation = Location(origin: (0, 0), width: 3, height: 3)
-        
-        var tiles = subject!.infoAt(location: testLocation)
-        XCTAssertEqual(0, tiles.count)
-        
-        do {
-            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 2), height: 1, width: 3))
-            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (1, 1), height: 1, width: 1))
-            try subject!.prop(prop: WaterPropTestDouble(origin: (2, 2), height: 1, width: 1, content: 1))
-            
-            //out of location
-            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (3, 3), height: 1, width: 1))
-        } catch {
-            XCTFail("should not fail")
-        }
-        
-        tiles = subject!.infoAt(location: testLocation)
-        XCTAssertEqual(3, tiles.count)
-    }
+    /// MARK: adding tiles
     
     func testZone() {
         do {
@@ -134,6 +117,29 @@ class CityMapTests: XCTestCase {
         XCTAssertNotNil(subject!.tileLayer[0, 0])
     }
     
+    /// MARK: remove, info
+    
+    func testInfoAt() {
+        let testLocation = Location(origin: (0, 0), width: 3, height: 3)
+        
+        var tiles = subject!.infoAt(location: testLocation)
+        XCTAssertEqual(0, tiles.count)
+        
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 2), height: 1, width: 3))
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (1, 1), height: 1, width: 1))
+            try subject!.prop(prop: WaterPropTestDouble(origin: (2, 2), height: 1, width: 1, content: 1))
+            
+            //out of location
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (3, 3), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        tiles = subject!.infoAt(location: testLocation)
+        XCTAssertEqual(3, tiles.count)
+    }
+    
     func testRemoveAt() {
         do {
             try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
@@ -163,6 +169,49 @@ class CityMapTests: XCTestCase {
             XCTAssertEqual(e, CityMapError.TileNotRemoveable)
         } catch {
             XCTFail("wrong error")
+        }
+    }
+    
+    /// MARK: events
+    
+    func testEmittsAddTile() {
+        func eventHandler (event: EventNaming, payload: Any) -> Void {
+            guard let event = event as? CityMapEvents else {
+                XCTFail("wrong event type")
+                return
+            }
+            
+            XCTAssertEqual(CityMapEvents.AddTile, event)
+        }
+        
+        let subscriber = CityMapEventSubscriberTestDouble(eventHandler: eventHandler)
+        subject!.subscribe(subscriber: subscriber, to: CityMapEvents.AddTile)
+        
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
+        }
+    }
+    
+    func testEmittsRemoveTile() {
+        func eventHandler (event: EventNaming, payload: Any) -> Void {
+            guard let event = event as? CityMapEvents else {
+                XCTFail("wrong event type")
+                return
+            }
+            
+            XCTAssertEqual(CityMapEvents.RemoveTile, event)
+        }
+        
+        let subscriber = CityMapEventSubscriberTestDouble(eventHandler: eventHandler)
+        subject!.subscribe(subscriber: subscriber, to: CityMapEvents.RemoveTile)
+        
+        do {
+            try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
+            try subject!.removeAt(location: Location(origin: (0, 0), height: 1, width: 1))
+        } catch {
+            XCTFail("should not fail")
         }
     }
     
