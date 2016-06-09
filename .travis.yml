@@ -1,8 +1,18 @@
 language: objective-c
 osx_image: xcode7.3
 xcode_project: CitySimCore.xcodeproj
-xcode_scheme: CitySimCoreiOS
-xcode_sdk: iphonesimulator9.3
+xcode_scheme: 
+    - CitySimCoreiOS
+    - CitySimCoreMacOS
+xcode_sdk: 
+    - iphonesimulator9.3
+    - macosx10.11
+matrix:
+     exclude:
+           - xcode_scheme: CitySimCoreiOS
+             xcode_sdk: macosx10.11
+           - xcode_scheme: CitySimCoreMacOS
+             xcode_sdk: iphonesimulator9.3
 cache: bundler
 addons:
     code_climate:
