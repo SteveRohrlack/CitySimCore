@@ -6,10 +6,15 @@
 //  Copyright © 2016 Steve Rohrlack. All rights reserved.
 //
 
-import Foundation
-
 import XCTest
-@testable import CitySimCoreiOS
+
+#if os(iOS)
+    @testable import CitySimCoreiOS
+#endif
+
+#if os(OSX)
+    @testable import CitySimCoreMacOS
+#endif
 
 class StatisticlayersContainerTests: XCTestCase {
     

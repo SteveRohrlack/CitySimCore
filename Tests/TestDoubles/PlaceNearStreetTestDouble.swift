@@ -6,7 +6,13 @@
 //  Copyright © 2016 Steve Rohrlack. All rights reserved.
 //
 
-@testable import CitySimCoreiOS
+#if os(iOS)
+    @testable import CitySimCoreiOS
+#endif
+
+#if os(OSX)
+    @testable import CitySimCoreMacOS
+#endif
 
 struct PlaceNearStreetTestDouble: Zoneable, PlaceNearStreet {
     let origin: (Int, Int)
