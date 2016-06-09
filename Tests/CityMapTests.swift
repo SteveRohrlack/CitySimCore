@@ -174,7 +174,7 @@ class CityMapTests: XCTestCase {
     
     /// MARK: events
     
-    func testEmittsAddTile() {
+    func testEmitsAddTile() {
         func eventHandler (event: EventNaming, payload: Any) -> Void {
             guard let event = event as? CityMapEvents else {
                 XCTFail("wrong event type")
@@ -184,7 +184,7 @@ class CityMapTests: XCTestCase {
             XCTAssertEqual(CityMapEvents.AddTile, event)
         }
         
-        let subscriber = CityMapEventSubscriberTestDouble(eventHandler: eventHandler)
+        let subscriber = EventSubscriberTestDouble(eventHandler: eventHandler)
         subject!.subscribe(subscriber: subscriber, to: CityMapEvents.AddTile)
         
         do {
@@ -192,9 +192,11 @@ class CityMapTests: XCTestCase {
         } catch {
             XCTFail("should not fail")
         }
+        
+        XCTAssertEqual(1, subscriber.callTimes)
     }
     
-    func testEmittsRemoveTile() {
+    func testEmitsRemoveTile() {
         func eventHandler (event: EventNaming, payload: Any) -> Void {
             guard let event = event as? CityMapEvents else {
                 XCTFail("wrong event type")
@@ -204,7 +206,7 @@ class CityMapTests: XCTestCase {
             XCTAssertEqual(CityMapEvents.RemoveTile, event)
         }
         
-        let subscriber = CityMapEventSubscriberTestDouble(eventHandler: eventHandler)
+        let subscriber = EventSubscriberTestDouble(eventHandler: eventHandler)
         subject!.subscribe(subscriber: subscriber, to: CityMapEvents.RemoveTile)
         
         do {
@@ -213,6 +215,8 @@ class CityMapTests: XCTestCase {
         } catch {
             XCTFail("should not fail")
         }
+        
+        XCTAssertEqual(1, subscriber.callTimes)
     }
     
 }

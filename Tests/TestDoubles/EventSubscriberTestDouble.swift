@@ -14,7 +14,9 @@
     @testable import CitySimCoreMacOS
 #endif
 
-class CityMapEventSubscriberTestDouble: EventSubscribing {
+class EventSubscriberTestDouble: EventSubscribing {
+    
+    var callTimes = 0
     
     var eventHandler: (event: EventNaming, payload: Any) -> Void
     
@@ -23,6 +25,7 @@ class CityMapEventSubscriberTestDouble: EventSubscribing {
     }
     
     func recieveEvent(event event: EventNaming, payload: Any) throws {
+        callTimes += 1
         eventHandler(event: event, payload: payload)
     }
     
