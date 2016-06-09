@@ -39,4 +39,22 @@ class LocationTests: XCTestCase {
         XCTAssertEqual(newLocation.width, location.width + (radius * 2))
     }
     
+    func testOperatorEqual() {
+        let location1 = Location(origin: (1, 1), height: 1, width: 1)
+        let location2 = Location(origin: (1, 1), height: 1, width: 1)
+        XCTAssertEqual(true, location1 == location2)
+        
+        let location3 = Location(origin: (2, 1), height: 1, width: 1)
+        XCTAssertEqual(false, location1 == location3)
+        
+        let location4 = Location(origin: (1, 2), height: 1, width: 1)
+        XCTAssertEqual(false, location1 == location4)
+        
+        let location5 = Location(origin: (1, 1), height: 2, width: 1)
+        XCTAssertEqual(false, location1 == location5)
+        
+        let location6 = Location(origin: (1, 1), height: 1, width: 2)
+        XCTAssertEqual(false, location1 == location6)
+    }
+    
 }

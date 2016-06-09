@@ -29,8 +29,13 @@ class TileTypeTests: XCTestCase {
     func testOperatorEqual() {
         let tileType1: TileType = .Zoneable(.Residential)
         let tileType2: TileType = .Zoneable(.Residential)
-        
         XCTAssertEqual(true, tileType1 == tileType2)
+        
+        let tileType3: TileType = .Propable(.Water)
+        XCTAssertEqual(false, tileType1 == tileType3)
+        
+        let tileType4: TileType = .Ploppable(.Street)
+        XCTAssertEqual(false, tileType1 == tileType4)
     }
     
 }

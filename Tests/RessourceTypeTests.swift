@@ -26,6 +26,12 @@ class RessourceTypeTests: XCTestCase {
         super.tearDown()
     }
     
+    func testValue() {
+        let ressourceType: RessourceType = .Electricity(10)
+        
+        XCTAssertEqual(10, ressourceType.value())
+    }
+    
     func testOperatorGreaterEqual() {
         let ressourceType1: RessourceType = .Electricity(10)
         let ressourceType2: RessourceType = .Electricity(20)

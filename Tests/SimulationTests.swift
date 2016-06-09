@@ -40,4 +40,5 @@ class SimulationTests: XCTestCase {
         
         XCTAssertEqual(1, subject!.ticks)
     }
+    
 }

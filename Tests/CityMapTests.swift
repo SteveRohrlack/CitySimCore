@@ -165,4 +165,5 @@ class CityMapTests: XCTestCase {
             XCTFail("wrong error")
         }
     }
+    
 }

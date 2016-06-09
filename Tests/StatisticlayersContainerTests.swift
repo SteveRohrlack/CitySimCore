@@ -52,7 +52,7 @@ class StatisticlayersContainerTests: XCTestCase {
         XCTAssertNil(subject!.noiseLayer[testLocationWithRadius.origin])
     }
     
-    func testremoveStatistics() {
+    func testRemoveStatistics() {
         let origin = (4, 4)
         let testDouble = SmallParkPloppTestDouble(origin: origin)
         
