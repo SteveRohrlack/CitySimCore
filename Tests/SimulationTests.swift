@@ -41,4 +41,27 @@ class SimulationTests: XCTestCase {
         XCTAssertEqual(1, subject!.ticks)
     }
     
+    func testAdvances() {
+        subject!.actors.append(
+            BudgetActor(stage: subject!.city)
+        )
+        
+        let startingBudget = subject!.city.budget.amount
+        let budgetable = BudgetablePloppTestDouble(origin: (0, 0), height: 1, width: 1)
+        
+        do {
+            try subject!.city.map.plopp(plopp: budgetable)
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        XCTAssertEqual(budgetable.runningCost!, subject!.city.budget.runningCost)
+        XCTAssertEqual(startingBudget - budgetable.cost!, subject!.city.budget.amount)
+        
+        subject!.advance()
+        
+        XCTAssertEqual(budgetable.runningCost!, subject!.city.budget.runningCost)
+        XCTAssertEqual(startingBudget - (budgetable.cost! * 2), subject!.city.budget.amount)
+    }
+    
 }

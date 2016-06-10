@@ -53,6 +53,8 @@
 		E22D20811CEB33FE00E97894 /* StatisticsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D207F1CEB33FE00E97894 /* StatisticsLayer.swift */; };
 		E22D20831CEB341100E97894 /* StatisticlayersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */; };
 		E22D20841CEB341100E97894 /* StatisticlayersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */; };
+		E23A8A1D1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */; };
+		E23A8A1E1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */; };
 		E24574D11D09A0EF00CA1A26 /* MapStatisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */; };
 		E24574D21D09A0EF00CA1A26 /* MapStatisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */; };
 		E24574D41D09A16600CA1A26 /* ContainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24574D31D09A16600CA1A26 /* ContainingTests.swift */; };
@@ -184,6 +186,7 @@
 		E22D20791CEB33D700E97894 /* StatisticsLayering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLayering.swift; sourceTree = "<group>"; };
 		E22D207F1CEB33FE00E97894 /* StatisticsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLayer.swift; sourceTree = "<group>"; };
 		E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticlayersContainer.swift; sourceTree = "<group>"; };
+		E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetablePloppTestDouble.swift; sourceTree = "<group>"; };
 		E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatisticTests.swift; sourceTree = "<group>"; };
 		E24574D31D09A16600CA1A26 /* ContainingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainingTests.swift; sourceTree = "<group>"; };
 		E24574D61D09A3C700CA1A26 /* ContainingTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainingTestDouble.swift; sourceTree = "<group>"; };
@@ -469,8 +472,9 @@
 		E2EDA0571CEDD74C000464C5 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
-				E2A9A5021D09E38100D2A334 /* EventSubscriberTestDouble.swift */,
+				E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */,
 				E24574D61D09A3C700CA1A26 /* ContainingTestDouble.swift */,
+				E2A9A5021D09E38100D2A334 /* EventSubscriberTestDouble.swift */,
 				E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */,
 				E2D1CD5D1CFEFD1000B64364 /* PlaceNearStreetTestDouble.swift */,
 				E2FF89641D0802BD0065D3ED /* RessourceConsumerTestDouble.swift */,
@@ -739,6 +743,7 @@
 				E24574D11D09A0EF00CA1A26 /* MapStatisticTests.swift in Sources */,
 				E2663E721CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
 				E24574D71D09A3C700CA1A26 /* ContainingTestDouble.swift in Sources */,
+				E23A8A1D1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift in Sources */,
 				E2EDA0631CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0651CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E217F7701D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */,
@@ -818,6 +823,7 @@
 				E24574D21D09A0EF00CA1A26 /* MapStatisticTests.swift in Sources */,
 				E2663E731CEF328F00B179ED /* StatisticlayersContainerTests.swift in Sources */,
 				E24574D81D09A3C700CA1A26 /* ContainingTestDouble.swift in Sources */,
+				E23A8A1E1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift in Sources */,
 				E2EDA0641CEDD74C000464C5 /* TreePropTestDouble.swift in Sources */,
 				E2EDA0661CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E217F7711D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */,
