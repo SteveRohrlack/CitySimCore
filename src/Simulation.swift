@@ -20,10 +20,10 @@ import Foundation
 public struct Simulation {
     
     /// simulation's main data container
-    public var city: City
+    public private(set) var city: City
     
     /// number of "ticks" the simulation is already running
-    public var ticks: Int
+    public private(set) var ticks: Int
     
     /// list of actors
     var actors: [Acting]

@@ -28,10 +28,10 @@ public struct CityMap: EventEmitting {
     var eventSubscribers: [EventNameType: [EventSubscribing]] = [:]
     
     /// height of the map / height of all layers
-    public var height: Int
+    public private(set) var height: Int
     
     /// width of the map / width of all layers
-    public var width: Int
+    public private(set) var width: Int
     
     /// the tile layer
     public var tileLayer: TileLayer
