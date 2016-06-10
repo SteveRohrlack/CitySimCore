@@ -20,7 +20,7 @@ class EventSubscriberTestDouble: EventSubscribing {
     
     var eventHandler: (event: EventNaming, payload: Any) -> Void
     
-    init(eventHandler: (EventNaming,Any) -> Void) {
+    init(eventHandler: (EventNaming, Any) -> Void) {
         self.eventHandler = eventHandler
     }
     

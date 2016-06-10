@@ -2,42 +2,53 @@ This is sort of my personal swift playground - nothing special.
 
 # CitySimCore
 
-I'll be working on a simplistic city simulation. This repository
-is intended to represent only the simulation data and logic, no UI.
+I'll be working on a simplistic city simulation implemented in swift.
+This repository is intended to represent only the
+simulation data and logic, no UI.
 
-The simulation works on a 2D representation of a city.
+CitySimCore is shipped as framework for iOS and macOS.
 
 ## Data structure
 
-The following describes the current state of the data structure
-the simulation will use.
+The following describes the underlying data structure
+the simulation uses.
 
 This section is also meant to elaborate on and describe
 specific terms related to the data structure.
 
 ### Overview
 
+The simulation uses a 2-dimensional representation of a map.
+
 ### City
 
-The "City" is composed of a multi-layerd map (see CityMap) and
-multiple statistical information.
+The "City" is composed of a multi-layerd map (see [CityMap](#citymap))
+and multiple statistical information.
 
-These information include:
+Statistical information that doesn't apply to the map is
+represented in attributes of the City object, such as: 
 
 * **Budget:** current budget and ongoing cost
 * **Ressources:** current supply and demand for ressources
 * **Population:** current population count
 
-### CityMap
+### CityMap<a name="citymap"></a>
 
 The map is composed of multiple "layers", each holding information
-regarding a different aspects of the map (for example: land value).
+regarding a different aspects of the map, for example:
+
+* [tiles](#tile)
+* Air Pollution
+* Noise
+* Land Value
+
+see [Layer](#layer)
 
 ### Cell
 
 A single address (1x1) on a layer is called a "cell".
 
-### Layer
+### Layer<a name="layer"></a>
 
 There are currently two different types of layers:
 
@@ -46,7 +57,7 @@ There are currently two different types of layers:
 
 #### Tile Layer
 
-This layer may contain several "tiles".
+This layer may contain several [tiles](#tile).
 
 #### Statistic Layer
 
@@ -66,7 +77,7 @@ It is planned to implement numerous statistical layers, for example:
 * Land Value
 * etc.
 
-### Tile
+### Tile<a name="tile"></a>
 
 A tile must cover at least one cell.
 If a tile covers multiple cells, each cell holds a corresponding
@@ -110,8 +121,8 @@ Examples include: residential zone, commercial zone, industrial zone
 
 #### Tile Attributes
 
-Tiles may also adopt one or more of the following behaviours.
-These behaviours are implemented using protocol composition.
+Tiles may adopt one or more of the following behaviours.
+These behaviours are implemented using protocols.
 
 * **not destructable:** tile can not be removed from map
 * **must be placed near street:** tile must be adjacent to street
@@ -121,7 +132,7 @@ These behaviours are implemented using protocol composition.
 * **produces one ressource:** see "Ressources"
 * **consumes one or more ressources:** see "Ressources"
 
-##### example content objects with attributes
+##### example content objects with protocol adoption
 
 ![image](https://raw.githubusercontent.com/SteveRohrlack/CitySimCore/master/docs/readme/content-objects-examples.png)
 
@@ -133,6 +144,14 @@ produced and consumed.
 * electricity
 * water
 
+A ressource producer can produce only one ressource, for example:
+
+	A power plant produces electricity.
+	
+A ressource consumer can consume multiple ressources, for example:
+
+	A small fountain park consumes electricity and water.
+
 ## Event system
 
 The following objects are emitting events by adopting the "EventEmitting"
@@ -140,9 +159,13 @@ protocol.
 
 Each event is given a payload.
 
-Actors (see "Actors") heavily make use of the event system.
+[Actors](#actors) make use of the event system.
 
-### CityMapEvents
+### CityEvent
+
+* Event "PopulationReachedThreshold", payload of type "Int"
+
+### CityMapEvent
 
 * Event "AddTile", payload of type "Tileable"
 * Event "RemoveTile", payload of type "Tileable"
@@ -163,7 +186,7 @@ calculated and used throughout the simulation.
 This allows, for example, to choose fitting locations for
 "growing" buildings in zoneables.
 
-### Actors
+### Actors<a name="actors"></a>
 
 Actors are lightweight objects that advance the simluation state. They should,
 however, not contain any state themself.
@@ -205,12 +228,26 @@ It subscribes to the "AddTile" and "RemoveTile" events of the CityMap.
 
 When adding or removing a tile to/from the TileLayer that produce or
 consume ressources (are "RessourceProducing" or "RessourceConsuming"),
-they will be handled by this actor.
+they will be handled by this actor - it updates the internal state
+regrading electricity in the City object and also updates the Condition
+of relevant tiles.
 
 ## Progress
 
 I'm currently extending the data model for non-map related statistics.
 Also, the "Actor" api is beeing created and tested by implementing actors.
+
+## Usage
+
+### installation
+
+Carthage support is planned
+
+### instanciation (simple)
+
+	var cityMap = CityMap(height: 1024, width: 1024)
+    var city = City(map: cityMap, startingBudget: 50000)
+    var simulation = Simulation(city: city)
 
 ## setup
 
@@ -233,3 +270,4 @@ Docs are generated using jazzy. To update, run:
 [![Code Climate](https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/gpa.svg)](https://codeclimate.com/github/SteveRohrlack/CitySimCore)
 
 [![Issue Count](https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/issue_count.svg)](https://codeclimate.com/github/SteveRohrlack/CitySimCore)
+

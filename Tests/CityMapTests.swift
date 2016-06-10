@@ -175,6 +175,7 @@ class CityMapTests: XCTestCase {
     /// MARK: events
     
     func testEmitsAddTile() {
+        
         func eventHandler (event: EventNaming, payload: Any) -> Void {
             guard let event = event as? CityMapEvents else {
                 XCTFail("wrong event type")
@@ -197,6 +198,7 @@ class CityMapTests: XCTestCase {
     }
     
     func testEmitsRemoveTile() {
+        
         func eventHandler (event: EventNaming, payload: Any) -> Void {
             guard let event = event as? CityMapEvents else {
                 XCTFail("wrong event type")
