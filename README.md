@@ -26,7 +26,7 @@ The "City" is composed of a multi-layerd map (see [CityMap](#citymap))
 and multiple statistical information.
 
 Statistical information that doesn't apply to the map is
-represented in attributes of the City object, such as: 
+represented in attributes of the City object, such as:
 
 * **Budget:** current budget and ongoing cost
 * **Ressources:** current supply and demand for ressources
@@ -146,11 +146,11 @@ produced and consumed.
 
 A ressource producer can produce only one ressource, for example:
 
-	A power plant produces electricity.
+    A power plant produces electricity.
 	
 A ressource consumer can consume multiple ressources, for example:
 
-	A small fountain park consumes electricity and water.
+    A small fountain park consumes electricity and water.
 
 ## Event system
 
@@ -245,7 +245,7 @@ Carthage support is planned
 
 ### instanciation (simple)
 
-	var cityMap = CityMap(height: 1024, width: 1024)
+    var cityMap = CityMap(height: 1024, width: 1024)
     var city = City(map: cityMap, startingBudget: 50000)
     var simulation = Simulation(city: city)
 

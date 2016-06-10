@@ -177,16 +177,16 @@ class CityMapTests: XCTestCase {
     func testEmitsAddTile() {
         
         func eventHandler (event: EventNaming, payload: Any) -> Void {
-            guard let event = event as? CityMapEvents else {
+            guard let event = event as? CityMapEvent else {
                 XCTFail("wrong event type")
                 return
             }
             
-            XCTAssertEqual(CityMapEvents.AddTile, event)
+            XCTAssertEqual(CityMapEvent.AddTile, event)
         }
         
         let subscriber = EventSubscriberTestDouble(eventHandler: eventHandler)
-        subject!.subscribe(subscriber: subscriber, to: CityMapEvents.AddTile)
+        subject!.subscribe(subscriber: subscriber, to: CityMapEvent.AddTile)
         
         do {
             try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
@@ -200,16 +200,16 @@ class CityMapTests: XCTestCase {
     func testEmitsRemoveTile() {
         
         func eventHandler (event: EventNaming, payload: Any) -> Void {
-            guard let event = event as? CityMapEvents else {
+            guard let event = event as? CityMapEvent else {
                 XCTFail("wrong event type")
                 return
             }
             
-            XCTAssertEqual(CityMapEvents.RemoveTile, event)
+            XCTAssertEqual(CityMapEvent.RemoveTile, event)
         }
         
         let subscriber = EventSubscriberTestDouble(eventHandler: eventHandler)
-        subject!.subscribe(subscriber: subscriber, to: CityMapEvents.RemoveTile)
+        subject!.subscribe(subscriber: subscriber, to: CityMapEvent.RemoveTile)
         
         do {
             try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))

@@ -35,7 +35,7 @@ public class ElectricityActor: Acting, EventSubscribing {
      - parameter payload: the event data
      */
     public func recieveEvent(event event: EventNaming, payload: Any) throws {
-        guard let event = event as? CityMapEvents else {
+        guard let event = event as? CityMapEvent else {
             return
         }
         

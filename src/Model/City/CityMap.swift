@@ -22,7 +22,7 @@ import Foundation
 */
 public struct CityMap: EventEmitting {
 
-    typealias EventNameType = CityMapEvents
+    typealias EventNameType = CityMapEvent
 
     /// Container holding event subscribers
     var eventSubscribers: [EventNameType: [EventSubscribing]] = [:]
@@ -109,7 +109,7 @@ public struct CityMap: EventEmitting {
         
         try tileLayer.addTile(tile: tile)
         
-        try emit(event: CityMapEvents.AddTile, payload: tile)
+        try emit(event: CityMapEvent.AddTile, payload: tile)
     }
     
     // MARK: remove, info
@@ -158,7 +158,7 @@ public struct CityMap: EventEmitting {
             
             tileLayer.remove(tile: tile)
             
-            try emit(event: CityMapEvents.RemoveTile, payload: tile)
+            try emit(event: CityMapEvent.RemoveTile, payload: tile)
         }
     }
     

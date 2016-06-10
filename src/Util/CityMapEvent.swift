@@ -11,7 +11,7 @@ import Foundation
 /**
  event names for the CityMap object
 */
-public enum CityMapEvents: EventNaming {
+public enum CityMapEvent: EventNaming {
     
     /// a tile was added
     case AddTile
