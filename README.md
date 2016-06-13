@@ -22,7 +22,7 @@ The simulation uses a 2-dimensional representation of a map.
 
 ### City
 
-The "City" is composed of a multi-layerd map (see [CityMap](#citymap))
+The "City" is composed of a multi-layerd map (see CityMap)
 and multiple statistical information.
 
 Statistical information that doesn't apply to the map is
@@ -32,23 +32,23 @@ represented in attributes of the City object, such as:
 * **Ressources:** current supply and demand for ressources
 * **Population:** current population count
 
-### CityMap<a name="citymap"></a>
+### CityMap
 
 The map is composed of multiple "layers", each holding information
 regarding a different aspects of the map, for example:
 
-* [tiles](#tile)
+* tiles
 * Air Pollution
 * Noise
 * Land Value
 
-see [Layer](#layer)
+see Layer
 
 ### Cell
 
 A single address (1x1) on a layer is called a "cell".
 
-### Layer<a name="layer"></a>
+### Layer
 
 There are currently two different types of layers:
 
@@ -57,7 +57,7 @@ There are currently two different types of layers:
 
 #### Tile Layer
 
-This layer may contain several [tiles](#tile).
+This layer may contain several tiles.
 
 #### Statistic Layer
 
@@ -77,7 +77,7 @@ It is planned to implement numerous statistical layers, for example:
 * Land Value
 * etc.
 
-### Tile<a name="tile"></a>
+### Tile
 
 A tile must cover at least one cell.
 If a tile covers multiple cells, each cell holds a corresponding
@@ -147,7 +147,7 @@ produced and consumed.
 A ressource producer can produce only one ressource, for example:
 
     A power plant produces electricity.
-	
+
 A ressource consumer can consume multiple ressources, for example:
 
     A small fountain park consumes electricity and water.
@@ -159,7 +159,7 @@ protocol.
 
 Each event is given a payload.
 
-[Actors](#actors) make use of the event system.
+Actors make use of the event system.
 
 ### CityEvent
 
@@ -186,7 +186,7 @@ calculated and used throughout the simulation.
 This allows, for example, to choose fitting locations for
 "growing" buildings in zoneables.
 
-### Actors<a name="actors"></a>
+### Actors
 
 Actors are lightweight objects that advance the simluation state. They should,
 however, not contain any state themself.
