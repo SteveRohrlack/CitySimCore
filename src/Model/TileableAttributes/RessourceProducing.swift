@@ -14,4 +14,5 @@ public protocol RessourceProducing {
     
     /// ressource produced
     var ressource: RessourceType { get }
+
 }

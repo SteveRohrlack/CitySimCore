@@ -39,7 +39,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             return
         }
         
-        /// consumers
+        /// update consumers if consumer is added or removed
         if let consumer = payload as? RessourceConsuming {
             let electricityRessources = consumer.ressources.filter { (ressource) in
                 guard case .Electricity = ressource else {
@@ -70,7 +70,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             updateConsumers()
         }
         
-        /// producers
+        /// update consumers if producer is added or removed
         if let producer = payload as? RessourceProducing {
             guard case .Electricity(let ressourceValue) = producer.ressource, let value = ressourceValue else {
                 return
@@ -83,21 +83,26 @@ public class ElectricityActor: Acting, EventSubscribing {
             if case .RemoveTile = event {
                 stage.ressources.electricitySupply -= value
             }
-                
+            
             updateConsumers()
         }
         
-        /// recalculate if streetplopp is added
+        /// update consumers if RessourceCarrier is added or removed
+        if let _ = payload as? RessourceCarrying {
+            updateConsumers()
+        }
     }
     
-    /// calculates the current consumption of electricity
+    /**
+     updates electricity consumers based on current electricity supply and demand
+    */
     private func updateConsumers() {
         /// no consumption
         guard stage.ressources.electricityDemand > 0 else {
             return
         }
-        
-        /// no production, every consumer should get condition "not powered"
+
+        /// no production, every conditionable consumer should get condition "not powered"
         guard stage.ressources.electricitySupply > 0 else {
             let allConditionableElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
                 guard let tile = tile as? RessourceConsuming where tile is Conditionable && tile.consumes(ressource: .Electricity(nil)) else {
@@ -121,6 +126,18 @@ public class ElectricityActor: Acting, EventSubscribing {
             return
         }
 
+        /// retrieve all electricity producers
+        let allElectricityProducers = stage.map.tileLayer.values.filter { (tile) in
+            guard let producer = tile as? RessourceProducing where producer.ressource >= .Electricity(nil) else {
+                return true
+            }
+            
+            return false
+        }
+        
+        /// track electricity flow on ressource carriers and
+        /// reproduce consumption for each adjecant consumer
+        
     }
     
 }

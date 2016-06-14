@@ -29,6 +29,8 @@
 		E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E11CE611460067BC91 /* TileTypeTests.swift */; };
 		E20B14E71CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
 		E20B14E81CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
+		E21760CB1D0FDFD600E9427C /* RessourceCarrying.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21760CA1D0FDFD600E9427C /* RessourceCarrying.swift */; };
+		E21760CC1D0FDFD600E9427C /* RessourceCarrying.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21760CA1D0FDFD600E9427C /* RessourceCarrying.swift */; };
 		E217F7701D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */; };
 		E217F7711D05CE6900FC703B /* NotRemoveableTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */; };
 		E21A16E31CFD68F800C8CEAD /* Ressources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A16E21CFD68F800C8CEAD /* Ressources.swift */; };
@@ -174,6 +176,7 @@
 		E20B14B51CE6108F0067BC91 /* TileLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerError.swift; sourceTree = "<group>"; };
 		E20B14E11CE611460067BC91 /* TileTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTypeTests.swift; sourceTree = "<group>"; };
 		E20B14E61CE613F00067BC91 /* TileLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerTests.swift; sourceTree = "<group>"; };
+		E21760CA1D0FDFD600E9427C /* RessourceCarrying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceCarrying.swift; sourceTree = "<group>"; };
 		E217F76F1D05CE6900FC703B /* NotRemoveableTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotRemoveableTestDouble.swift; sourceTree = "<group>"; };
 		E21A16E21CFD68F800C8CEAD /* Ressources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ressources.swift; sourceTree = "<group>"; };
 		E21EC7531CF8273E001F328B /* RessourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceType.swift; sourceTree = "<group>"; };
@@ -292,8 +295,9 @@
 				E20066711CEC8BA500E55D4B /* NotRemoveable.swift */,
 				E2EDA0541CEDD361000464C5 /* PlaceNearStreet.swift */,
 				E21EC7531CF8273E001F328B /* RessourceType.swift */,
-				E21EC7561CF827B2001F328B /* RessourceProducing.swift */,
+				E21760CA1D0FDFD600E9427C /* RessourceCarrying.swift */,
 				E21EC7591CF827FC001F328B /* RessourceConsuming.swift */,
+				E21EC7561CF827B2001F328B /* RessourceProducing.swift */,
 			);
 			path = TileableAttributes;
 			sourceTree = "<group>";
@@ -701,6 +705,7 @@
 				E227B9301CEF62120052918B /* EventNaming.swift in Sources */,
 				E22512E31CFC195B00DE5E7F /* ElectricityActor.swift in Sources */,
 				E2EDA04F1CEDD325000464C5 /* Condition.swift in Sources */,
+				E21760CB1D0FDFD600E9427C /* RessourceCarrying.swift in Sources */,
 				E2D86D221CEA44E2007EABD8 /* Zoneable.swift in Sources */,
 				E227B9361CEF624C0052918B /* EventSubscribing.swift in Sources */,
 				E26041371CF2DCC200773A73 /* BudgetActor.swift in Sources */,
@@ -781,6 +786,7 @@
 				E227B9371CEF624C0052918B /* EventSubscribing.swift in Sources */,
 				E26041381CF2DCC200773A73 /* BudgetActor.swift in Sources */,
 				E2D86D1F1CEA44E2007EABD8 /* PropableType.swift in Sources */,
+				E21760CC1D0FDFD600E9427C /* RessourceCarrying.swift in Sources */,
 				E2D86CEC1CEA4247007EABD8 /* Tileable.swift in Sources */,
 				E24C44C21CF5D617006B9425 /* CityMap.swift in Sources */,
 				E24C44C01CF5D617006B9425 /* City.swift in Sources */,

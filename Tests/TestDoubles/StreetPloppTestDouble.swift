@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct StreetPloppTestDouble: Ploppable, MapStatistical, Budgetable {
+struct StreetPloppTestDouble: RessourceCarrying, Ploppable, MapStatistical, Budgetable {
     let origin: (Int, Int)
     let height: Int
     let width: Int

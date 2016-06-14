@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StreetPlopp: Ploppable, Budgetable, MapStatistical, Budgetable {
+struct StreetPlopp: RessourceCarrying, Ploppable, Budgetable, MapStatistical, Budgetable {
     let origin: (Int, Int)
     let height: Int
     let width: Int
