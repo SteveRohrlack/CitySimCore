@@ -35,7 +35,7 @@ class CityTests: XCTestCase {
     
     func testEmitsPopulationReachedThreshold() {
         
-        func eventHandler (event: EventNaming, payload: Any) -> Void {
+        func eventHandler(event: EventNaming, payload: Any) -> Void {
             guard let event = event as? CityEvent else {
                 XCTFail("wrong event type")
                 return
