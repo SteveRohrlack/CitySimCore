@@ -1,8 +1,8 @@
 //
-//  SmallResidentialZone.swift
+//  ZoneTestDouble.swift
 //  CitySimCore
 //
-//  Created by Steve Rohrlack on 18.05.16.
+//  Created by Steve Rohrlack on 15.06.16.
 //  Copyright © 2016 Steve Rohrlack. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct SmallResidentialZoneTestDouble: Zoneable, PlaceNearStreet {
+struct ZoneTestDouble: Zoneable {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 2

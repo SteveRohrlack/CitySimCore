@@ -23,8 +23,11 @@ public enum PloppableType {
     /// police station
     case PoliceStation
     
+    /// power plant
+    case Powerplant
+    
     /// wind turbine power plant
-    case WindTurbine
+    case PowerplantWind
     
     /// water pumping station
     case WaterPumpingStation

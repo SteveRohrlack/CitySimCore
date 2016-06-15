@@ -33,7 +33,7 @@ class CityMapTests: XCTestCase {
     /// MARK: canAdd
     
     func testCanAdd() {       
-        let tile = SmallResidentialZoneTestDouble(origin: (1, 1))
+        let tile = ZoneTestDouble(origin: (1, 1))
         
         do {
             try subject!.canAdd(tile: tile)
@@ -55,7 +55,7 @@ class CityMapTests: XCTestCase {
     }
     
     func testCanAddFailsBecauseNotEmpty() {
-        let tile = SmallResidentialZoneTestDouble(origin: (0, 0))
+        let tile = ZoneTestDouble(origin: (0, 0))
         
         do {
             try subject!.canAdd(tile: tile)

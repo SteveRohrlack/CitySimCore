@@ -46,7 +46,7 @@ public struct Simulation {
      
      - parameter city: city object
     */
-    init(city: City) {
+    init(city: City) {       
         self.init(city: city, ticks: 0, actors: [])
     }
     

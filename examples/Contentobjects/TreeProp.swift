@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TreeProp: Tileable {
+struct TreeProp: Propable {
     let origin: (Int, Int)
     let height = 1
     let width = 1

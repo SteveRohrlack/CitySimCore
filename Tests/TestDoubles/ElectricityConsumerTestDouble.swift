@@ -1,8 +1,8 @@
 //
-//  SmallPark.swift
+//  ElectricityConsumerTestDouble.swift
 //  CitySimCore
 //
-//  Created by Steve Rohrlack on 17.05.16.
+//  Created by Steve Rohrlack on 15.06.16.
 //  Copyright © 2016 Steve Rohrlack. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct SmallParkPloppTestDouble: Ploppable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming, Budgetable {
+struct ElectricityConsumerTestDouble: Ploppable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming, Budgetable {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 2
@@ -25,7 +25,7 @@ struct SmallParkPloppTestDouble: Ploppable, MapStatistical, Conditionable, Place
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Landvalue(radius: 3, value: 4))
     var conditions: ConditionContainer = ConditionContainer()
-    let ressources: [RessourceType] = [.Electricity(100), .Water(10)]
+    let ressources: [RessourceType] = [.Electricity(50)]
     
     init(origin: (Int, Int)) {
         self.origin = origin
