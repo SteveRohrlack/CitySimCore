@@ -152,6 +152,13 @@ A ressource consumer can consume multiple ressources, for example:
 
     A small fountain park consumes electricity and water.
 
+#### Ressource transport through the city
+
+A tile can adopt the RessourceCarrying protocol to signal the simulation
+that it is capable of transporting ressources.
+
+This is currently only planned for streets (StreetPlopp).
+
 ## Event system
 
 The following objects are emitting events by adopting the "EventEmitting"
@@ -222,7 +229,8 @@ from the budget and adds collected taxes to it.
 #### Electricity
 
 The "Electricity" actor manages the current state of production and
-consumption of electricity.
+consumption of electricity, it also updates tiles on the TileLayer
+to reflect if they get electricity or not (condition: .NotPowered).
 
 It subscribes to the "AddTile" and "RemoveTile" events of the CityMap.
 
@@ -270,4 +278,3 @@ Docs are generated using jazzy. To update, run:
 [![Code Climate](https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/gpa.svg)](https://codeclimate.com/github/SteveRohrlack/CitySimCore)
 
 [![Issue Count](https://codeclimate.com/github/SteveRohrlack/CitySimCore/badges/issue_count.svg)](https://codeclimate.com/github/SteveRohrlack/CitySimCore)
-
