@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct PlaceNearStreetTestDouble: Zoneable, PlaceNearStreet {
+struct PlaceNearStreetZoneTestDouble: Zoneable, PlaceNearStreet {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 2

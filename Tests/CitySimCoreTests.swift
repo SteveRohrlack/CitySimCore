@@ -50,7 +50,7 @@ class CitySimCoreTests: XCTestCase {
         }
         
         /// adding electricity consumer
-        let electricityConsumer = ElectricityConsumerTestDouble(origin: (1, 1));
+        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 1));
         do {
             try city.map.plopp(plopp: electricityConsumer)
         } catch {
@@ -60,7 +60,7 @@ class CitySimCoreTests: XCTestCase {
         simulation.advance()
         
         /// adding electricity producer
-        let electricityProducer = ElectricityProducerTestDouble(origin: (electricityConsumer.originY, electricityConsumer.maxX + 1))
+        let electricityProducer = ElectricityProducerPloppTestDouble(origin: (electricityConsumer.originY, electricityConsumer.maxX + 1))
         do {
             try city.map.plopp(plopp: electricityProducer)
         } catch {

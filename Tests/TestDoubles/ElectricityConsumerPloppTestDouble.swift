@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct ElectricityConsumerTestDouble: Ploppable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming, Budgetable {
+struct ElectricityConsumerPloppTestDouble: Ploppable, MapStatistical, Conditionable, PlaceNearStreet, RessourceConsuming, Budgetable {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 2

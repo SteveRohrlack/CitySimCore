@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct NotRemoveableTestDouble: Propable, NotRemoveable {
+struct NotRemoveablePropTestDouble: Propable, NotRemoveable {
     let origin: (Int, Int)
     let height: Int = 1
     let width: Int = 1

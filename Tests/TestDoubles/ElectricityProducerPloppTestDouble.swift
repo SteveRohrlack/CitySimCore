@@ -14,7 +14,7 @@
     @testable import CitySimCoreMacOS
 #endif
 
-struct ElectricityProducerTestDouble: Ploppable, PlaceNearStreet, RessourceProducing {
+struct ElectricityProducerPloppTestDouble: Ploppable, PlaceNearStreet, RessourceProducing {
     let origin: (Int, Int)
     let height: Int = 4
     let width: Int = 4

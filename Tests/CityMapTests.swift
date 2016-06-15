@@ -73,7 +73,7 @@ class CityMapTests: XCTestCase {
     }
     
     func testCanAddFailsBecauseNotNearStreet() {
-        let tile = PlaceNearStreetTestDouble(origin: (0, 0))
+        let tile = PlaceNearStreetZoneTestDouble(origin: (0, 0))
         
         do {
             try subject!.canAdd(tile: tile)
@@ -158,7 +158,7 @@ class CityMapTests: XCTestCase {
     
     func testCanRemoveAt() {
         do {
-            try subject!.prop(prop: NotRemoveableTestDouble(origin: (0, 0)))
+            try subject!.prop(prop: NotRemoveablePropTestDouble(origin: (0, 0)))
         } catch {
             XCTFail("should not fail")
         }
