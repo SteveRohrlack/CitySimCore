@@ -58,6 +58,18 @@ public class ElectricityActor: Acting, EventSubscribing {
                     continue
                 }
                 
+                /*switch
+                 add:
+                    stage.ressources.electricityDemand += value
+                    supply >= oldDemand && supply >= newDemand ?
+                        nothing
+                    else
+                        update consumers
+                 
+                 remove:
+                 
+                 */
+                
                 if case .AddTile = event {
                     stage.ressources.electricityDemand += value
                 }

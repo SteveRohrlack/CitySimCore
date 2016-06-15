@@ -25,10 +25,16 @@ struct ElectricityProducerPloppTestDouble: Ploppable, PlaceNearStreet, Ressource
     let type: TileType = .Ploppable(.Powerplant)
     let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Noise(radius: 3, value: 4))
     var conditions: ConditionContainer = ConditionContainer()
-    let ressource: RessourceType = .Electricity(100)
+    let ressource: RessourceType
+    
+    init(origin: (Int, Int), producesAmount amount: Int) {
+        self.origin = origin
+        self.ressource = .Electricity(amount)
+    }
     
     init(origin: (Int, Int)) {
         self.origin = origin
+        self.ressource = .Electricity(100)
     }
 
 }
