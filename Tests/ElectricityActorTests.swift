@@ -72,7 +72,7 @@ class CitySimCoreTests: XCTestCase {
         
         /// adding electricity consumer
         let consumedElectricityAmount = 100
-        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 0), consumesAmount: consumedElectricityAmount);
+        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 0), consumesAmount: consumedElectricityAmount)
         do {
             try subject!.city.map.plopp(plopp: electricityConsumer)
         } catch {
@@ -93,7 +93,7 @@ class CitySimCoreTests: XCTestCase {
     func testUpdatesConsumersIfNoProduction() {
         /// adding electricity consumer
         let consumedElectricityAmount = 100
-        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 0), consumesAmount: consumedElectricityAmount);
+        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 0), consumesAmount: consumedElectricityAmount)
         
         XCTAssertFalse(electricityConsumer.conditions.has(content: .NotPowered))
         
@@ -123,10 +123,10 @@ class CitySimCoreTests: XCTestCase {
         let consumedElectricityAmount = producedElectricityAmount / 2
         
         let electricityConsumer1Origin = (1, electricityProducer.maxX + 1)
-        let electricityConsumer1 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer1Origin, consumesAmount: consumedElectricityAmount);
+        let electricityConsumer1 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer1Origin, consumesAmount: consumedElectricityAmount)
         
         let electricityConsumer2Origin = (1, electricityConsumer1.maxX + 1)
-        let electricityConsumer2 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer2Origin, consumesAmount: consumedElectricityAmount);
+        let electricityConsumer2 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer2Origin, consumesAmount: consumedElectricityAmount)
         
         do {
             try subject!.city.map.plopp(plopp: electricityConsumer1)
@@ -140,4 +140,5 @@ class CitySimCoreTests: XCTestCase {
         let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1] as! Conditionable
         XCTAssertFalse(modifiedElectricityConsumer.conditions.has(content: .NotPowered))
     }
+
 }
