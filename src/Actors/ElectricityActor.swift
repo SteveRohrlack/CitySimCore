@@ -111,7 +111,7 @@ public class ElectricityActor: Acting, EventSubscribing {
      - parameter tick: the current simulation tick
      */
     func act(tick tick: Int) {
-        guard stage.ressources.electricityNeedsRecalculation == true else {
+        guard stage.ressources.electricityNeedsRecalculation else {
             return
         }
         
