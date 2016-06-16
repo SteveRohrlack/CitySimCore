@@ -60,7 +60,7 @@ public class City: EventEmitting {
     */
     convenience init(map: CityMap, startingBudget: Int) {
         let budget = Budget(amount: startingBudget, runningCost: 0)
-        let ressources = Ressources(electricityDemand: 0, electricitySupply: 0)
+        let ressources = Ressources(electricityDemand: 0, electricitySupply: 0, electricityNeedsRecalculation: false)
         
         self.init(map: map, budget: budget, ressources: ressources, population: 0, populationThresholds: [])
     }
@@ -73,7 +73,7 @@ public class City: EventEmitting {
      */
     convenience init(map: CityMap, startingBudget: Int, populationThresholds: [Int]) {
         let budget = Budget(amount: startingBudget, runningCost: 0)
-        let ressources = Ressources(electricityDemand: 0, electricitySupply: 0)
+        let ressources = Ressources(electricityDemand: 0, electricitySupply: 0, electricityNeedsRecalculation: false)
         
         self.init(map: map, budget: budget, ressources: ressources, population: 0, populationThresholds: populationThresholds)
     }

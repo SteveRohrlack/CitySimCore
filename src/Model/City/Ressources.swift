@@ -17,4 +17,7 @@ public struct Ressources {
     /// supply of electricity, sum of all electricity producers
     public var electricitySupply: Int
     
+    /// states if the electricity "flow" needs to be recalculated
+    public var electricityNeedsRecalculation: Bool
+    
 }

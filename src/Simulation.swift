@@ -53,7 +53,7 @@ public struct Simulation {
     /// advances the simulation by calling every actor
     public mutating func advance() {
         for (index, _) in actors.enumerate() {
-            actors[index].act()
+            actors[index].act(tick: ticks)
         }
         
         ticks += 1

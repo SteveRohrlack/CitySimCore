@@ -39,81 +39,94 @@ public class ElectricityActor: Acting, EventSubscribing {
             return
         }
         
-        /// update consumers if consumer is added or removed
+        /// a tile may be a consumer and a producer at the same time
+        
+        /// consumer is added or removed
         if let consumer = payload as? RessourceConsuming {
-            let electricityRessources = consumer.ressources.filter { (ressource) in
-                guard case .Electricity = ressource else {
-                    return false
-                }
-                
-                return true
-            }
-            
-            guard electricityRessources.count > 0 else {
-                return
-            }
-            
-            for ressource in electricityRessources {
-                guard let value = ressource.value() else {
+            for ressource in consumer.ressources {
+                guard case .Electricity = ressource, let value = ressource.value() else {
                     continue
                 }
                 
-                /*switch
-                 add:
+                switch event {
+                case .AddTile:
+                    /// if the new demand is bigger than the current supply,
+                    /// recalculation is needed
+                    /// otherwise, all consumers will be supplied with
+                    /// electricity, after adding this new one
                     stage.ressources.electricityDemand += value
-                    supply >= oldDemand && supply >= newDemand ?
-                        nothing
-                    else
-                        update consumers
-                 
-                 remove:
-                 
-                 */
-                
-                if case .AddTile = event {
-                    stage.ressources.electricityDemand += value
-                }
-                        
-                if case .RemoveTile = event {
+                    if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
+                       stage.ressources.electricityNeedsRecalculation = true
+                    }
+                case .RemoveTile:
+                    /// if the previous demand is already bigger than the supply,
+                    /// recalculation is needed
+                    /// otherwise, all consumers have already been supplied with
+                    /// electricity, and will still be if a consumer is removed
+                    if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
+                        stage.ressources.electricityNeedsRecalculation = true
+                    }
                     stage.ressources.electricityDemand -= value
                 }
             }
-            
-            updateConsumers()
         }
         
-        /// update consumers if producer is added or removed
+        /// producer is added or removed
         if let producer = payload as? RessourceProducing {
             guard case .Electricity(let ressourceValue) = producer.ressource, let value = ressourceValue else {
                 return
             }
             
-            if case .AddTile = event {
+            switch event {
+            case .AddTile:
+                /// if the previous supply is smaller than the current demand,
+                /// recalculation is needed
+                /// otherwise, all consumers are already supplied with electricity
+                /// and will still be after adding a new producer
+                if stage.ressources.electricitySupply < stage.ressources.electricityDemand {
+                    stage.ressources.electricityNeedsRecalculation = true
+                }
                 stage.ressources.electricitySupply += value
-            }
-                
-            if case .RemoveTile = event {
+            case .RemoveTile:
+                /// if the new supply is smaller than the current demand,
+                /// recalculation is needed
+                /// otherwise, all consumers are still being supplied with
+                /// electricity, and will still be if the producer is removed
                 stage.ressources.electricitySupply -= value
+                if stage.ressources.electricitySupply < stage.ressources.electricityDemand {
+                    stage.ressources.electricityNeedsRecalculation = true
+                }
             }
-            
-            updateConsumers()
         }
         
         /// update consumers if RessourceCarrier is added or removed
         if let _ = payload as? RessourceCarrying {
-            updateConsumers()
+            stage.ressources.electricityNeedsRecalculation = true
         }
     }
     
     /**
+     the ElectricityActor updates electricity consumers state
+     
+     - parameter tick: the current simulation tick
+     */
+    func act(tick tick: Int) {
+        guard stage.ressources.electricityNeedsRecalculation == true else {
+            return
+        }
+        
+        updateConsumers()
+    }
+    
+    /**
      updates electricity consumers based on current electricity supply and demand
-    */
+     */
     private func updateConsumers() {
         /// no consumption
         guard stage.ressources.electricityDemand > 0 else {
             return
         }
-
+        
         /// no production, every conditionable consumer should get condition "not powered"
         guard stage.ressources.electricitySupply > 0 else {
             let allConditionableElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
@@ -137,7 +150,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             
             return
         }
-
+        
         /// retrieve all electricity producers
         let allElectricityProducers = stage.map.tileLayer.values.filter { (tile) in
             guard let producer = tile as? RessourceProducing where producer.ressource >= .Electricity(nil) else {
@@ -150,6 +163,7 @@ public class ElectricityActor: Acting, EventSubscribing {
         /// track electricity flow on ressource carriers and
         /// reproduce consumption for each adjecant consumer
         
+        /// reset recalculation flag
+        stage.ressources.electricityNeedsRecalculation = false
     }
-    
 }

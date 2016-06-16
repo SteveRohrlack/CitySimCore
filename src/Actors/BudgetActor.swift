@@ -70,8 +70,10 @@ public class BudgetActor: Acting, EventSubscribing {
     
     /**
      the BudgetActor subtracts the current total running cost from the budget
+     
+     - parameter tick: the current simulation tick
      */
-    func act() {
+    func act(tick tick: Int) {
         /// subtract running cost
         stage.budget.amount -= stage.budget.runningCost
     }

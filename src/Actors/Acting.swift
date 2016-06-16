@@ -18,8 +18,10 @@ protocol Acting {
     
     /**
      Actors gonna act
+     
+     - parameter tick: the current simulation tick
     */
-    mutating func act()
+    mutating func act(tick tick: Int)
     
 }
 
@@ -27,8 +29,10 @@ extension Acting {
 
     /**
      Actors gonna act
+     
+     - parameter tick: the current simulation tick
      */
-    func act() {
+    func act(tick tick: Int) {
         
     }
 

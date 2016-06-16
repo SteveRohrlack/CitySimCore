@@ -103,6 +103,8 @@ class CitySimCoreTests: XCTestCase {
             XCTFail("should not fail")
         }
         
+        subject!.advance()
+        
         let modifiedElectricityConsumer = subject!.city.map.tileLayer[1, 0] as! Conditionable
         XCTAssertTrue(modifiedElectricityConsumer.conditions.has(content: .NotPowered))
     }
@@ -133,6 +135,8 @@ class CitySimCoreTests: XCTestCase {
             XCTFail("should not fail")
         }
         
+        subject!.advance()
+
         let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1] as! Conditionable
         XCTAssertFalse(modifiedElectricityConsumer.conditions.has(content: .NotPowered))
     }
