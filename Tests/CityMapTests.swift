@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import GameplayKit
 
 #if os(iOS)
     @testable import CitySimCoreiOS
@@ -86,7 +87,7 @@ class CityMapTests: XCTestCase {
     
     /// MARK: adding tiles
     
-    func testZone() {
+    func testAddZone() {
         do {
             try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
             try subject!.zone(zone: SmallResidentialZoneTestDouble(origin: (1, 1)))
@@ -97,7 +98,7 @@ class CityMapTests: XCTestCase {
         XCTAssertNotNil(subject!.tileLayer[1, 1])
     }
     
-    func testPlopp() {
+    func testAddPlopp() {
         do {
             try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
         } catch {
@@ -107,7 +108,7 @@ class CityMapTests: XCTestCase {
         XCTAssertNotNil(subject!.tileLayer[0, 0])
     }
     
-    func testProp() {
+    func testAddProp() {
         do {
             try subject!.prop(prop: WaterPropTestDouble(origin: (0, 0), height: 1, width: 1, content: 1))
         } catch {
@@ -115,6 +116,28 @@ class CityMapTests: XCTestCase {
         }
         
         XCTAssertNotNil(subject!.tileLayer[0, 0])
+    }
+    
+    func testAddGraphable() {
+        let streetPlopp = StreetPloppTestDouble(origin: (0, 0), height: 1, width: 2)
+        
+        do {
+            try subject!.plopp(plopp: streetPlopp)
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        streetPlopp.forEachCell { (y: Int, x: Int) in
+            let node = self.subject!.graph.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
+            XCTAssertNotNil(node)
+        }
+        
+        let nodeNil: GKGridGraphNode? = subject!.graph.nodeAtGridPosition(vector_int2(Int32(streetPlopp.originY + 1), Int32(streetPlopp.originX + 2)))
+        
+        guard let _ = nodeNil else {
+            XCTFail("node should not exist")
+            return
+        }
     }
     
     /// MARK: remove, info
@@ -140,6 +163,22 @@ class CityMapTests: XCTestCase {
         XCTAssertEqual(3, tiles.count)
     }
     
+    func testCanRemoveAt() {
+        do {
+            try subject!.prop(prop: NotRemoveablePropTestDouble(origin: (0, 0)))
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        do {
+            try subject!.canRemoveAt(location: Location(origin: (0, 0), height: 1, width: 1))
+        } catch let e as CityMapError {
+            XCTAssertEqual(e, CityMapError.TileNotRemoveable)
+        } catch {
+            XCTFail("wrong error")
+        }
+    }
+    
     func testRemoveAt() {
         do {
             try subject!.plopp(plopp: StreetPloppTestDouble(origin: (0, 0), height: 1, width: 1))
@@ -156,19 +195,25 @@ class CityMapTests: XCTestCase {
         XCTAssertNil(subject!.tileLayer[0, 0])
     }
     
-    func testCanRemoveAt() {
+    func testRemoveGraphable() {
+        let location = Location(origin: (0, 0))
+        
+        let streetPlopp = StreetPloppTestDouble(origin: location.origin, height: 1, width: 2)
+        
         do {
-            try subject!.prop(prop: NotRemoveablePropTestDouble(origin: (0, 0)))
+            try subject!.plopp(plopp: streetPlopp)
+            try subject!.removeAt(location: location)
         } catch {
             XCTFail("should not fail")
         }
         
-        do {
-            try subject!.canRemoveAt(location: Location(origin: (0, 0), height: 1, width: 1))
-        } catch let e as CityMapError {
-            XCTAssertEqual(e, CityMapError.TileNotRemoveable)
-        } catch {
-            XCTFail("wrong error")
+        streetPlopp.forEachCell { (y: Int, x: Int) in
+            let nodeNil: GKGridGraphNode? = self.subject!.graph.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
+            guard let _ = nodeNil else {
+                return
+            }
+            
+            XCTFail("node should not exist")
         }
     }
     
