@@ -16,9 +16,9 @@ public protocol Graphable: Locateable {
     /**
      converts Locateable to GraphNode
      
-     - returns: GraphNode representation of location
+     - returns: array of GraphNodes representing the location
     */
-    func asNode() -> GKGridGraphNode
+    func asNodes() -> [GKGridGraphNode]
 }
 
 extension Graphable {
@@ -28,8 +28,14 @@ extension Graphable {
      
      - returns: GraphNode representation of location
      */
-    func asNode() -> GKGridGraphNode {
-        return GKGridGraphNode(gridPosition: vector_int2(Int32(originY), Int32(originX)))
+    func asNodes() -> [GKGridGraphNode] {
+        var nodes: [GKGridGraphNode] = []
+        
+        forEachCell { (y: Int, x: Int) in
+            nodes.append(GKGridGraphNode(gridPosition: vector_int2(Int32(y), Int32(x))))
+        }
+        
+        return nodes
     }
     
 }

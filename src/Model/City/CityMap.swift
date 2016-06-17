@@ -131,11 +131,12 @@ public struct CityMap: EventEmitting {
             )
         }
         
-        /// adding graph node for supporting tile
+        /// adding graph nodes for supporting tile
         if let graphable = tile as? Graphable {
-            graph.addNodes([graphable.asNode()])
+            graph.addNodes(graphable.asNodes())
         }
         
+        /// emit event
         try emit(event: CityMapEvent.AddTile, payload: tile)
     }
     
@@ -186,11 +187,12 @@ public struct CityMap: EventEmitting {
                 )
             }
             
-            /// removing graph node for supporting tile
+            /// removing graph nodes for supporting tile
             if let graphable = tile as? Graphable {
-                graph.removeNodes([graphable.asNode()])
+                graph.removeNodes(graphable.asNodes())
             }
             
+            /// emit event
             try emit(event: CityMapEvent.RemoveTile, payload: tile)
         }
     }
