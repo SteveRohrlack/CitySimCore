@@ -60,7 +60,7 @@ public struct CityMap: EventEmitting {
         self.height = height
         self.tileLayer = TileLayer(rows: height, columns: width)
         self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
-        self.graph = GKGridGraph()
+        self.graph = GKGridGraph(fromGridStartingAt: vector_int2(0, 0), width: Int32(width), height: Int32(height), diagonalsAllowed: false)
     }
     
     // MARK: add, remove
@@ -186,7 +186,7 @@ public struct CityMap: EventEmitting {
                 )
             }
             
-            /// remobing graph node for supporting tile
+            /// removing graph node for supporting tile
             if let graphable = tile as? Graphable {
                 graph.removeNodes([graphable.asNode()])
             }
