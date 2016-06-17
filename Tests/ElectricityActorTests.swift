@@ -259,7 +259,7 @@ class CitySimCoreTests: XCTestCase {
         XCTAssertTrue(subject!.city.ressources.electricityNeedsRecalculation)
     }
     
-    /// MARK: update consumers scenarios
+    /// MARK: update consumer status scenarios
 
     func testUpdatesConsumersIfNoProduction() {
         /// adding electricity consumer
@@ -333,20 +333,30 @@ class CitySimCoreTests: XCTestCase {
         }
         
         /// adding electricity consumer
-        let consumedElectricityAmount = producedElectricityAmount * 2
+        let consumedElectricityAmount = producedElectricityAmount / 2
         
-        let electricityConsumerOrigin = (1, electricityProducer.maxX + 1)
-        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: electricityConsumerOrigin, consumesAmount: consumedElectricityAmount)
+        let electricityConsumer1Origin = (1, electricityProducer.maxX + 1)
+        let electricityConsumer1 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer1Origin, consumesAmount: consumedElectricityAmount)
+        
+        let electricityConsumer2Origin = (1, electricityConsumer1.maxX + 1)
+        let electricityConsumer2 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer2Origin, consumesAmount: consumedElectricityAmount)
         
         do {
-            try subject!.city.map.plopp(plopp: electricityConsumer)
+            try subject!.city.map.plopp(plopp: electricityConsumer1)
+            try subject!.city.map.plopp(plopp: electricityConsumer2)
         } catch {
             XCTFail("should not fail")
         }
         
         subject!.advance()
         
-        /// Todo
+        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1]
+        guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
+            XCTFail("needs to be Conditionable")
+            return
+        }
+        
+        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
     }
 
 }
