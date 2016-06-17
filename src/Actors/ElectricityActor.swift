@@ -153,7 +153,7 @@ public class ElectricityActor: Acting, EventSubscribing {
         }
         
         /// retrieve all electricity producers and consumers
-        let allElectricityProducers = stage.map.tileLayer.values.filter { (tile) in
+        let allProducers = stage.map.tileLayer.values.filter { (tile) in
             guard let producer = tile as? RessourceProducing where producer.ressource >= .Electricity(nil) else {
                 return true
             }
@@ -161,7 +161,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             return false
         }
         
-        let allElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
+        let allConsumers = stage.map.tileLayer.values.filter { (tile) in
             guard let consumer = tile as? RessourceConsuming where consumer.consumes(ressource: .Electricity(nil)) else {
                 return true
             }
@@ -169,8 +169,34 @@ public class ElectricityActor: Acting, EventSubscribing {
             return false
         }
         
+        /// if a consumer is supplied with electricity by one producer,
+        /// it doesn't need to be supplied by another one
+        var suppliedConsumers: [TileLayer.ValueType?] = []
+        
         /// track electricity flow on ressource carriers and
         /// reproduce consumption for each adjecant consumer
+        for producer in allProducers {
+            guard let producer = producer else {
+                continue
+            }
+            
+            /// retrieve ressource carriers that surround the current producer
+            let surroundingLocation = Location(origin: producer.origin) + 1
+            let availableCarriers = stage.map.infoAt(location: surroundingLocation).filter { (tile) in
+                return tile is RessourceCarrying
+            }
+            
+            
+            
+            let carriers = availableCarriers.filter { (carrier) in
+                return true
+            }
+            
+            /// use each carrier as starting point for pathfinding to each consumer
+            for carrier in carriers {
+                
+            }
+        }
         
         /// reset recalculation flag
         stage.ressources.electricityNeedsRecalculation = false
