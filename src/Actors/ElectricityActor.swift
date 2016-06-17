@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 /**
  The ElectricityActor
@@ -151,9 +152,17 @@ public class ElectricityActor: Acting, EventSubscribing {
             return
         }
         
-        /// retrieve all electricity producers
+        /// retrieve all electricity producers and consumers
         let allElectricityProducers = stage.map.tileLayer.values.filter { (tile) in
             guard let producer = tile as? RessourceProducing where producer.ressource >= .Electricity(nil) else {
+                return true
+            }
+            
+            return false
+        }
+        
+        let allElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
+            guard let consumer = tile as? RessourceConsuming where consumer.consumes(ressource: .Electricity(nil)) else {
                 return true
             }
             

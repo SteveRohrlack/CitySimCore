@@ -7,6 +7,7 @@
 ///
 
 import Foundation
+import GameplayKit
 
 /**
  CityMap encapsules all aspects of working with the simulation's underlying 
@@ -18,7 +19,13 @@ import Foundation
  - TileLayer holding all visible tiles
  - StatisticlayersContainer holding all statistical layers
  
- CityMap emits different events
+ Additionaly, the CityMap contains a Graph representation of Locations that are
+ "Graphable".
+ 
+ CityMap emits events, see CityMapEvent:
+ - AddTile: when a tile was successfully added, payload: new tile
+ - RemoveTile: when a tile was successfully removed, payload: removed tile
+ 
 */
 public struct CityMap: EventEmitting {
 
@@ -39,6 +46,9 @@ public struct CityMap: EventEmitting {
     /// Container holding statistical layers
     public var statisticsLayerContainer: StatisticlayersContainer
     
+    /// pathfinding graph
+    var graph: GKGridGraph
+    
     /**
      Constructur
      
@@ -50,6 +60,7 @@ public struct CityMap: EventEmitting {
         self.height = height
         self.tileLayer = TileLayer(rows: height, columns: width)
         self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
+        self.graph = GKGridGraph()
     }
     
     // MARK: add, remove
@@ -66,31 +77,34 @@ public struct CityMap: EventEmitting {
      throws: CityMapError.PlaceNearStreet if the tile should be placed adjecant to a street ploppable and isn't
     */
     func canAdd(tile newTile: Tileable) throws {
+        /// check if new tile can fit into the map
         guard newTile.originY >= 0 && newTile.originX >= 0 && newTile.maxY < height &&  newTile.maxX < width else {
             throw CityMapError.TileCantFit
         }
-        
+
+        /// check if desired location is already in use
         let locationUsedByTiles = tileLayer.usedByTilesAt(location: newTile)
-        
         guard locationUsedByTiles.count == 0 else {
             throw CityMapError.CannotAddBecauseNotEmpty
         }
         
-        if newTile is PlaceNearStreet {
-            let check = newTile + 1
+        /// check if tile should be placed near a street
+        guard newTile is PlaceNearStreet else {
+            return
+        }
+        
+        let check = newTile + 1
+        let checkLocationUsedByTiles = tileLayer.usedByTilesAt(location: check)
             
-            let checkLocationUsedByTiles = tileLayer.usedByTilesAt(location: check)
-            
-            let adjecantStreet = checkLocationUsedByTiles.contains { (tile: Tileable) in
-                guard case .Ploppable(let ploppType) = tile.type where ploppType == .Street else {
-                    return false
-                }
-                return true
+        let adjecantStreet = checkLocationUsedByTiles.contains { (tile: Tileable) in
+            guard case .Ploppable(let ploppType) = tile.type where ploppType == .Street else {
+                return false
             }
+            return true
+        }
             
-            if !adjecantStreet {
-                throw CityMapError.PlaceNearStreet
-            }
+        if !adjecantStreet {
+            throw CityMapError.PlaceNearStreet
         }
     }
     
@@ -108,6 +122,19 @@ public struct CityMap: EventEmitting {
         try canAdd(tile: tile)
         
         try tileLayer.addTile(tile: tile)
+        
+        /// adding map statistics for supporting tile
+        if let mapStatistical = tile as? MapStatistical {
+            statisticsLayerContainer.addStatistics(
+                at: tile,
+                statistical: mapStatistical
+            )
+        }
+        
+        /// adding graph node for supporting tile
+        if let graphable = tile as? Graphable {
+            graph.addNodes([graphable.asNode()])
+        }
         
         try emit(event: CityMapEvent.AddTile, payload: tile)
     }
@@ -149,14 +176,20 @@ public struct CityMap: EventEmitting {
                 throw CityMapError.TileNotRemoveable
             }
             
-            if tile is MapStatistical {
+            tileLayer.remove(tile: tile)
+            
+            /// removing map statistics for supporting tile
+            if let mapStatistical = tile as? MapStatistical {
                 statisticsLayerContainer.removeStatistics(
                     at: tile,
-                    statistical: tile as! MapStatistical // tailor:disable
+                    statistical: mapStatistical
                 )
             }
             
-            tileLayer.remove(tile: tile)
+            /// remobing graph node for supporting tile
+            if let graphable = tile as? Graphable {
+                graph.removeNodes([graphable.asNode()])
+            }
             
             try emit(event: CityMapEvent.RemoveTile, payload: tile)
         }
@@ -195,13 +228,6 @@ public struct CityMap: EventEmitting {
     */
     public mutating func plopp(plopp plopp: Ploppable) throws {
         try add(tile: plopp)
-        
-        if plopp is MapStatistical {
-            statisticsLayerContainer.addStatistics(
-                at: plopp,
-                statistical: plopp as! MapStatistical // tailor:disable
-            )
-        }
     }
     
     /**
