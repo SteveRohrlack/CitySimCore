@@ -8,8 +8,10 @@
 
 import Foundation
 
-/// basic protocol describing a "Tile"
-/// Tiles are always "Locateable"
+/**
+ basic protocol describing a "Tile"
+ Tiles are always "Locateable"
+*/
 public protocol Tileable: Locateable {
     var type: TileType { get }
 }

@@ -8,8 +8,11 @@
 
 import Foundation
 
-/// the MapStatisticContainer encapsulates accessing a list of MapStatistics by
-/// adapting the "Containing" protocol
+/**
+ the MapStatisticContainer encapsulates accessing a list of MapStatistics by
+ 
+ adapting the "Containing" protocol
+*/
 public struct MapStatisticContainer: Containing {
     
     /// container for multiple MapStatistic elements

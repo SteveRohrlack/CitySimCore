@@ -14,7 +14,7 @@
     <a title="City Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CitySimCoreiOS Docs</a> (85% documented)</p>
+        <p><a href="../index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -46,10 +46,13 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/CityEvent.html">CityEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/CityMapError.html">CityMapError</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/CityMapEvents.html">CityMapEvents</a>
+                <a href="../Enums/CityMapEvent.html">CityMapEvent</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Condition.html">Condition</a>
@@ -134,6 +137,9 @@
                 <a href="../Protocols/EventSubscribing.html">EventSubscribing</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/Graphable.html">Graphable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/Locateable.html">Locateable</a>
               </li>
               <li class="nav-group-task">
@@ -150,6 +156,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/Propable.html">Propable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P14CitySimCoreiOS17RessourceCarrying">RessourceCarrying</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/RessourceConsuming.html">RessourceConsuming</a>
@@ -211,7 +220,7 @@
             <h1>City</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">City</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">City</span><span class="p">:</span> <span class="kt">EventEmitting</span></code></pre>
 
                 </div>
               </div>
@@ -221,6 +230,33 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC14CitySimCoreiOS4City16eventSubscribersGVs10DictionaryOS_9CityEventGSaPS_16EventSubscribing___"></a>
+                    <a name="//apple_ref/swift/Property/eventSubscribers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC14CitySimCoreiOS4City16eventSubscribersGVs10DictionaryOS_9CityEventGSaPS_16EventSubscribing___">eventSubscribers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container holding event subscribers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">eventSubscribers</span><span class="p">:</span> <span class="p">[</span><span class="kt">EventNameType</span><span class="p">:</span> <span class="p">[</span><span class="kt">EventSubscribing</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[:]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -332,9 +368,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap6budgetVS_6Budget10ressourcesVS_10Ressources10populationSi_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(map:budget:ressources:population:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap6budgetVS_6Budget10ressourcesVS_10Ressources10populationSi_S0_">init(map:budget:ressources:population:)</a>
+                    <a name="/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap6budgetVS_6Budget10ressourcesVS_10Ressources10populationSi20populationThresholdsGSaSi__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(map:budget:ressources:population:populationThresholds:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap6budgetVS_6Budget10ressourcesVS_10Ressources10populationSi20populationThresholdsGSaSi__S0_">init(map:budget:ressources:population:populationThresholds:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -349,7 +385,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">CityMap</span><span class="p">,</span> <span class="nv">budget</span><span class="p">:</span> <span class="kt">Budget</span><span class="p">,</span> <span class="nv">ressources</span><span class="p">:</span> <span class="kt">Ressources</span><span class="p">,</span> <span class="nv">population</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">CityMap</span><span class="p">,</span> <span class="nv">budget</span><span class="p">:</span> <span class="kt">Budget</span><span class="p">,</span> <span class="nv">ressources</span><span class="p">:</span> <span class="kt">Ressources</span><span class="p">,</span> <span class="nv">population</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">populationThresholds</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -392,6 +428,19 @@
                               <td>
                                 <div>
                                   <p>city population</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>populationThresholds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>population thresholds that trigger events</p>
 
                                 </div>
                               </td>
@@ -456,6 +505,79 @@
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>populationThresholds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>population thresholds that trigger events</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap14startingBudgetSi20populationThresholdsGSaSi__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(map:startingBudget:populationThresholds:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14CitySimCoreiOS4CitycFT3mapVS_7CityMap14startingBudgetSi20populationThresholdsGSaSi__S0_">init(map:startingBudget:populationThresholds:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>convenience initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">CityMap</span><span class="p">,</span> <span class="nv">startingBudget</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">populationThresholds</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>map</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CityMap</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startingBudget</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>starting budget</p>
+
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -467,7 +589,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-08)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

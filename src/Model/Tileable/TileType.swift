@@ -8,8 +8,10 @@
 
 import Foundation
 
-/// provides a set of basic tile types
-/// TileType is also "Equatable"
+/**
+ provides a set of basic tile types
+ TileType is also "Equatable"
+*/
 public enum TileType {
     
     /**

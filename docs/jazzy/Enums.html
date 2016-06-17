@@ -13,7 +13,7 @@
     <a title="Enums  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (85% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -45,10 +45,13 @@
             <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums/CityEvent.html">CityEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/CityMapError.html">CityMapError</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/CityMapEvents.html">CityMapEvents</a>
+                <a href="Enums/CityMapEvent.html">CityMapEvent</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Condition.html">Condition</a>
@@ -133,6 +136,9 @@
                 <a href="Protocols/EventSubscribing.html">EventSubscribing</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/Graphable.html">Graphable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/Locateable.html">Locateable</a>
               </li>
               <li class="nav-group-task">
@@ -149,6 +155,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Propable.html">Propable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:P14CitySimCoreiOS17RessourceCarrying">RessourceCarrying</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/RessourceConsuming.html">RessourceConsuming</a>
@@ -250,9 +259,9 @@ TileType is also <q>Equatable</q></p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:O14CitySimCoreiOS13CityMapEvents"></a>
-                    <a name="//apple_ref/swift/Enum/CityMapEvents" class="dashAnchor"></a>
-                    <a class="token" href="#/s:O14CitySimCoreiOS13CityMapEvents">CityMapEvents</a>
+                    <a name="/s:O14CitySimCoreiOS12CityMapEvent"></a>
+                    <a name="//apple_ref/swift/Enum/CityMapEvent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14CitySimCoreiOS12CityMapEvent">CityMapEvent</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,13 +271,13 @@ TileType is also <q>Equatable</q></p>
                       <div class="abstract">
                         <p>event names for the CityMap object</p>
 
-                        <a href="Enums/CityMapEvents.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/CityMapEvent.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CityMapEvents</span><span class="p">:</span> <span class="kt">EventNaming</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CityMapEvent</span><span class="p">:</span> <span class="kt">EventNaming</span></code></pre>
 
                         </div>
                       </div>
@@ -490,9 +499,11 @@ TileType is also <q>Equatable</q></p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Ressources in the simulation
-each has a Int parameter, depicting the actual value an adopting object 
-holds of a specific RessourceType</p>
+                        <p>Ressources in the simulation</p>
+
+<p>each has a Int parameter, depicting the actual value an adopting object</p>
+
+<p>holds of a specific RessourceType</p>
 
                         <a href="Enums/RessourceType.html" class="slightly-smaller">See more</a>
                       </div>
@@ -501,6 +512,38 @@ holds of a specific RessourceType</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RessourceType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O14CitySimCoreiOS9CityEvent"></a>
+                    <a name="//apple_ref/swift/Enum/CityEvent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14CitySimCoreiOS9CityEvent">CityEvent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>event names for the City object</p>
+
+                        <a href="Enums/CityEvent.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CityEvent</span><span class="p">:</span> <span class="kt">EventNaming</span></code></pre>
 
                         </div>
                       </div>
@@ -576,7 +619,7 @@ holds of a specific RessourceType</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-08)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

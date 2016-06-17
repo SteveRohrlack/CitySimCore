@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RessourceConsuming Protocol Reference</title>
+    <title>Graphable Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/RessourceConsuming" class="dashAnchor"></a>
-    <a title="RessourceConsuming Protocol Reference"></a>
+    <a name="//apple_ref/swift/Protocol/Graphable" class="dashAnchor"></a>
+    <a title="Graphable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">CitySimCoreiOS Reference</a>
         <img id="carat" src="../img/carat.png" />
-        RessourceConsuming Protocol Reference
+        Graphable Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -217,14 +217,16 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>RessourceConsuming</h1>
+            <h1>Graphable</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RessourceConsuming</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Graphable</span><span class="p">:</span> <span class="kt">Locateable</span></code></pre>
 
                 </div>
               </div>
-            <p>an adopting object may consume specific amounts of one or more ressources</p>
+            <p>adopting this protocol makes an object present in the pathfinding</p>
+
+<p>if something is graphable, it also needs to be Locateable</p>
 
           </section>
           <section class="section task-group-section">
@@ -233,36 +235,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP14CitySimCoreiOS18RessourceConsuming10ressourcesGSaOS_13RessourceType_"></a>
-                    <a name="//apple_ref/swift/Property/ressources" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP14CitySimCoreiOS18RessourceConsuming10ressourcesGSaOS_13RessourceType_">ressources</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>list of ressources consumed</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">ressources</span><span class="p">:</span> <span class="p">[</span><span class="kt">RessourceType</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP14CitySimCoreiOS18RessourceConsuming8consumesFT9ressourceOS_13RessourceType_Sb"></a>
-                    <a name="//apple_ref/swift/Method/consumes(ressource:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP14CitySimCoreiOS18RessourceConsuming8consumesFT9ressourceOS_13RessourceType_Sb">consumes(ressource:)</a>
+                    <a name="/s:FP14CitySimCoreiOS9Graphable7asNodesFT_GSaCSo15GKGridGraphNode_"></a>
+                    <a name="//apple_ref/swift/Method/asNodes()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP14CitySimCoreiOS9Graphable7asNodesFT_GSaCSo15GKGridGraphNode_">asNodes()</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -273,45 +248,25 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>checks wether the given RessourceType is consumed, ignoring the value</p>
+                        <p>converts Locateable to GraphNodes</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>checks wether the given RessourceType is consumed, ignoring the value</p>
+                        <p>converts Locateable to GraphNodes</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">consumes</span><span class="p">(</span><span class="n">ressource</span> <span class="nv">ressource</span><span class="p">:</span> <span class="kt">RessourceType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">asNodes</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">GKGridGraphNode</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
                       <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>ressource</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the RessourceType to search for</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
                         <h4>Return Value</h4>
-                        <p>Bool</p>
+                        <p>array of GraphNodes representing the location</p>
 
                       </div>
                     </section>

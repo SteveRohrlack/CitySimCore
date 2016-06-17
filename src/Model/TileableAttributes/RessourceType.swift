@@ -8,9 +8,13 @@
 
 import Foundation
 
-/// Ressources in the simulation
-/// each has a Int parameter, depicting the actual value an adopting object 
-/// holds of a specific RessourceType
+/**
+ Ressources in the simulation
+ 
+ each has a Int parameter, depicting the actual value an adopting object
+ 
+ holds of a specific RessourceType
+*/
 public enum RessourceType {
     
     /// Electricity

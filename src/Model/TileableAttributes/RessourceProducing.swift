@@ -8,8 +8,11 @@
 
 import Foundation
 
-/// an adopting object is seen as producing a fixed amount of one
-/// specific ressource
+/**
+ an adopting object is seen as producing a fixed amount of one
+ 
+ specific ressource
+*/
 public protocol RessourceProducing {
     
     /// ressource produced

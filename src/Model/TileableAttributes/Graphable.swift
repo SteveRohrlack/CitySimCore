@@ -9,12 +9,15 @@
 import Foundation
 import GameplayKit
 
-/// adopting this protocol makes an object present in the pathfinding
-/// if something is graphable, it also needs to be Locateable
+/**
+ adopting this protocol makes an object present in the pathfinding
+ 
+ if something is graphable, it also needs to be Locateable
+*/
 public protocol Graphable: Locateable {
     
     /**
-     converts Locateable to GraphNode
+     converts Locateable to GraphNodes
      
      - returns: array of GraphNodes representing the location
     */
@@ -24,7 +27,7 @@ public protocol Graphable: Locateable {
 extension Graphable {
 
     /**
-     converts Locateable to GraphNode
+     converts Locateable to GraphNodes
      
      - returns: GraphNode representation of location
      */

@@ -8,8 +8,11 @@
 
 import Foundation
 
-/// the ConditionContainer encapsulates accessing a list of conditions by 
-/// adapting the "Containing" protocol
+/**
+ the ConditionContainer encapsulates accessing a list of conditions by
+ 
+ adapting the "Containing" protocol
+*/
 public struct ConditionContainer: Containing {
     
     /// container for multiple Condition elements

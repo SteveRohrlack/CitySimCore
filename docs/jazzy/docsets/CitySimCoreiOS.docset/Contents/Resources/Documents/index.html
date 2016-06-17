@@ -13,7 +13,7 @@
     <a title="CitySimCoreiOS  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (85% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -45,10 +45,13 @@
             <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums/CityEvent.html">CityEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/CityMapError.html">CityMapError</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/CityMapEvents.html">CityMapEvents</a>
+                <a href="Enums/CityMapEvent.html">CityMapEvent</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/Condition.html">Condition</a>
@@ -133,6 +136,9 @@
                 <a href="Protocols/EventSubscribing.html">EventSubscribing</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/Graphable.html">Graphable</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/Locateable.html">Locateable</a>
               </li>
               <li class="nav-group-task">
@@ -149,6 +155,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Propable.html">Propable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:P14CitySimCoreiOS17RessourceCarrying">RessourceCarrying</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/RessourceConsuming.html">RessourceConsuming</a>
@@ -211,24 +220,28 @@
             <p>This is sort of my personal swift playground - nothing special.</p>
 <a href='#citysimcore' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='citysimcore'>CitySimCore</h1>
 
-<p>I&rsquo;ll be working on a simplistic city simulation. This repository
-is intended to represent only the simulation data and logic, no UI.</p>
+<p>I&rsquo;ll be working on a simplistic city simulation implemented in swift.
+This repository is intended to represent only the
+simulation data and logic, no UI.</p>
 
-<p>The simulation works on a 2D representation of a city.</p>
+<p>CitySimCore is shipped as framework for iOS and macOS.</p>
 <a href='#data_structure' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='data_structure'>Data structure</h2>
 
-<p>The following describes the current state of the data structure
-the simulation will use.</p>
+<p>The following describes the underlying data structure
+the simulation uses.</p>
 
 <p>This section is also meant to elaborate on and describe
 specific terms related to the data structure.</p>
 <a href='#overview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='overview'>Overview</h3>
+
+<p>The simulation uses a 2-dimensional representation of a map.</p>
 <a href='#city' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='city'>City</h3>
 
-<p>The <q>City</q> is composed of a multi-layerd map (see CityMap) and
-multiple statistical information.</p>
+<p>The <q>City</q> is composed of a multi-layerd map (see CityMap)
+and multiple statistical information.</p>
 
-<p>These information include:</p>
+<p>Statistical information that doesn&rsquo;t apply to the map is
+represented in attributes of the City object, such as:</p>
 
 <ul>
 <li><strong>Budget:</strong> current budget and ongoing cost</li>
@@ -238,25 +251,42 @@ multiple statistical information.</p>
 <a href='#citymap' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='citymap'>CityMap</h3>
 
 <p>The map is composed of multiple <q>layers</q>, each holding information
-regarding a different aspects of the map (for example: land value).</p>
+regarding a different aspects of the map, for example:</p>
+
+<ul>
+<li>tiles (actual game objects)</li>
+<li>graph (graph nodes for pathfinding)</li>
+<li>Air Pollution (statistic data)</li>
+<li>Noise (statistic data)</li>
+<li>Land Value (statistic data)</li>
+</ul>
+
+<p>see Layer</p>
 <a href='#cell' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cell'>Cell</h3>
 
 <p>A single address (1x1) on a layer is called a <q>cell</q>.</p>
 <a href='#layer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='layer'>Layer</h3>
 
-<p>There are currently two different types of layers:</p>
+<p>There are currently three different types of layers:</p>
 
 <ul>
-<li>TileLayer: contains <q>tiles</q></li>
+<li>TileLayer: contains <q>tiles</q> (game objects)</li>
 <li>StatisticsLayer: contains statistic information</li>
+<li>Graph: contains nodes for pathfinding</li>
 </ul>
 <a href='#tile_layer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='tile_layer'>Tile Layer</h4>
 
-<p>This layer may contain several <q>tiles</q>.</p>
+<p>This layer may contain several tiles.</p>
+
+<p>When adding tiles like <q>small park</q>, <q>street</q> or <q>hospital</q>,
+they reside on the tile layer.</p>
 <a href='#statistic_layer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='statistic_layer'>Statistic Layer</h4>
 
-<p>A StatisticLayer contains numeric values regarding statistics for
+<p>A StatisticLayer contains values regarding statistics for
 a certain aspect of the map.</p>
+
+<p>When adding tiles like <q>small park</q>, <q>street</q> or <q>hospital</q>,
+their statistic data resides on statistic layers.</p>
 
 <p>Statistical values are numeric.</p>
 
@@ -272,6 +302,13 @@ a certain aspect of the map.</p>
 <li>Land Value</li>
 <li>etc.</li>
 </ul>
+<a href='#graph' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='graph'>Graph</h4>
+
+<p>The graph contains nodes for each game object that is needed for
+pathfinding.</p>
+
+<p>When adding a <q>street</q> tile, all <q>cells</q> of that tile
+produce a graph node that resides on the graph.</p>
 <a href='#tile' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='tile'>Tile</h3>
 
 <p>A tile must cover at least one cell.
@@ -314,8 +351,8 @@ A ploppable has a cost for buying it and ongoing cost to cover it&rsquo;s operat
 <p>Examples include: residential zone, commercial zone, industrial zone</p>
 <a href='#tile_attributes' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='tile_attributes'>Tile Attributes</h4>
 
-<p>Tiles may also adopt one or more of the following behaviours.
-These behaviours are implemented using protocol composition.</p>
+<p>Tiles may adopt one or more of the following behaviours.
+These behaviours are implemented using protocols.</p>
 
 <ul>
 <li><strong>not destructable:</strong> tile can not be removed from map</li>
@@ -325,8 +362,9 @@ These behaviours are implemented using protocol composition.</p>
 <li><strong>contains budget information:</strong> one time cost and/or running cost</li>
 <li><strong>produces one ressource:</strong> see <q>Ressources</q></li>
 <li><strong>consumes one or more ressources:</strong> see <q>Ressources</q></li>
+<li><strong>graphable:</strong> is part of the pathfinding</li>
 </ul>
-<a href='#example_content_objects_with_attributes' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='example_content_objects_with_attributes'>example content objects with attributes</h5>
+<a href='#example_content_objects_with_protocol_adoption' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='example_content_objects_with_protocol_adoption'>example content objects with protocol adoption</h5>
 
 <p><img src="https://raw.githubusercontent.com/SteveRohrlack/CitySimCore/master/docs/readme/content-objects-examples.png" alt="image"></p>
 <a href='#ressources' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='ressources'>Ressources</h3>
@@ -338,6 +376,23 @@ produced and consumed.</p>
 <li>electricity</li>
 <li>water</li>
 </ul>
+
+<p>A ressource producer can produce only one ressource, for example:</p>
+<pre class="highlight plaintext"><code>A power plant produces electricity.
+</code></pre>
+
+<p>A ressource consumer can consume multiple ressources, for example:</p>
+<pre class="highlight plaintext"><code>A small fountain park consumes electricity and water.
+</code></pre>
+<a href='#ressource_transport_through_the_city' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='ressource_transport_through_the_city'>Ressource transport through the city</h4>
+
+<p>A tile can adopt the RessourceCarrying protocol to signal the simulation
+that it is capable of transporting ressources.</p>
+
+<p>A ressource carrier is always <q>graphable</q>, meaning that it is neccessary
+for any pathfinding.</p>
+
+<p>This is currently only planned for streets (StreetPlopp).</p>
 <a href='#event_system' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='event_system'>Event system</h2>
 
 <p>The following objects are emitting events by adopting the <q>EventEmitting</q>
@@ -345,8 +400,13 @@ protocol.</p>
 
 <p>Each event is given a payload.</p>
 
-<p>Actors (see <q>Actors</q>) heavily make use of the event system.</p>
-<a href='#citymapevents' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='citymapevents'>CityMapEvents</h3>
+<p>Actors make use of the event system.</p>
+<a href='#cityevent' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cityevent'>CityEvent</h3>
+
+<ul>
+<li>Event <q>PopulationReachedThreshold</q>, payload of type <q>Int</q></li>
+</ul>
+<a href='#citymapevent' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='citymapevent'>CityMapEvent</h3>
 
 <ul>
 <li>Event <q>AddTile</q>, payload of type <q>Tileable</q></li>
@@ -401,17 +461,29 @@ from the budget and adds collected taxes to it.</p>
 <a href='#electricity' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='electricity'>Electricity</h4>
 
 <p>The <q>Electricity</q> actor manages the current state of production and
-consumption of electricity.</p>
+consumption of electricity, it also updates tiles on the TileLayer
+to reflect if they get electricity or not (condition: .NotPowered).</p>
 
 <p>It subscribes to the <q>AddTile</q> and <q>RemoveTile</q> events of the CityMap.</p>
 
 <p>When adding or removing a tile to/from the TileLayer that produce or
 consume ressources (are <q>RessourceProducing</q> or <q>RessourceConsuming</q>),
-they will be handled by this actor.</p>
+they will be handled by this actor - it updates the internal state
+regrading electricity in the City object and also updates the Condition
+of relevant tiles.</p>
 <a href='#progress' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='progress'>Progress</h2>
 
 <p>I&rsquo;m currently extending the data model for non-map related statistics.
 Also, the <q>Actor</q> api is beeing created and tested by implementing actors.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='installation'>installation</h3>
+
+<p>Carthage support is planned</p>
+<a href='#instanciation_simple' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='instanciation_simple'>instanciation (simple)</h3>
+<pre class="highlight plaintext"><code>var cityMap = CityMap(height: 1024, width: 1024)
+var city = City(map: cityMap, startingBudget: 50000)
+var simulation = Simulation(city: city)
+</code></pre>
 <a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='setup'>setup</h2>
 <pre class="highlight plaintext"><code>bundle install
 </code></pre>
@@ -433,7 +505,7 @@ Also, the <q>Actor</q> api is beeing created and tested by implementing actors.<
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-08)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

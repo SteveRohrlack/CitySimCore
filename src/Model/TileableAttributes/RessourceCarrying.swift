@@ -8,7 +8,11 @@
 
 import Foundation
 
-/// an adopting object is a ressource carrier
-/// ressource carrier are always graphable to allow pathfinding on them
+/**
+ an adopting object is a ressource carrier
+ 
+ ressource carrier are always graphable to allow pathfinding on them
+*/
 public protocol RessourceCarrying: Graphable {
+    
 }

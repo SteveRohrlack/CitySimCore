@@ -8,8 +8,10 @@
 
 import Foundation
 
-/// basic protocol describing a "Zoneable" Tile
-/// a Zoneable is a Tile because it is always "Tileable"
+/**
+ basic protocol describing a "Zoneable" Tile
+ a Zoneable is a Tile because it is always "Tileable"
+*/
 public protocol Zoneable: Tileable {
     
     // every zoneable may have a content
