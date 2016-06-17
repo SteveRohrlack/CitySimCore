@@ -37,10 +37,11 @@ represented in attributes of the City object, such as:
 The map is composed of multiple "layers", each holding information
 regarding a different aspects of the map, for example:
 
-* tiles
-* Air Pollution
-* Noise
-* Land Value
+* tiles (actual game objects)
+* graph (graph nodes for pathfinding)
+* Air Pollution (statistic data)
+* Noise (statistic data)
+* Land Value (statistic data)
 
 see Layer
 
@@ -50,19 +51,26 @@ A single address (1x1) on a layer is called a "cell".
 
 ### Layer
 
-There are currently two different types of layers:
+There are currently three different types of layers:
 
-* TileLayer: contains "tiles"
+* TileLayer: contains "tiles" (game objects)
 * StatisticsLayer: contains statistic information
+* Graph: contains nodes for pathfinding
 
 #### Tile Layer
 
 This layer may contain several tiles.
 
+When adding tiles like "small park", "street" or "hospital",
+they reside on the tile layer.
+
 #### Statistic Layer
 
-A StatisticLayer contains numeric values regarding statistics for
+A StatisticLayer contains values regarding statistics for
 a certain aspect of the map.
+
+When adding tiles like "small park", "street" or "hospital",
+their statistic data resides on statistic layers.
 
 Statistical values are numeric.
 
@@ -76,6 +84,14 @@ It is planned to implement numerous statistical layers, for example:
 * Crime Probability
 * Land Value
 * etc.
+
+#### Graph
+
+The graph contains nodes for each game object that is needed for
+pathfinding.
+
+When adding a "street" tile, all "cells" of that tile
+produce a graph node that resides on the graph.
 
 ### Tile
 
@@ -131,6 +147,7 @@ These behaviours are implemented using protocols.
 * **contains budget information:** one time cost and/or running cost
 * **produces one ressource:** see "Ressources"
 * **consumes one or more ressources:** see "Ressources"
+* **graphable:** is part of the pathfinding
 
 ##### example content objects with protocol adoption
 
@@ -156,6 +173,9 @@ A ressource consumer can consume multiple ressources, for example:
 
 A tile can adopt the RessourceCarrying protocol to signal the simulation
 that it is capable of transporting ressources.
+
+A ressource carrier is always "graphable", meaning that it is neccessary
+for any pathfinding.
 
 This is currently only planned for streets (StreetPlopp).
 

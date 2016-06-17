@@ -105,8 +105,13 @@ class CitySimCoreTests: XCTestCase {
         
         subject!.advance()
         
-        let modifiedElectricityConsumer = subject!.city.map.tileLayer[1, 0] as! Conditionable
-        XCTAssertTrue(modifiedElectricityConsumer.conditions.has(content: .NotPowered))
+        let modifiedElectricityConsumer = subject!.city.map.tileLayer[1, 0]
+        guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
+            XCTFail("needs to be Conditionable")
+            return
+        }
+        
+        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
     }
     
     func testUpdatesConsumersIfSufficientProduction() {
@@ -137,8 +142,13 @@ class CitySimCoreTests: XCTestCase {
         
         subject!.advance()
 
-        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1] as! Conditionable
-        XCTAssertFalse(modifiedElectricityConsumer.conditions.has(content: .NotPowered))
+        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1]
+        guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
+            XCTFail("needs to be Conditionable")
+            return
+        }
+        
+        XCTAssertFalse(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
     }
 
 }

@@ -175,4 +175,5 @@ public class ElectricityActor: Acting, EventSubscribing {
         /// reset recalculation flag
         stage.ressources.electricityNeedsRecalculation = false
     }
+
 }
