@@ -174,26 +174,40 @@ public class ElectricityActor: Acting, EventSubscribing {
             return true
         }
         
-        /// if a consumer is supplied with electricity by one producer,
-        /// it doesn't need to be supplied by another one
-        var suppliedConsumers: [TileLayer.ValueType] = []
+        /// aggregate paths from producers to consumers
+        var electricityPaths: [[GKGraphNode]] = []
         
         /// track electricity flow on ressource carriers by temporarily adding
         /// producers and consumers to the graph
         for producer in allProducers {
             let producerNodes = producer.asNodes()
             
+            guard let startNode = producerNodes.first else {
+                continue
+            }
+            
             /// temporary inclusion of producer in ressource grid
             stage.map.graph.addNodes(producerNodes)
             
-            for consumer in allConsumers {                
+            for consumer in allConsumers {
+                /// check if consumer is already connected to a producer
+                /// if suppliedConsumers.contains(consumer)
+                
                 let consumerNodes = consumer.asNodes()
+                
+                guard let endNode = consumerNodes.first else {
+                    continue
+                }
                 
                 /// temporary inclusion of consumer in ressource grid
                 stage.map.graph.addNodes(consumerNodes)
                 
                 /// track electricity flow
+                let path = stage.map.graph.findPathFromNode(startNode, toNode: endNode)
                 
+                if path.count > 0 {
+                    electricityPaths.append(path)
+                }
                 
                 /// remove consumer from ressource grid
                 stage.map.graph.removeNodes(consumerNodes)
@@ -202,6 +216,13 @@ public class ElectricityActor: Acting, EventSubscribing {
             /// remove producer from ressource grid
             stage.map.graph.removeNodes(producerNodes)
         }
+        
+        /// if a consumer is supplied with electricity by one producer,
+        /// it doesn't need to be supplied by another one
+        var suppliedConsumers: [TileLayer.ValueType] = []
+        
+        /// sort paths
+        
         
         /// reset recalculation flag
         stage.ressources.electricityNeedsRecalculation = false

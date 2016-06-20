@@ -347,7 +347,7 @@ class ElectricityActorTests: XCTestCase {
             XCTFail("should not fail")
         }
         
-        /*subject!.advance()
+        subject!.advance()
         
         let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1]
         guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
@@ -355,7 +355,7 @@ class ElectricityActorTests: XCTestCase {
             return
         }
         
-        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))*/
+        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
     }
 
     /// MARK: performance
