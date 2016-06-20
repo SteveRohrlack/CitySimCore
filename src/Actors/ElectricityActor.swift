@@ -155,28 +155,28 @@ public class ElectricityActor: Acting, EventSubscribing {
         /// retrieve all electricity producers and consumers
         let allProducers = stage.map.tileLayer.values.filter { (tile) in
             guard let producer = tile as? RessourceProducing where producer.ressource >= .Electricity(nil) else {
-                return true
+                return false
             }
             
-            return false
+            return true
         }
         
         let allConsumers = stage.map.tileLayer.values.filter { (tile) in
-            guard let consumer = tile as? RessourceConsuming where consumer.consumes(ressource: .Electricity(nil)) else {
-                return true
+            guard let consumer = tile as? RessourceConsuming where consumer is Conditionable && consumer.consumes(ressource: .Electricity(nil)) else {
+                return false
             }
             
-            return false
+            return true
         }
         
         /// if a consumer is supplied with electricity by one producer,
         /// it doesn't need to be supplied by another one
-        var suppliedConsumers: [TileLayer.ValueType?] = []
+        var suppliedConsumers: [TileLayer.ValueType] = []
         
         /// track electricity flow on ressource carriers by temporarily adding
         /// producers and consumers to the graph
         for producer in allProducers {
-            guard let producer = producer as? Graphable else {
+            guard let producer = producer else {
                 continue
             }
             
@@ -186,7 +186,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             stage.map.graph.addNodes(producerNodes)
             
             for consumer in allConsumers {
-                guard let consumer = consumer as? Graphable else {
+                guard let consumer = consumer else {
                     continue
                 }
                 

@@ -88,3 +88,15 @@ extension Locateable {
         return forEach
     }
 }
+
+/**
+ operator "==" to allow comparing Locations
+ 
+ - parameter lhs: Locateable
+ - parameter rhs: Locateable
+ 
+ - returns: Bool
+ */
+public func == (lhs: Locateable, rhs: Locateable) -> Bool {
+    return lhs.origin == rhs.origin && lhs.height == rhs.height && lhs.width == rhs.width
+}

@@ -57,15 +57,3 @@ public func + (location: Locateable, radius: Int) -> Locateable {
     
     return Location(origin: newOrigin, height: newHeight, width: newWidth)
 }
-
-/**
- operator "==" to allow comparing Locations
- 
- - parameter lhs: location
- - parameter rhs: location
- 
- - returns: Bool
- */
-public func == (lhs: Location, rhs: Location) -> Bool {
-    return lhs.origin == rhs.origin && lhs.height == rhs.height && lhs.width == rhs.width
-}

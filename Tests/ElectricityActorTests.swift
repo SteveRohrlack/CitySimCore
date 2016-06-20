@@ -40,6 +40,8 @@ class ElectricityActorTests: XCTestCase {
         } catch {
             XCTFail("should not fail")
         }
+        
+        subject!.city.ressources.electricityNeedsRecalculation = false
     }
     
     override func tearDown() {
@@ -104,7 +106,6 @@ class ElectricityActorTests: XCTestCase {
         let electricityConsumerOrigin = (1, 0)
         let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: electricityConsumerOrigin, consumesAmount: 1)
         
-        subject!.city.ressources.electricityNeedsRecalculation = false
         do {
             try subject!.city.map.plopp(plopp: electricityConsumer)
         } catch {
@@ -123,7 +124,6 @@ class ElectricityActorTests: XCTestCase {
         let electricityConsumerOrigin = (1, 0)
         let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: electricityConsumerOrigin, consumesAmount: 100)
         
-        subject!.city.ressources.electricityNeedsRecalculation = false
         do {
             try subject!.city.map.plopp(plopp: electricityConsumer)
         } catch {
@@ -176,7 +176,6 @@ class ElectricityActorTests: XCTestCase {
     func testAddProducerIfDemandNotGreaterThanSupply() {
         subject!.city.ressources.electricitySupply = 1
         subject!.city.ressources.electricityDemand = 0
-        subject!.city.ressources.electricityNeedsRecalculation = false
         
         /// adding electricity producer
         let electricityProducer = ElectricityProducerPloppTestDouble(origin: (1, 0), producesAmount: 1)
@@ -192,7 +191,6 @@ class ElectricityActorTests: XCTestCase {
     func testAddProducerIfDemandGreaterThanSupply() {
         subject!.city.ressources.electricitySupply = 0
         subject!.city.ressources.electricityDemand = 1
-        subject!.city.ressources.electricityNeedsRecalculation = false
         
         /// adding electricity producer
         let electricityProducer = ElectricityProducerPloppTestDouble(origin: (1, 0), producesAmount: 1)
@@ -312,7 +310,7 @@ class ElectricityActorTests: XCTestCase {
             XCTFail("should not fail")
         }
         
-        /*subject!.advance()
+        subject!.advance()
 
         let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1]
         guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
@@ -321,7 +319,6 @@ class ElectricityActorTests: XCTestCase {
         }
         
         XCTAssertFalse(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
-        */
     }
     
     func testUpdatesConsumersIfInsufficientProduction() {
@@ -335,7 +332,7 @@ class ElectricityActorTests: XCTestCase {
         }
         
         /// adding electricity consumer
-        let consumedElectricityAmount = producedElectricityAmount / 2
+        let consumedElectricityAmount = producedElectricityAmount * 2
         
         let electricityConsumer1Origin = (1, electricityProducer.maxX + 1)
         let electricityConsumer1 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer1Origin, consumesAmount: consumedElectricityAmount)
@@ -358,8 +355,7 @@ class ElectricityActorTests: XCTestCase {
             return
         }
         
-        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
-        */
+        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))*/
     }
 
     /// MARK: performance
@@ -395,9 +391,11 @@ class ElectricityActorTests: XCTestCase {
         }
         
         /// adding electricity consumers
+        let consumedElectricityAmount = (producedElectricityAmount / 25) + 1
+        
         for i in 4.stride(through: 54, by: 2) {
             let origin = (1, i)
-            let consumer = ElectricityConsumerPloppTestDouble(origin: origin, consumesAmount: 20)
+            let consumer = ElectricityConsumerPloppTestDouble(origin: origin, consumesAmount: consumedElectricityAmount)
             
             do {
                 try subject!.city.map.plopp(plopp: consumer)
