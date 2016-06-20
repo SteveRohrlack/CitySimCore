@@ -121,7 +121,7 @@ public struct CityMap: EventEmitting {
     private mutating func add(tile tile: Tileable) throws {
         try canAdd(tile: tile)
         
-        try tileLayer.addTile(tile: tile)
+        try tileLayer.add(tile: tile)
         
         /// adding map statistics for supporting tile
         if let mapStatistical = tile as? MapStatistical {

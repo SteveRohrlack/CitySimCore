@@ -54,7 +54,7 @@ public struct TileLayer: Array2DMapping {
      
      - throws TileableLayerError.TileCantFit if the given tile is out of  the layer bounds
     */
-    mutating func addTile(tile tile: ValueType) throws {
+    mutating func add(tile tile: ValueType) throws {
         guard tile.originY >= 0 && tile.originX >= 0 && tile.maxY < rows &&  tile.maxX < columns else {
             throw TileLayerError.TileCantFit
         }
@@ -90,11 +90,48 @@ public struct TileLayer: Array2DMapping {
                 return
             }
             
-            if !(tiles.contains { (element: ValueType) in
-                return (element.origin == tile.origin && element.type == tile.type)
-                }) {
-                tiles.append(tile)
+            let tileAdded = (tiles.contains { (element: ValueType) in
+                return element.origin == tile.origin
+            })
+            
+            guard !tileAdded else {
+                return
             }
+            
+            tiles.append(tile)
+        }
+        
+        return tiles
+    }
+    
+    /**
+     filters tiles using a supplied filter method
+     
+     - parameter method: custom filter method
+     
+     - returns: list of tiles
+    */
+    func filter(method: (tile: ValueType) -> Bool) -> [ValueType] {
+        var tiles: [ValueType] = []
+        
+        for tile in values {
+            guard let tile = tile else {
+                continue
+            }
+            
+            let tileAdded = (tiles.contains { (element: ValueType) in
+                return element.origin == tile.origin
+            })
+
+            guard !tileAdded else {
+                continue
+            }
+            
+            guard method(tile: tile) else {
+                continue
+            }
+            
+            tiles.append(tile)
         }
         
         return tiles

@@ -45,7 +45,7 @@ class TileLayerTests: XCTestCase {
         let tile = SmallResidentialZoneTestDouble(origin: (1, 1))
         
         do {
-            try subject!.addTile(tile: tile)
+            try subject!.add(tile: tile)
         }
         catch {
             XCTFail("should not fail")
@@ -79,7 +79,7 @@ class TileLayerTests: XCTestCase {
         var errorOccured = false
         
         do {
-            try subject!.addTile(tile: tile)
+            try subject!.add(tile: tile)
         } catch let e as TileLayerError {
             XCTAssertEqual(e, TileLayerError.TileCantFit)
             errorOccured = true
@@ -97,8 +97,8 @@ class TileLayerTests: XCTestCase {
         let tile2 = SmallResidentialZoneTestDouble(origin: (2, 2))
         
         do {
-            try subject!.addTile(tile: tile1)
-            try subject!.addTile(tile: tile2)
+            try subject!.add(tile: tile1)
+            try subject!.add(tile: tile2)
         } catch {
             XCTFail("should not fail")
         }
@@ -108,4 +108,22 @@ class TileLayerTests: XCTestCase {
         XCTAssertEqual(2, tiles.count)
     }
     
+    func testFilter() {
+        let tile1 = SmallResidentialZoneTestDouble(origin: (0, 0))
+        let tile2 = SmallParkPloppTestDouble(origin: (2, 2))
+        
+        do {
+            try subject!.add(tile: tile1)
+            try subject!.add(tile: tile2)
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        let tiles = subject!.filter { (tile) in
+            return tile is RessourceConsuming
+        }
+        
+        XCTAssertEqual(1, tiles.count)
+    }
+
 }

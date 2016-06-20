@@ -130,8 +130,8 @@ public class ElectricityActor: Acting, EventSubscribing {
         
         /// no production, every conditionable consumer should get condition "not powered"
         guard stage.ressources.electricitySupply > 0 else {
-            let allConditionableElectricityConsumers = stage.map.tileLayer.values.filter { (tile) in
-                guard let tile = tile as? RessourceConsuming where tile is Conditionable && tile.consumes(ressource: .Electricity(nil)) else {
+            let allConsumers = stage.map.tileLayer.filter { (tile) in
+                guard let consumer = tile as? RessourceConsuming where consumer is Conditionable && consumer.consumes(ressource: .Electricity(nil)) else {
                     return false
                 }
                 
@@ -139,21 +139,26 @@ public class ElectricityActor: Acting, EventSubscribing {
             }
             
             /// update tile status to "not powered"
-            allConditionableElectricityConsumers.forEach { (tile) in
-                guard let tile = tile else {
-                    return
-                }
-                
+            allConsumers.forEach { (tile) in               
                 var conditionableTile = tile as! Conditionable  // tailor:disable
                 conditionableTile.conditions.add(content: .NotPowered)
-                stage.map.tileLayer[tile.origin] = conditionableTile as? TileLayer.ValueType
+                
+                guard let changedTile = conditionableTile as? TileLayer.ValueType else {
+                    fatalError()
+                }
+                
+                do {
+                    try self.stage.map.tileLayer.add(tile: changedTile)
+                } catch {
+                    fatalError()
+                }
             }
             
             return
         }
         
         /// retrieve all electricity producers and consumers
-        let allProducers = stage.map.tileLayer.values.filter { (tile) in
+        let allProducers = stage.map.tileLayer.filter { (tile) in
             guard let producer = tile as? RessourceProducing where producer.ressource >= .Electricity(nil) else {
                 return false
             }
@@ -161,7 +166,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             return true
         }
         
-        let allConsumers = stage.map.tileLayer.values.filter { (tile) in
+        let allConsumers = stage.map.tileLayer.filter { (tile) in
             guard let consumer = tile as? RessourceConsuming where consumer is Conditionable && consumer.consumes(ressource: .Electricity(nil)) else {
                 return false
             }
@@ -176,20 +181,12 @@ public class ElectricityActor: Acting, EventSubscribing {
         /// track electricity flow on ressource carriers by temporarily adding
         /// producers and consumers to the graph
         for producer in allProducers {
-            guard let producer = producer else {
-                continue
-            }
-            
             let producerNodes = producer.asNodes()
             
             /// temporary inclusion of producer in ressource grid
             stage.map.graph.addNodes(producerNodes)
             
-            for consumer in allConsumers {
-                guard let consumer = consumer else {
-                    continue
-                }
-                
+            for consumer in allConsumers {                
                 let consumerNodes = consumer.asNodes()
                 
                 /// temporary inclusion of consumer in ressource grid
