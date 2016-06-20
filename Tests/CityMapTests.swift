@@ -118,7 +118,7 @@ class CityMapTests: XCTestCase {
         XCTAssertNotNil(subject!.tileLayer[0, 0])
     }
     
-    func testAddGraphable() {
+    func testAddRessourceCarrying() {
         let streetPlopp = StreetPloppTestDouble(origin: (0, 0), height: 1, width: 2)
         
         do {
@@ -195,7 +195,7 @@ class CityMapTests: XCTestCase {
         XCTAssertNil(subject!.tileLayer[0, 0])
     }
     
-    func testRemoveGraphable() {
+    func testRemoveRessourceCarrying() {
         let location = Location(origin: (0, 0))
         
         let streetPlopp = StreetPloppTestDouble(origin: location.origin, height: 1, width: 2)

@@ -11,8 +11,8 @@ import Foundation
 /**
  an adopting object is a ressource carrier
  
- ressource carrier are always graphable to allow pathfinding on them
+ ressource carriers are always added to the map graph
 */
-public protocol RessourceCarrying: Graphable {
+public protocol RessourceCarrying {
     
 }

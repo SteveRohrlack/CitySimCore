@@ -20,7 +20,7 @@ import GameplayKit
  - StatisticlayersContainer holding all statistical layers
  
  Additionaly, the CityMap contains a Graph representation of Locations that are
- "Graphable".
+ RessourceCyrrying.
  
  CityMap emits events, see CityMapEvent:
  - AddTile: when a tile was successfully added, payload: new tile
@@ -132,7 +132,7 @@ public struct CityMap: EventEmitting {
         }
         
         /// adding graph nodes for supporting tile
-        if tile is Graphable {
+        if tile is RessourceCarrying {
             graph.addNodes(tile.asNodes())
         }
         
@@ -188,7 +188,7 @@ public struct CityMap: EventEmitting {
             }
             
             /// removing graph nodes for supporting tile
-            if tile is Graphable {
+            if tile is RessourceCarrying {
                 graph.removeNodes(tile.asNodes())
             }
             

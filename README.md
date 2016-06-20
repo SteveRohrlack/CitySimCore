@@ -147,7 +147,6 @@ These behaviours are implemented using protocols.
 * **contains budget information:** one time cost and/or running cost
 * **produces one ressource:** see "Ressources"
 * **consumes one or more ressources:** see "Ressources"
-* **graphable:** is part of the pathfinding
 
 ##### example content objects with protocol adoption
 
@@ -174,8 +173,7 @@ A ressource consumer can consume multiple ressources, for example:
 A tile can adopt the RessourceCarrying protocol to signal the simulation
 that it is capable of transporting ressources.
 
-A ressource carrier is always "graphable", meaning that it is neccessary
-for any pathfinding.
+A ressource carrier is always added to the map graph.
 
 This is currently only planned for streets (StreetPlopp).
 

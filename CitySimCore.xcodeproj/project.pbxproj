@@ -66,8 +66,6 @@
 		E22D20841CEB341100E97894 /* StatisticlayersContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */; };
 		E23A8A1D1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */; };
 		E23A8A1E1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */; };
-		E23D73551D13E51C00784CAB /* Graphable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D73541D13E51C00784CAB /* Graphable.swift */; };
-		E23D73561D13E51C00784CAB /* Graphable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D73541D13E51C00784CAB /* Graphable.swift */; };
 		E24574D11D09A0EF00CA1A26 /* MapStatisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */; };
 		E24574D21D09A0EF00CA1A26 /* MapStatisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */; };
 		E24574D41D09A16600CA1A26 /* ContainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24574D31D09A16600CA1A26 /* ContainingTests.swift */; };
@@ -208,7 +206,6 @@
 		E22D207F1CEB33FE00E97894 /* StatisticsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsLayer.swift; sourceTree = "<group>"; };
 		E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticlayersContainer.swift; sourceTree = "<group>"; };
 		E23A8A1C1D0ADC8100FD4DB0 /* BudgetablePloppTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetablePloppTestDouble.swift; sourceTree = "<group>"; };
-		E23D73541D13E51C00784CAB /* Graphable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graphable.swift; sourceTree = "<group>"; };
 		E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStatisticTests.swift; sourceTree = "<group>"; };
 		E24574D31D09A16600CA1A26 /* ContainingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainingTests.swift; sourceTree = "<group>"; };
 		E24574D61D09A3C700CA1A26 /* ContainingTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainingTestDouble.swift; sourceTree = "<group>"; };
@@ -308,7 +305,6 @@
 				E2EDA04E1CEDD325000464C5 /* Condition.swift */,
 				E2EDA0511CEDD330000464C5 /* Conditionable.swift */,
 				E26041331CF2D96300773A73 /* ConditionContainer.swift */,
-				E23D73541D13E51C00784CAB /* Graphable.swift */,
 				E200666B1CEC8B9000E55D4B /* MapStatistic.swift */,
 				E200666C1CEC8B9000E55D4B /* MapStatistical.swift */,
 				E2A286251CF6251F0094ECB4 /* MapStatisticContainer.swift */,
@@ -743,7 +739,6 @@
 				E22D20831CEB341100E97894 /* StatisticlayersContainer.swift in Sources */,
 				E292B5D01CEB66E2001C4A23 /* StatisticsLayerError.swift in Sources */,
 				E26041311CF2D7C100773A73 /* Simulation.swift in Sources */,
-				E23D73551D13E51C00784CAB /* Graphable.swift in Sources */,
 				E260413A1CF2DD2A00773A73 /* Budgetable.swift in Sources */,
 				E2EDA0551CEDD361000464C5 /* PlaceNearStreet.swift in Sources */,
 				E21EC7541CF8273E001F328B /* RessourceType.swift in Sources */,
@@ -830,7 +825,6 @@
 				E21EC7551CF8273E001F328B /* RessourceType.swift in Sources */,
 				E2D86D1D1CEA44E2007EABD8 /* Propable.swift in Sources */,
 				E2D86D251CEA44E2007EABD8 /* ZoneableType.swift in Sources */,
-				E23D73561D13E51C00784CAB /* Graphable.swift in Sources */,
 				E21EC75B1CF827FC001F328B /* RessourceConsuming.swift in Sources */,
 				E2663E6C1CEF2D4200B179ED /* Containing.swift in Sources */,
 				E2A2862A1CF62A0A0094ECB4 /* Budget.swift in Sources */,
