@@ -18,7 +18,7 @@ import Foundation
  (Array2DMapping) by providing a high level api to the raw data
 */
 public struct TileLayer: Array2DMapping {
-    typealias ValueType = Tileable
+    public typealias ValueType = Tileable
     
     /**
      since TileLayer adopts Array2DMapping, the number of rows must be
@@ -33,7 +33,7 @@ public struct TileLayer: Array2DMapping {
     let columns: Int
     
     /// container for values
-    var values: [ValueType?]
+    public internal(set) var values: [ValueType?]
     
     /**
      initializer
