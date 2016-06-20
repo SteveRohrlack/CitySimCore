@@ -13,7 +13,6 @@
 		E20066701CEC8B9000E55D4B /* MapStatistical.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200666C1CEC8B9000E55D4B /* MapStatistical.swift */; };
 		E20066721CEC8BA500E55D4B /* NotRemoveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066711CEC8BA500E55D4B /* NotRemoveable.swift */; };
 		E20066731CEC8BA500E55D4B /* NotRemoveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066711CEC8BA500E55D4B /* NotRemoveable.swift */; };
-		E207CF461D11293F00ACA4DC /* ElectricityActorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207CF451D11293F00ACA4DC /* ElectricityActorTests.swift */; };
 		E207CF471D11293F00ACA4DC /* ElectricityActorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207CF451D11293F00ACA4DC /* ElectricityActorTests.swift */; };
 		E207CF491D112B4D00ACA4DC /* ZoneTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207CF481D112B4D00ACA4DC /* ZoneTestDouble.swift */; };
 		E207CF4A1D112B4D00ACA4DC /* ZoneTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207CF481D112B4D00ACA4DC /* ZoneTestDouble.swift */; };
@@ -81,6 +80,7 @@
 		E24C44C21CF5D617006B9425 /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C44BE1CF5D617006B9425 /* CityMap.swift */; };
 		E24C65F81D05D3C700E73E91 /* SimulationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C65F71D05D3C700E73E91 /* SimulationTests.swift */; };
 		E24C65F91D05D3C700E73E91 /* SimulationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24C65F71D05D3C700E73E91 /* SimulationTests.swift */; };
+		E25518721D17CBA900752451 /* ElectricityActorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207CF451D11293F00ACA4DC /* ElectricityActorTests.swift */; };
 		E26041311CF2D7C100773A73 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26041301CF2D7C100773A73 /* Simulation.swift */; };
 		E26041321CF2D7C100773A73 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26041301CF2D7C100773A73 /* Simulation.swift */; };
 		E26041341CF2D96300773A73 /* ConditionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26041331CF2D96300773A73 /* ConditionContainer.swift */; };
@@ -766,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25518721D17CBA900752451 /* ElectricityActorTests.swift in Sources */,
 				E2F1DD6C1CFED3AB00E347A2 /* CityMapTests.swift in Sources */,
 				E2A9A5091D09EDE500D2A334 /* CityTests.swift in Sources */,
 				E292B5CD1CEB6209001C4A23 /* StatisticsLayerTests.swift in Sources */,
@@ -783,7 +784,6 @@
 				E2EDA0651CEDD74C000464C5 /* WaterPropTestDouble.swift in Sources */,
 				E217F7701D05CE6900FC703B /* NotRemoveablePropTestDouble.swift in Sources */,
 				E2FF89651D0802BD0065D3ED /* RessourceConsumerTestDouble.swift in Sources */,
-				E207CF461D11293F00ACA4DC /* ElectricityActorTests.swift in Sources */,
 				E24C65F81D05D3C700E73E91 /* SimulationTests.swift in Sources */,
 				E2A9A5031D09E38100D2A334 /* EventSubscriberTestDouble.swift in Sources */,
 				E2EDA05F1CEDD74C000464C5 /* SmallResidentialZoneTestDouble.swift in Sources */,
