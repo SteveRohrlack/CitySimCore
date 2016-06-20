@@ -428,10 +428,10 @@
 			children = (
 				E2EDA0571CEDD74C000464C5 /* TestDoubles */,
 				E207CF521D11335E00ACA4DC /* BudgetActorTests.swift */,
-				E207CF451D11293F00ACA4DC /* ElectricityActorTests.swift */,
 				E2A9A5081D09EDE500D2A334 /* CityTests.swift */,
 				E2F1DD6B1CFED3AB00E347A2 /* CityMapTests.swift */,
 				E24574D31D09A16600CA1A26 /* ContainingTests.swift */,
+				E207CF451D11293F00ACA4DC /* ElectricityActorTests.swift */,
 				E20B14441CE5EC420067BC91 /* LocationTests.swift */,
 				E24574D01D09A0EF00CA1A26 /* MapStatisticTests.swift */,
 				E2FF89671D0803030065D3ED /* RessourceTypeTests.swift */,

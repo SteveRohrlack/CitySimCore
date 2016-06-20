@@ -173,29 +173,37 @@ public class ElectricityActor: Acting, EventSubscribing {
         /// it doesn't need to be supplied by another one
         var suppliedConsumers: [TileLayer.ValueType?] = []
         
-        /// track electricity flow on ressource carriers and
-        /// reproduce consumption for each adjecant consumer
+        /// track electricity flow on ressource carriers by temporarily adding
+        /// producers and consumers to the graph
         for producer in allProducers {
-            guard let producer = producer else {
+            guard let producer = producer as? Graphable else {
                 continue
             }
             
-            /// retrieve ressource carriers that surround the current producer
-            let surroundingLocation = Location(origin: producer.origin) + 1
-            let availableCarriers = stage.map.infoAt(location: surroundingLocation).filter { (tile) in
-                return tile is RessourceCarrying
-            }
+            let producerNodes = producer.asNodes()
             
+            /// temporary inclusion of producer in ressource grid
+            stage.map.graph.addNodes(producerNodes)
             
-            
-            let carriers = availableCarriers.filter { (carrier) in
-                return true
-            }
-            
-            /// use each carrier as starting point for pathfinding to each consumer
-            for carrier in carriers {
+            for consumer in allConsumers {
+                guard let consumer = consumer as? Graphable else {
+                    continue
+                }
                 
+                let consumerNodes = consumer.asNodes()
+                
+                /// temporary inclusion of consumer in ressource grid
+                stage.map.graph.addNodes(consumerNodes)
+                
+                /// track electricity flow
+                
+                
+                /// remove consumer from ressource grid
+                stage.map.graph.removeNodes(consumerNodes)
             }
+            
+            /// remove producer from ressource grid
+            stage.map.graph.removeNodes(producerNodes)
         }
         
         /// reset recalculation flag

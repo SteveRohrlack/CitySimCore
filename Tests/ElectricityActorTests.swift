@@ -16,7 +16,7 @@ import XCTest
     @testable import CitySimCoreMacOS
 #endif
 
-class CitySimCoreTests: XCTestCase {
+class ElectricityActorTests: XCTestCase {
     
     var subject: Simulation?
     
