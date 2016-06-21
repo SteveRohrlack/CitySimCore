@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 /**
  default implementation for the Locateable protocol
@@ -16,8 +17,10 @@ import Foundation
 */
 public struct Location: Locateable {
     
-    /// origin of the location
-    /// this is relative to the used coordinate system
+    /**
+     origin of the location
+     this is relative to the used coordinate system
+    */
     public let origin: (Int, Int)
     
     /// height of the location, absolute value
@@ -25,12 +28,14 @@ public struct Location: Locateable {
     
     /// width of the location, absolute value
     public let width: Int
-    
+   
+    /// initializer
     init(origin: (Int, Int), height: Int = 1, width: Int = 1) {
         self.origin = origin
         self.height = height
         self.width = width
     }
+
 }
 
 /**
