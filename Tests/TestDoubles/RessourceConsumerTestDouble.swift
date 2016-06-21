@@ -17,5 +17,10 @@
 struct RessourceConsumerTestDouble: RessourceConsuming {
     
     let ressources: [RessourceType]
+    var conditions: ConditionContainer = ConditionContainer()
+    
+    init(ressources: [RessourceType]) {
+        self.ressources = ressources
+    }
     
 }

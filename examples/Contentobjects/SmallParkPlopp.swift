@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SmallParkPlopp: Ploppable, Budgetable, MapStatistical, Conditionable, PlaceNearStreet, Budgetable, RessourceConsuming {
+struct SmallParkPlopp: Ploppable, Budgetable, MapStatistical, PlaceNearStreet, Budgetable, RessourceConsuming {
     let origin: (Int, Int)
     let height: Int = 2
     let width: Int = 3

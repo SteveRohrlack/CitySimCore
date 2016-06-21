@@ -128,11 +128,11 @@ class CityMapTests: XCTestCase {
         }
         
         streetPlopp.forEachCell { (y: Int, x: Int) in
-            let node = self.subject!.graph.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
+            let node = self.subject!.trafficLayer.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
             XCTAssertNotNil(node)
         }
         
-        let nodeNil: GKGridGraphNode? = subject!.graph.nodeAtGridPosition(vector_int2(Int32(streetPlopp.originY + 1), Int32(streetPlopp.originX + 2)))
+        let nodeNil: GKGridGraphNode? = subject!.trafficLayer.nodeAtGridPosition(vector_int2(Int32(streetPlopp.originY + 1), Int32(streetPlopp.originX + 2)))
         
         guard let _ = nodeNil else {
             XCTFail("node should not exist")
@@ -208,7 +208,7 @@ class CityMapTests: XCTestCase {
         }
         
         streetPlopp.forEachCell { (y: Int, x: Int) in
-            let nodeNil: GKGridGraphNode? = self.subject!.graph.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
+            let nodeNil: GKGridGraphNode? = self.subject!.trafficLayer.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
             guard let _ = nodeNil else {
                 return
             }

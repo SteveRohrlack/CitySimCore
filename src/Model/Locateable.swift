@@ -44,12 +44,8 @@ public protocol Locateable {
     /// helper to iterate over each cell
     var forEachCell: ((((Int, Int) -> Void)) -> Void) { get }
     
-    /**
-     converts Locateable to GraphNodes
-     
-     - returns: GraphNode representation of location
-     */
-    func asNodes() -> [GKGridGraphNode]
+    /// representation as GKGridGraphNodes
+    var nodes: [GKGridGraphNode] { get }
 }
 
 extension Locateable {
@@ -96,12 +92,8 @@ extension Locateable {
         return forEach
     }
     
-    /**
-     converts Locateable to GraphNodes
-     
-     - returns: GraphNode representation of location
-     */
-    public func asNodes() -> [GKGridGraphNode] {
+    /// representation as GKGridGraphNodes
+    public var nodes: [GKGridGraphNode] {
         var nodes: [GKGridGraphNode] = []
         
         forEachCell { (y: Int, x: Int) in

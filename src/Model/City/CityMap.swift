@@ -47,7 +47,7 @@ public struct CityMap: EventEmitting {
     public var statisticsLayerContainer: StatisticlayersContainer
     
     /// pathfinding graph
-    var graph: GKGridGraph
+    var trafficLayer: GKGridGraph
     
     /**
      Constructur
@@ -60,7 +60,7 @@ public struct CityMap: EventEmitting {
         self.height = height
         self.tileLayer = TileLayer(rows: height, columns: width)
         self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
-        self.graph = GKGridGraph(fromGridStartingAt: vector_int2(0, 0), width: Int32(width), height: Int32(height), diagonalsAllowed: false)
+        self.trafficLayer = GKGridGraph(fromGridStartingAt: vector_int2(0, 0), width: Int32(width), height: Int32(height), diagonalsAllowed: false)
     }
     
     // MARK: add, remove
@@ -133,7 +133,7 @@ public struct CityMap: EventEmitting {
         
         /// adding graph nodes for supporting tile
         if tile is RessourceCarrying {
-            graph.addNodes(tile.asNodes())
+            trafficLayer.addLocation(location: tile)
         }
         
         /// emit event
@@ -189,7 +189,7 @@ public struct CityMap: EventEmitting {
             
             /// removing graph nodes for supporting tile
             if tile is RessourceCarrying {
-                graph.removeNodes(tile.asNodes())
+                trafficLayer.removeLocation(location: tile)
             }
             
             /// emit event
