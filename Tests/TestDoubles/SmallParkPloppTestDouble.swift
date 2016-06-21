@@ -25,10 +25,11 @@ struct SmallParkPloppTestDouble: Ploppable, MapStatistical, PlaceNearStreet, Res
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Landvalue(radius: 3, value: 4))
     var conditions: ConditionContainer = ConditionContainer()
-    let ressources: [RessourceType] = [.Electricity(100), .Water(10)]
+    var ressources: RessourceContainer = RessourceContainer()
     
     init(origin: (Int, Int)) {
         self.origin = origin
+        self.ressources.add(contents: [.Electricity(100), .Water(10)])
     }
     
 }

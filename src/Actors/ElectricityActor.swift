@@ -66,31 +66,29 @@ public class ElectricityActor: Acting, EventSubscribing {
         
         /// consumer is added or removed
         if let consumer = payload as? RessourceConsuming {
-            for ressource in consumer.ressources {
-                guard case .Electricity = ressource, let value = ressource.value() else {
-                    continue
+            guard let ressource = consumer.ressources.get(content: .Electricity(nil)), value = ressource.value() else {
+                return
+            }
+            
+            switch event {
+            case .AddTile:
+                /// if the new demand is bigger than the current supply,
+                /// recalculation is needed
+                /// otherwise, all consumers will be supplied with
+                /// electricity, after adding this new one
+                stage.ressources.electricityDemand += value
+                if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
+                   stage.ressources.electricityNeedsRecalculation = true
                 }
-                
-                switch event {
-                case .AddTile:
-                    /// if the new demand is bigger than the current supply,
-                    /// recalculation is needed
-                    /// otherwise, all consumers will be supplied with
-                    /// electricity, after adding this new one
-                    stage.ressources.electricityDemand += value
-                    if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
-                       stage.ressources.electricityNeedsRecalculation = true
-                    }
-                case .RemoveTile:
-                    /// if the previous demand is already bigger than the supply,
-                    /// recalculation is needed
-                    /// otherwise, all consumers have already been supplied with
-                    /// electricity, and will still be if a consumer is removed
-                    if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
-                        stage.ressources.electricityNeedsRecalculation = true
-                    }
-                    stage.ressources.electricityDemand -= value
+            case .RemoveTile:
+                /// if the previous demand is already bigger than the supply,
+                /// recalculation is needed
+                /// otherwise, all consumers have already been supplied with
+                /// electricity, and will still be if a consumer is removed
+                if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
+                    stage.ressources.electricityNeedsRecalculation = true
                 }
+                stage.ressources.electricityDemand -= value
             }
         }
         
@@ -145,6 +143,11 @@ public class ElectricityActor: Acting, EventSubscribing {
      updates electricity consumers based on current electricity supply and demand
      */
     private func updateConsumers() {
+        defer {
+            /// reset recalculation flag
+            stage.ressources.electricityNeedsRecalculation = false
+        }
+        
         /// no consumption
         guard stage.ressources.electricityDemand > 0 else {
             return
@@ -153,28 +156,11 @@ public class ElectricityActor: Acting, EventSubscribing {
         /// no production, every consumer should get condition "not powered"
         guard stage.ressources.electricitySupply > 0 else {
             /// update tile status to "not powered"
-            consumers.forEach { (tile) in
-                var conditionableTile = tile as! Conditionable  // tailor:disable
-                conditionableTile.conditions.add(content: .NotPowered)
-                
-                guard let changedTile = conditionableTile as? TileLayer.ValueType else {
-                    fatalError()
-                }
-                
-                do {
-                    try self.stage.map.tileLayer.add(tile: changedTile)
-                } catch {
-                    fatalError()
-                }
-            }
-            
+            changeCondition(for: consumers, to: .NotPowered)
             return
         }
         
         var calculateForConsumers = consumers
-        
-        /// aggregate paths from producers to consumers
-        var paths: [[GKGraphNode]] = []
         
         /// track electricity flow on ressource carriers by temporarily adding
         /// producers and consumers to the graph
@@ -188,12 +174,11 @@ public class ElectricityActor: Acting, EventSubscribing {
             /// temporary inclusion of producer in ressource grid
             stage.map.trafficLayer.addNodes(producerNodes)
             
+            /// aggregate distance from producer to consumers
+            var distances: [Distance] = []
+            
             for consumer in calculateForConsumers {
-                /// check if consumer is already connected to a producer
-                /// if suppliedConsumers.contains(consumer)
-                
                 let consumerNodes = consumer.nodes
-                
                 guard let endNode = consumerNodes.first else {
                     continue
                 }
@@ -205,30 +190,65 @@ public class ElectricityActor: Acting, EventSubscribing {
                 let path = stage.map.trafficLayer.findPathFromNode(startNode, toNode: endNode)
                 
                 if path.count > 0 {
-                    paths.append(path)
+                    distances.append(Distance(from: producer, to: consumer, distance: path.count))
                 }
                 
                 /// remove consumer from ressource grid
                 stage.map.trafficLayer.removeNodes(consumerNodes)
-                
-                /// sort paths
-                
             }
-            
+
             /// remove producer from ressource grid
             stage.map.trafficLayer.removeNodes(producerNodes)
             
             /// sort paths
+            distances.sortInPlace { $0.distance > $1.distance }
+            
+            /// provide consumers with electricity based on their distance to the producer
+            guard let ressourceProducer = producer as? RessourceProducing, let ressourceValue = ressourceProducer.ressource.value() else {
+                continue
+            }
+            
+            var ressourceAmount = ressourceValue
+            for distance in distances {
+                guard let ressourceConsumer = distance.to as? RessourceConsuming, let ressource = ressourceConsumer.ressources.get(content: .Electricity(nil)), let value = ressource.value() else {
+                    continue
+                }
+                
+                ressourceAmount -= value
+            }
             
         }
         
         /// if a consumer is supplied with electricity by one producer,
         /// it doesn't need to be supplied by another one
         var suppliedConsumers: [TileLayer.ValueType] = []
-        
-        
-        /// reset recalculation flag
-        stage.ressources.electricityNeedsRecalculation = false
+    }
+    
+    /**
+     changes the condition of all given tiles
+     
+     - parameter for: list of consumers
+     - parameter to: condition
+    */
+    private func changeCondition(for tiles: [TileLayer.ValueType], to condition: Condition) {
+        for tile in tiles {
+            guard let conditionableTile = tile as? Conditionable else {
+                continue
+            }
+            
+            var conditionable = conditionableTile
+            conditionable.conditions.add(content: condition)
+            
+            guard let updatedTile = conditionable as? TileLayer.ValueType else {
+                continue
+            }
+            
+            do {
+                try self.stage.map.tileLayer.add(tile: updatedTile)
+            } catch {
+                continue
+            }
+        }
     }
 
 }

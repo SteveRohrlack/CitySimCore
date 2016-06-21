@@ -15,6 +15,8 @@ protocol Containing {
     
     mutating func add(content newContent: ContentType)
     
+    mutating func add(contents newContents: [ContentType])
+    
     mutating func remove(content existingContent: ContentType)
     
     func has(content existingContent: ContentType) -> Bool
@@ -31,6 +33,13 @@ extension Containing {
         containerContent.append(newContent)
     }
     
+    mutating func add(contents newContents: [ContentType]) {
+        for newContent in newContents {
+        
+            add(content: newContent)
+        }
+    }
+    
     mutating func remove(content existingContent: ContentType) {
         guard has(content: existingContent) else {
             return
@@ -42,9 +51,7 @@ extension Containing {
     }
     
     func has(content existingContent: ContentType) -> Bool {
-        return containerContent.contains { (content: ContentType) in
-            existingContent == content
-        }
+        return containerContent.contains { $0 == existingContent }
     }
     
 }

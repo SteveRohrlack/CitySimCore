@@ -12,7 +12,7 @@ import Foundation
 public protocol RessourceConsuming: Conditionable {
     
     /// list of ressources consumed
-    var ressources: [RessourceType] { get }
+    var ressources: RessourceContainer { get }
     
     /**
      checks wether the given RessourceType is consumed, ignoring the value
@@ -34,9 +34,7 @@ extension RessourceConsuming {
      - returns: Bool
      */
     func consumes(ressource ressource: RessourceType) -> Bool {
-        return ressources.contains { (consumedRessource) in
-            return consumedRessource >= ressource
-        }
+        return ressources.has(content: ressource)
     }
     
 }

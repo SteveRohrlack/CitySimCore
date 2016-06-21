@@ -16,11 +16,11 @@
 
 struct RessourceConsumerTestDouble: RessourceConsuming {
     
-    let ressources: [RessourceType]
+    var ressources: RessourceContainer = RessourceContainer()
     var conditions: ConditionContainer = ConditionContainer()
     
     init(ressources: [RessourceType]) {
-        self.ressources = ressources
+        self.ressources.add(contents: ressources)
     }
     
 }

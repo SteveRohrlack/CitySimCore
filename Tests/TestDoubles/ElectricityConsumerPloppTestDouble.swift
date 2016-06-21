@@ -25,11 +25,11 @@ struct ElectricityConsumerPloppTestDouble: Ploppable, MapStatistical, PlaceNearS
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: MapStatisticContainer = MapStatisticContainer(mapStatistics: .Landvalue(radius: 3, value: 4))
     var conditions: ConditionContainer = ConditionContainer()
-    let ressources: [RessourceType]
+    var ressources: RessourceContainer = RessourceContainer()
     
     init(origin: (Int, Int), consumesAmount amount: Int) {
         self.origin = origin
-        self.ressources = [.Electricity(amount)]
+        self.ressources.add(content: .Electricity(amount))
     }
     
 }
