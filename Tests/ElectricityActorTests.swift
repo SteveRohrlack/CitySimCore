@@ -237,6 +237,29 @@ class ElectricityActorTests: XCTestCase {
         XCTAssertTrue(subject!.city.ressources.electricityNeedsRecalculation)
     }
     
+    /// MARK: consumer condition is updated upon adding
+    
+    func testConsumerIsNotPoweredAfterAddingIfDemandGreaterThanSupply() {
+        /// adding electricity consumer
+        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 0), consumesAmount: 1)
+        
+        XCTAssertFalse(electricityConsumer.conditions.has(content: .NotPowered))
+        
+        do {
+            try subject!.city.map.plopp(plopp: electricityConsumer)
+        } catch {
+            XCTFail("should not fail")
+        }
+        
+        let modifiedElectricityConsumer = subject!.city.map.tileLayer[1, 0]
+        guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
+            XCTFail("needs to be Conditionable")
+            return
+        }
+        
+        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
+    }
+    
     /// MARK: electricity needs recalculation when adding or removing ressource carrier
     
     func testAddRessourceCarrier() {
@@ -260,30 +283,7 @@ class ElectricityActorTests: XCTestCase {
     }
     
     /// MARK: update consumer status scenarios
-
-    func testUpdatesConsumersIfNoProduction() {
-        /// adding electricity consumer
-        let electricityConsumer = ElectricityConsumerPloppTestDouble(origin: (1, 0), consumesAmount: 1)
-        
-        XCTAssertFalse(electricityConsumer.conditions.has(content: .NotPowered))
-        
-        do {
-            try subject!.city.map.plopp(plopp: electricityConsumer)
-        } catch {
-            XCTFail("should not fail")
-        }
-        
-        self.subject!.advance()
-        
-        let modifiedElectricityConsumer = subject!.city.map.tileLayer[1, 0]
-        guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
-            XCTFail("needs to be Conditionable")
-            return
-        }
-        
-        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
-    }
-    
+   
     func testUpdatesConsumersIfSufficientProduction() {
         /// adding electricity producer
         let producedElectricityAmount = 100
@@ -349,7 +349,7 @@ class ElectricityActorTests: XCTestCase {
         
         subject!.advance()
         
-        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin.0, electricityConsumer1Origin.1]
+        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer2Origin]
         guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
             XCTFail("needs to be Conditionable")
             return

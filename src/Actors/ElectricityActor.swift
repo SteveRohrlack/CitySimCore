@@ -78,7 +78,21 @@ public class ElectricityActor: Acting, EventSubscribing {
                 /// electricity, after adding this new one
                 stage.ressources.electricityDemand += value
                 if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
-                   stage.ressources.electricityNeedsRecalculation = true
+                    stage.ressources.electricityNeedsRecalculation = true
+                    
+                    /// newly added tile needs to get status .NotPowered if electricity demand is higher than supply
+                    var updatedConsumer = consumer
+                    updatedConsumer.conditions.add(content: .NotPowered)
+                    
+                    guard let updatedTile = updatedConsumer as? TileLayer.ValueType else {
+                        return
+                    }
+                    
+                    do {
+                        try self.stage.map.tileLayer.add(tile: updatedTile)
+                    } catch {
+                        return
+                    }
                 }
             case .RemoveTile:
                 /// if the previous demand is already bigger than the supply,
@@ -204,24 +218,43 @@ public class ElectricityActor: Acting, EventSubscribing {
             distances.sortInPlace { $0.distance > $1.distance }
             
             /// provide consumers with electricity based on their distance to the producer
-            guard let ressourceProducer = producer as? RessourceProducing, let ressourceValue = ressourceProducer.ressource.value() else {
+            guard let ressourceProducer = producer as? RessourceProducing, let producedRessourceValue = ressourceProducer.ressource.value() else {
                 continue
             }
             
-            var ressourceAmount = ressourceValue
+            var ressourceAmount = producedRessourceValue
             for distance in distances {
+                guard ressourceAmount > 0 else {
+                    break
+                }
+                
                 guard let ressourceConsumer = distance.to as? RessourceConsuming, let ressource = ressourceConsumer.ressources.get(content: .Electricity(nil)), let value = ressource.value() else {
                     continue
                 }
                 
+                guard ressourceAmount - value > 0 else {
+                    break
+                }
+                
+                /// this consumer does not have to be supplied by another producer
+                var updatedConsumer = ressourceConsumer
+                updatedConsumer.conditions.remove(content: .NotPowered)
+
+                guard let updatedTile = updatedConsumer as? TileLayer.ValueType else {
+                    continue
+                }
+                
+                do {
+                    try self.stage.map.tileLayer.add(tile: updatedTile)
+                } catch {
+                    continue
+                }
+
                 ressourceAmount -= value
+                calculateForConsumers = calculateForConsumers.filter { !($0 == distance.to) }
             }
             
         }
-        
-        /// if a consumer is supplied with electricity by one producer,
-        /// it doesn't need to be supplied by another one
-        var suppliedConsumers: [TileLayer.ValueType] = []
     }
     
     /**
