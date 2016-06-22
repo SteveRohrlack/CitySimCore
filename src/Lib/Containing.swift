@@ -35,7 +35,6 @@ extension Containing {
     
     mutating func add(contents newContents: [ContentType]) {
         for newContent in newContents {
-        
             add(content: newContent)
         }
     }

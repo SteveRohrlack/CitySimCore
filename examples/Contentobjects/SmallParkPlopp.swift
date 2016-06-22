@@ -19,7 +19,7 @@ struct SmallParkPlopp: Ploppable, Budgetable, MapStatistical, PlaceNearStreet, B
     let type: TileType = .Ploppable(.ParkSmall)
     let statistics: MapStatisticContainer = MapStatisticContainer()
     var conditions: ConditionContainer = ConditionContainer()
-    let ressources: [RessourceType] = [.Electricity(100), .Water(10)]
+    let ressources: RessourceContainer = RessourceContainer(containerContent: [.Electricity(100), .Water(10)])
     
     init(origin: (Int, Int)) {
         self.origin = origin
