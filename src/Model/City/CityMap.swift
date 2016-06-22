@@ -61,6 +61,8 @@ public struct CityMap: EventEmitting {
         self.tileLayer = TileLayer(rows: height, columns: width)
         self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
         self.trafficLayer = GKGridGraph(fromGridStartingAt: vector_int2(0, 0), width: Int32(width), height: Int32(height), diagonalsAllowed: false)
+        //empty graph
+        self.trafficLayer.removeNodes(self.trafficLayer.nodes!)
     }
     
     // MARK: add, remove
@@ -133,7 +135,7 @@ public struct CityMap: EventEmitting {
         
         /// adding graph nodes for supporting tile
         if tile is RessourceCarrying {
-            trafficLayer.addLocation(location: tile)
+            trafficLayer.add(location: tile)
         }
         
         /// emit event
@@ -189,7 +191,7 @@ public struct CityMap: EventEmitting {
             
             /// removing graph nodes for supporting tile
             if tile is RessourceCarrying {
-                trafficLayer.removeLocation(location: tile)
+                trafficLayer.remove(location: tile)
             }
             
             /// emit event

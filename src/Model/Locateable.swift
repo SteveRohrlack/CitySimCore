@@ -77,6 +77,8 @@ extension Locateable {
      return a function to call with another function as parameter to recieve 
      y, x coordinates for each cell in the location
      
+     - parameter: callback function
+     
      - returns: function
     */
     public var forEachCell: ((((Int, Int) -> Void)) -> Void) {
@@ -97,7 +99,7 @@ extension Locateable {
         var nodes: [GKGridGraphNode] = []
         
         forEachCell { (y: Int, x: Int) in
-            nodes.append(GKGridGraphNode(gridPosition: vector_int2(Int32(y), Int32(x))))
+            nodes.append(GKGridGraphNode(gridPosition: vector_int2(Int32(x), Int32(y))))
         }
         
         return nodes

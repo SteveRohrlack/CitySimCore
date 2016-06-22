@@ -46,6 +46,8 @@ class ElectricityActorTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        
+        subject = nil
     }
     
     /// MARK: electricity supply and demand
@@ -332,7 +334,7 @@ class ElectricityActorTests: XCTestCase {
         }
         
         /// adding electricity consumer
-        let consumedElectricityAmount = producedElectricityAmount * 2
+        let consumedElectricityAmount = producedElectricityAmount
         
         let electricityConsumer1Origin = (1, electricityProducer.maxX + 1)
         let electricityConsumer1 = ElectricityConsumerPloppTestDouble(origin: electricityConsumer1Origin, consumesAmount: consumedElectricityAmount)
@@ -349,13 +351,13 @@ class ElectricityActorTests: XCTestCase {
         
         subject!.advance()
         
-        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer2Origin]
+        let modifiedElectricityConsumer = subject!.city.map.tileLayer[electricityConsumer1Origin]
         guard let modifiedElectricityConsumerConditionable = modifiedElectricityConsumer as? Conditionable else {
             XCTFail("needs to be Conditionable")
             return
         }
         
-        XCTAssertTrue(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
+        XCTAssertFalse(modifiedElectricityConsumerConditionable.conditions.has(content: .NotPowered))
     }
 
     /// MARK: performance
@@ -391,7 +393,7 @@ class ElectricityActorTests: XCTestCase {
         }
         
         /// adding electricity consumers
-        let consumedElectricityAmount = (producedElectricityAmount / 25) + 1
+        let consumedElectricityAmount: Int = (producedElectricityAmount / 25) + 1
         
         for i in 4.stride(through: 54, by: 2) {
             let origin = (1, i)
@@ -405,9 +407,9 @@ class ElectricityActorTests: XCTestCase {
         }
         
         /// measure updating all consumers by tracking the electricity "flow"
-        /*measureBlock {
+        measureBlock {
             self.subject!.city.ressources.electricityNeedsRecalculation = true
             self.subject!.advance()
-        }*/
+        }
     }
 }

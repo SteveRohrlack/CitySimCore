@@ -173,49 +173,43 @@ public class ElectricityActor: Acting, EventSubscribing {
             changeCondition(for: consumers, to: .NotPowered)
             return
         }
-        
+
+        let allProducers = producers
         var calculateForConsumers = consumers
         
         /// track electricity flow on ressource carriers by temporarily adding
         /// producers and consumers to the graph
-        for producer in producers {
-            let producerNodes = producer.nodes
-            
-            guard let startNode = producerNodes.first else {
-                continue
-            }
-            
+        for producer in allProducers {
             /// temporary inclusion of producer in ressource grid
-            stage.map.trafficLayer.addNodes(producerNodes)
+            stage.map.trafficLayer.add(location: producer as Locateable)
+
+            let startNode = stage.map.trafficLayer.nodeAtGridPosition(location: producer as Locateable)!
             
             /// aggregate distance from producer to consumers
-            var distances: [Distance] = []
+            var distances: [Distance]? = []
             
             for consumer in calculateForConsumers {
-                let consumerNodes = consumer.nodes
-                guard let endNode = consumerNodes.first else {
-                    continue
-                }
-                
                 /// temporary inclusion of consumer in ressource grid
-                stage.map.trafficLayer.addNodes(consumerNodes)
+                stage.map.trafficLayer.add(location: consumer as Locateable)
                 
                 /// track electricity flow
+                let endNode = stage.map.trafficLayer.nodeAtGridPosition(location: consumer as Locateable)!
+                
                 let path = stage.map.trafficLayer.findPathFromNode(startNode, toNode: endNode)
                 
                 if path.count > 0 {
-                    distances.append(Distance(from: producer, to: consumer, distance: path.count))
+                    distances!.append(Distance(from: producer, to: consumer, distance: path.count))
                 }
                 
                 /// remove consumer from ressource grid
-                stage.map.trafficLayer.removeNodes(consumerNodes)
+                stage.map.trafficLayer.remove(location: consumer as Locateable)
             }
 
             /// remove producer from ressource grid
-            stage.map.trafficLayer.removeNodes(producerNodes)
+            stage.map.trafficLayer.remove(location: producer as Locateable)
             
             /// sort paths
-            distances.sortInPlace { $0.distance > $1.distance }
+            distances!.sortInPlace { $0.distance < $1.distance }
             
             /// provide consumers with electricity based on their distance to the producer
             guard let ressourceProducer = producer as? RessourceProducing, let producedRessourceValue = ressourceProducer.ressource.value() else {
@@ -223,7 +217,7 @@ public class ElectricityActor: Acting, EventSubscribing {
             }
             
             var ressourceAmount = producedRessourceValue
-            for distance in distances {
+            for distance in distances! {
                 guard ressourceAmount > 0 else {
                     break
                 }
@@ -251,9 +245,11 @@ public class ElectricityActor: Acting, EventSubscribing {
                 }
 
                 ressourceAmount -= value
+
                 calculateForConsumers = calculateForConsumers.filter { !($0 == distance.to) }
             }
             
+            distances = nil
         }
     }
     

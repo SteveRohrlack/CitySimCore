@@ -19,8 +19,12 @@ extension GKGridGraph {
      
      - parameter location: the location to add
     */
-    func addLocation(location location: Locateable) {
-        addNodes(location.nodes)
+    func add(location location: Locateable) {
+        let nodes = location.nodes
+        
+        for node in nodes {
+            connectNodeToAdjacentNodes(node)
+        }
     }
     
     /**
@@ -28,8 +32,24 @@ extension GKGridGraph {
      
      - parameter location: the location to remove
      */
-    func removeLocation(location location: Locateable) {
+    func remove(location location: Locateable) {
         removeNodes(location.nodes)
+    }
+    
+    /**
+     gets node at grid position by Locateable
+     uses origin of Locateable
+     
+     - parameter location: the location to use
+     
+     - returns: GKGridGraphNode optional
+    */
+    func nodeAtGridPosition(location location: Locateable) -> GKGridGraphNode? {
+        guard let firstNode = location.nodes.first else {
+            return nil
+        }
+        
+        return nodeAtGridPosition(firstNode.gridPosition)
     }
     
 }
