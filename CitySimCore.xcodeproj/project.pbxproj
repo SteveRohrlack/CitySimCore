@@ -38,10 +38,6 @@
 		E20B14E51CE6119B0067BC91 /* TileTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E11CE611460067BC91 /* TileTypeTests.swift */; };
 		E20B14E71CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
 		E20B14E81CE613F00067BC91 /* TileLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20B14E61CE613F00067BC91 /* TileLayerTests.swift */; };
-		E213BEB61D19189A00A4F45A /* GKGridGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213BEB51D19189A00A4F45A /* GKGridGraph.swift */; };
-		E213BEB71D19189A00A4F45A /* GKGridGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213BEB51D19189A00A4F45A /* GKGridGraph.swift */; };
-		E213BEB91D19649000A4F45A /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213BEB81D19649000A4F45A /* Distance.swift */; };
-		E213BEBA1D19649000A4F45A /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213BEB81D19649000A4F45A /* Distance.swift */; };
 		E213BEBC1D1993E000A4F45A /* RessourceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213BEBB1D1993E000A4F45A /* RessourceContainer.swift */; };
 		E213BEBD1D1993E000A4F45A /* RessourceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213BEBB1D1993E000A4F45A /* RessourceContainer.swift */; };
 		E21760CB1D0FDFD600E9427C /* RessourceCarrying.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21760CA1D0FDFD600E9427C /* RessourceCarrying.swift */; };
@@ -198,8 +194,6 @@
 		E20B14B51CE6108F0067BC91 /* TileLayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerError.swift; sourceTree = "<group>"; };
 		E20B14E11CE611460067BC91 /* TileTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileTypeTests.swift; sourceTree = "<group>"; };
 		E20B14E61CE613F00067BC91 /* TileLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileLayerTests.swift; sourceTree = "<group>"; };
-		E213BEB51D19189A00A4F45A /* GKGridGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKGridGraph.swift; sourceTree = "<group>"; };
-		E213BEB81D19649000A4F45A /* Distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		E213BEBB1D1993E000A4F45A /* RessourceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceContainer.swift; sourceTree = "<group>"; };
 		E21760CA1D0FDFD600E9427C /* RessourceCarrying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RessourceCarrying.swift; sourceTree = "<group>"; };
 		E217F76F1D05CE6900FC703B /* NotRemoveablePropTestDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotRemoveablePropTestDouble.swift; sourceTree = "<group>"; };
@@ -344,7 +338,6 @@
 				E24C44BC1CF5D617006B9425 /* City */,
 				E200666A1CEC8B9000E55D4B /* TileableAttributes */,
 				E2D86CCD1CEA4247007EABD8 /* Tileable */,
-				E213BEB81D19649000A4F45A /* Distance.swift */,
 				E20B14A41CE6108F0067BC91 /* Locateable.swift */,
 				E20B14A51CE6108F0067BC91 /* Location.swift */,
 			);
@@ -467,7 +460,6 @@
 		E2D86CFE1CEA4364007EABD8 /* MapLayer */ = {
 			isa = PBXGroup;
 			children = (
-				E213BEB51D19189A00A4F45A /* GKGridGraph.swift */,
 				E22D20791CEB33D700E97894 /* StatisticsLayering.swift */,
 				E22D207F1CEB33FE00E97894 /* StatisticsLayer.swift */,
 				E22D20821CEB341100E97894 /* StatisticlayersContainer.swift */,
@@ -733,7 +725,6 @@
 				E2D86D1E1CEA44E2007EABD8 /* PropableType.swift in Sources */,
 				E2D86CEB1CEA4247007EABD8 /* Tileable.swift in Sources */,
 				E227B9331CEF62200052918B /* EventEmitting.swift in Sources */,
-				E213BEB61D19189A00A4F45A /* GKGridGraph.swift in Sources */,
 				E21A16E31CFD68F800C8CEAD /* Ressources.swift in Sources */,
 				E2663E6F1CEF305900B179ED /* Acting.swift in Sources */,
 				E21EC7571CF827B2001F328B /* RessourceProducing.swift in Sources */,
@@ -752,7 +743,6 @@
 				E22D20831CEB341100E97894 /* StatisticlayersContainer.swift in Sources */,
 				E292B5D01CEB66E2001C4A23 /* StatisticsLayerError.swift in Sources */,
 				E26041311CF2D7C100773A73 /* Simulation.swift in Sources */,
-				E213BEB91D19649000A4F45A /* Distance.swift in Sources */,
 				E260413A1CF2DD2A00773A73 /* Budgetable.swift in Sources */,
 				E213BEBC1D1993E000A4F45A /* RessourceContainer.swift in Sources */,
 				E2EDA0551CEDD361000464C5 /* PlaceNearStreet.swift in Sources */,
@@ -822,7 +812,6 @@
 				E2663E701CEF305900B179ED /* Acting.swift in Sources */,
 				E21EC7581CF827B2001F328B /* RessourceProducing.swift in Sources */,
 				E227B9311CEF62120052918B /* EventNaming.swift in Sources */,
-				E213BEB71D19189A00A4F45A /* GKGridGraph.swift in Sources */,
 				E22512E41CFC195B00DE5E7F /* ElectricityActor.swift in Sources */,
 				E20B14B71CE6108F0067BC91 /* Array2DMapping.swift in Sources */,
 				E2EDA0561CEDD361000464C5 /* PlaceNearStreet.swift in Sources */,
@@ -841,7 +830,6 @@
 				E21EC7551CF8273E001F328B /* RessourceType.swift in Sources */,
 				E2D86D1D1CEA44E2007EABD8 /* Propable.swift in Sources */,
 				E2D86D251CEA44E2007EABD8 /* ZoneableType.swift in Sources */,
-				E213BEBA1D19649000A4F45A /* Distance.swift in Sources */,
 				E21EC75B1CF827FC001F328B /* RessourceConsuming.swift in Sources */,
 				E213BEBD1D1993E000A4F45A /* RessourceContainer.swift in Sources */,
 				E2663E6C1CEF2D4200B179ED /* Containing.swift in Sources */,

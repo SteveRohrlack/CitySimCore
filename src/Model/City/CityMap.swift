@@ -7,7 +7,6 @@
 ///
 
 import Foundation
-import GameplayKit
 
 /**
  CityMap encapsules all aspects of working with the simulation's underlying 
@@ -47,7 +46,7 @@ public struct CityMap: EventEmitting {
     public var statisticsLayerContainer: StatisticlayersContainer
     
     /// pathfinding graph
-    var trafficLayer: GKGridGraph
+    //var trafficLayer: GKGridGraph
     
     /**
      Constructur
@@ -60,9 +59,9 @@ public struct CityMap: EventEmitting {
         self.height = height
         self.tileLayer = TileLayer(rows: height, columns: width)
         self.statisticsLayerContainer = StatisticlayersContainer(height: height, width: width)
-        self.trafficLayer = GKGridGraph(fromGridStartingAt: vector_int2(0, 0), width: Int32(width), height: Int32(height), diagonalsAllowed: false)
+        //self.trafficLayer = GKGridGraph(fromGridStartingAt: vector_int2(0, 0), width: Int32(width), height: Int32(height), diagonalsAllowed: false)
         //empty graph
-        self.trafficLayer.removeNodes(self.trafficLayer.nodes!)
+        //self.trafficLayer.removeNodes(self.trafficLayer.nodes!)
     }
     
     // MARK: add, remove
@@ -134,9 +133,9 @@ public struct CityMap: EventEmitting {
         }
         
         /// adding graph nodes for supporting tile
-        if tile is RessourceCarrying {
+        /*if tile is RessourceCarrying {
             trafficLayer.add(location: tile)
-        }
+        }*/
         
         /// emit event
         try emit(event: CityMapEvent.AddTile, payload: tile)
@@ -190,9 +189,9 @@ public struct CityMap: EventEmitting {
             }
             
             /// removing graph nodes for supporting tile
-            if tile is RessourceCarrying {
+            /*if tile is RessourceCarrying {
                 trafficLayer.remove(location: tile)
-            }
+            }*/
             
             /// emit event
             try emit(event: CityMapEvent.RemoveTile, payload: tile)

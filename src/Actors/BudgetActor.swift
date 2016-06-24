@@ -22,17 +22,17 @@ public class BudgetActor: Acting, EventSubscribing {
    
     /// actor stage
     /// simulation's main data container
-    var stage: City
+    weak var stage: City?
     
     /**
      initializer
      
      - parameter stage: City object work work with
     */
-    init(stage: City) {
+    init(stage: City?) {
         self.stage = stage
-        self.stage.map.subscribe(subscriber: self, to: .AddTile)
-        self.stage.map.subscribe(subscriber: self, to: .RemoveTile)
+        self.stage?.map.subscribe(subscriber: self, to: .AddTile)
+        self.stage?.map.subscribe(subscriber: self, to: .RemoveTile)
     }
     
     /**
@@ -54,16 +54,16 @@ public class BudgetActor: Acting, EventSubscribing {
         if let runningCost = budgetable.runningCost {
             switch event {
             case .AddTile:
-                stage.budget.runningCost += runningCost
+                stage?.budget.runningCost += runningCost
             case .RemoveTile:
-                stage.budget.runningCost -= runningCost
+                stage?.budget.runningCost -= runningCost
             }
         }
         
         /// subtract one-time cost from budget
         if let cost = budgetable.cost {
             if case .AddTile = event {
-                stage.budget.amount -= cost
+                stage?.budget.amount -= cost
             }
         }
     }
@@ -74,8 +74,12 @@ public class BudgetActor: Acting, EventSubscribing {
      - parameter tick: the current simulation tick
      */
     func act(tick tick: Int) {
+        guard let _ = stage else {
+            return
+        }
+
         /// subtract running cost
-        stage.budget.amount -= stage.budget.runningCost
+        stage!.budget.amount -= stage!.budget.runningCost
     }
     
 }

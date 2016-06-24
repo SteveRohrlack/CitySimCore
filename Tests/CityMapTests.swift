@@ -118,25 +118,6 @@ class CityMapTests: XCTestCase {
         XCTAssertNotNil(subject!.tileLayer[0, 0])
     }
     
-    func testAddRessourceCarrying() {
-        let streetPlopp = StreetPloppTestDouble(origin: (0, 0), height: 1, width: 2)
-        
-        do {
-            try subject!.plopp(plopp: streetPlopp)
-        } catch {
-            XCTFail("should not fail")
-        }
-        
-        streetPlopp.forEachCell { (y: Int, x: Int) in
-            let node = self.subject!.trafficLayer.nodeAtGridPosition(location: streetPlopp as Locateable)
-            XCTAssertNotNil(node)
-        }
-        
-        let nodeNil: GKGridGraphNode? = subject!.trafficLayer.nodeAtGridPosition(vector_int2(Int32(streetPlopp.originX + 2), Int32(streetPlopp.originY + 1)))
-        
-        XCTAssertNil(nodeNil)
-    }
-    
     /// MARK: remove, info
     
     func testInfoAt() {
@@ -190,28 +171,6 @@ class CityMapTests: XCTestCase {
         }
         
         XCTAssertNil(subject!.tileLayer[0, 0])
-    }
-    
-    func testRemoveRessourceCarrying() {
-        let location = Location(origin: (0, 0))
-        
-        let streetPlopp = StreetPloppTestDouble(origin: location.origin, height: 1, width: 2)
-        
-        do {
-            try subject!.plopp(plopp: streetPlopp)
-            try subject!.removeAt(location: location)
-        } catch {
-            XCTFail("should not fail")
-        }
-        
-        streetPlopp.forEachCell { (y: Int, x: Int) in
-            let nodeNil: GKGridGraphNode? = self.subject!.trafficLayer.nodeAtGridPosition(vector_int2(Int32(y), Int32(x)))
-            guard let _ = nodeNil else {
-                return
-            }
-            
-            XCTFail("node should not exist")
-        }
     }
     
     /// MARK: events

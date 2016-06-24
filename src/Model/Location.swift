@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import GameplayKit
 
 /**
  default implementation for the Locateable protocol

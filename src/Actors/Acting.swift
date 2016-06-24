@@ -17,7 +17,7 @@ protocol Acting {
     
     /// actor stage
     /// simulation's main data container
-    var stage: City { get set }
+    weak var stage: City? { get set }
     
     /**
      Actors gonna act
