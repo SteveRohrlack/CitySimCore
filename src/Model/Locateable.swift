@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 /**
  the Locateable protocol describes a location on a 2D map
@@ -42,6 +43,9 @@ public protocol Locateable {
     
     /// helper to iterate over each cell
     var forEachCell: ((((Int, Int) -> Void)) -> Void) { get }
+    
+    /// representation as GKGridGraphNodes
+    var nodes: [GKGridGraphNode] { get }
 }
 
 extension Locateable {
@@ -73,8 +77,6 @@ extension Locateable {
      return a function to call with another function as parameter to recieve 
      y, x coordinates for each cell in the location
      
-     - parameter: callback function
-     
      - returns: function
     */
     public var forEachCell: ((((Int, Int) -> Void)) -> Void) {
@@ -88,6 +90,17 @@ extension Locateable {
         }
         
         return forEach
+    }
+    
+    /// representation as GKGridGraphNodes
+    public var nodes: [GKGridGraphNode] {
+        var nodes: [GKGridGraphNode] = []
+        
+        forEachCell { (y: Int, x: Int) in
+            nodes.append(GKGridGraphNode(gridPosition: vector_int2(Int32(x), Int32(y))))
+        }
+        
+        return nodes
     }
 
 }
