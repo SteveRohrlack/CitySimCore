@@ -14,6 +14,4 @@ import Foundation
  it is used in the "CityMap.canAdd" method to determine if an adapting
  tile can be removed from the TileLayer or not
  */
-public protocol NotRemoveable {
-    
-}
+public protocol NotRemoveable {}

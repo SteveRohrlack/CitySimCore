@@ -13,6 +13,4 @@ import Foundation
  
  ressource carriers are always added to the map graph
 */
-public protocol RessourceCarrying {
-    
-}
+public protocol RessourceCarrying {}

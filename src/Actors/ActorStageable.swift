@@ -12,6 +12,7 @@ import Foundation
  an ActorStageable object is an object that can be used by an Acting object
  as a stage
  
- it also should be a reference type because else, Actors wouldn't make much sense
+ it also should be a reference type because else, Actors accessing and 
+ manupulating the ActorStageable wouldn't make much sense
  */
 protocol ActorStageable: class {}
