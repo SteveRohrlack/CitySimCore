@@ -9,7 +9,7 @@
 import Foundation
 
 /// the simulation's main data container
-public class City: EventEmitting {
+public class City: EventEmitting, ActorStageable {
     
     typealias EventNameType = CityEvent
     

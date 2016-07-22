@@ -14,9 +14,11 @@ import GameplayKit
 */
 public struct ElectricityActor: Acting, EventSubscribing {
     
+    typealias StageType = City
+    
     /// actor stage
     /// simulation's main data container
-    weak var stage: City?
+    weak var stage: ActorStageable?
     
     /**
      initializer
@@ -25,8 +27,8 @@ public struct ElectricityActor: Acting, EventSubscribing {
      */
     init(stage: City) {
         self.stage = stage
-        self.stage?.map.subscribe(subscriber: self, to: .AddTile)
-        self.stage?.map.subscribe(subscriber: self, to: .RemoveTile)
+        stage.map.subscribe(subscriber: self, to: .AddTile)
+        stage.map.subscribe(subscriber: self, to: .RemoveTile)
     }
 
     /**
@@ -36,8 +38,9 @@ public struct ElectricityActor: Acting, EventSubscribing {
      - parameter payload: the event data
      */
     public func recieveEvent(event event: EventNaming, payload: Any) throws {
-        guard let event = event as? CityMapEvent else {
-            return
+        guard let stage = stage as? StageType,
+            let event = event as? CityMapEvent else {
+                return
         }
         
         /// a tile may be a consumer and a producer at the same time
@@ -54,9 +57,9 @@ public struct ElectricityActor: Acting, EventSubscribing {
                 /// recalculation is needed
                 /// otherwise, all consumers will be supplied with
                 /// electricity, after adding this new one
-                stage?.ressources.electricityDemand += value
-                if stage?.ressources.electricityDemand > stage?.ressources.electricitySupply {
-                    stage?.ressources.electricityNeedsRecalculation = true
+                stage.ressources.electricityDemand += value
+                if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
+                    stage.ressources.electricityNeedsRecalculation = true
                     
                     /// newly added tile needs to get status .NotPowered if electricity demand is higher than supply
                     var updatedConsumer = consumer
@@ -67,7 +70,7 @@ public struct ElectricityActor: Acting, EventSubscribing {
                     }
                     
                     do {
-                        try stage?.map.tileLayer.add(tile: updatedTile)
+                        try stage.map.tileLayer.add(tile: updatedTile)
                     } catch {
                         return
                     }
@@ -77,10 +80,10 @@ public struct ElectricityActor: Acting, EventSubscribing {
                 /// recalculation is needed
                 /// otherwise, all consumers have already been supplied with
                 /// electricity, and will still be if a consumer is removed
-                if stage?.ressources.electricityDemand > stage?.ressources.electricitySupply {
-                    stage?.ressources.electricityNeedsRecalculation = true
+                if stage.ressources.electricityDemand > stage.ressources.electricitySupply {
+                    stage.ressources.electricityNeedsRecalculation = true
                 }
-                stage?.ressources.electricityDemand -= value
+                stage.ressources.electricityDemand -= value
             }
         }
         
@@ -96,25 +99,25 @@ public struct ElectricityActor: Acting, EventSubscribing {
                 /// recalculation is needed
                 /// otherwise, all consumers are already supplied with electricity
                 /// and will still be after adding a new producer
-                if stage?.ressources.electricitySupply < stage?.ressources.electricityDemand {
-                    stage?.ressources.electricityNeedsRecalculation = true
+                if stage.ressources.electricitySupply < stage.ressources.electricityDemand {
+                    stage.ressources.electricityNeedsRecalculation = true
                 }
-                stage?.ressources.electricitySupply += value
+                stage.ressources.electricitySupply += value
             case .RemoveTile:
                 /// if the new supply is smaller than the current demand,
                 /// recalculation is needed
                 /// otherwise, all consumers are still being supplied with
                 /// electricity, and will still be if the producer is removed
-                stage?.ressources.electricitySupply -= value
-                if stage?.ressources.electricitySupply < stage?.ressources.electricityDemand {
-                    stage?.ressources.electricityNeedsRecalculation = true
+                stage.ressources.electricitySupply -= value
+                if stage.ressources.electricitySupply < stage.ressources.electricityDemand {
+                    stage.ressources.electricityNeedsRecalculation = true
                 }
             }
         }
         
         /// update consumers if RessourceCarrier is added or removed
         if let _ = payload as? RessourceCarrying {
-            stage?.ressources.electricityNeedsRecalculation = true
+            stage.ressources.electricityNeedsRecalculation = true
         }
     }
     
@@ -124,7 +127,7 @@ public struct ElectricityActor: Acting, EventSubscribing {
      - parameter tick: the current simulation tick
      */
     func act(tick tick: Int) {
-        guard let stage = stage where stage.ressources.electricityNeedsRecalculation else {
+        guard let stage = stage as? StageType where stage.ressources.electricityNeedsRecalculation else {
             return
         }
         
@@ -135,12 +138,10 @@ public struct ElectricityActor: Acting, EventSubscribing {
      updates electricity consumers based on current electricity supply and demand
      */
     private func updateConsumers() {
-        defer {
+        /*defer {
             /// reset recalculation flag
             stage?.ressources.electricityNeedsRecalculation = false
-        }
-        
-        
+        }*/
     }
 
 }

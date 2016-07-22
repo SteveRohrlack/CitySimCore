@@ -75,11 +75,15 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <PathRunnable
+         runnableDebuggingMode = "0"
+         FilePath = "/Users/steverohrlack/Library/Developer/Xcode/DerivedData/CitySimCore-ggzysjnwuycojngeqruehdygnmoi/Build/Products/Debug/CitySimCoreMacOS.framework/Versions/A/CitySimCoreMacOS">
+      </PathRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"

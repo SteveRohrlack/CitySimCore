@@ -20,19 +20,21 @@ import Foundation
 */
 public struct BudgetActor: Acting, EventSubscribing {
    
+    typealias StageType = City
+    
     /// actor stage
     /// simulation's main data container
-    weak var stage: City?
+    weak var stage: ActorStageable?
     
     /**
      initializer
      
      - parameter stage: City object work work with
     */
-    init(stage: City?) {
+    init(stage: StageType) {
         self.stage = stage
-        self.stage?.map.subscribe(subscriber: self, to: .AddTile)
-        self.stage?.map.subscribe(subscriber: self, to: .RemoveTile)
+        stage.map.subscribe(subscriber: self, to: .AddTile)
+        stage.map.subscribe(subscriber: self, to: .RemoveTile)
     }
     
     /**
@@ -42,11 +44,9 @@ public struct BudgetActor: Acting, EventSubscribing {
      - parameter payload: the event data
     */
     public func recieveEvent(event event: EventNaming, payload: Any) throws {
-        guard let event = event as? CityMapEvent else {
-            return
-        }
-        
-        guard let budgetable = payload as? Budgetable else {
+        guard let stage = stage as? StageType,
+              let event = event as? CityMapEvent,
+              let budgetable = payload as? Budgetable else {
             return
         }
         
@@ -54,16 +54,16 @@ public struct BudgetActor: Acting, EventSubscribing {
         if let runningCost = budgetable.runningCost {
             switch event {
             case .AddTile:
-                stage?.budget.runningCost += runningCost
+                stage.budget.runningCost += runningCost
             case .RemoveTile:
-                stage?.budget.runningCost -= runningCost
+                stage.budget.runningCost -= runningCost
             }
         }
         
         /// subtract one-time cost from budget
         if let cost = budgetable.cost {
             if case .AddTile = event {
-                stage?.budget.amount -= cost
+                stage.budget.amount -= cost
             }
         }
     }
@@ -74,12 +74,12 @@ public struct BudgetActor: Acting, EventSubscribing {
      - parameter tick: the current simulation tick
      */
     func act(tick tick: Int) {
-        guard let _ = stage else {
+        guard let stage = stage as? StageType else {
             return
         }
 
         /// subtract running cost
-        stage!.budget.amount -= stage!.budget.runningCost
+        stage.budget.amount -= stage.budget.runningCost
     }
     
 }
