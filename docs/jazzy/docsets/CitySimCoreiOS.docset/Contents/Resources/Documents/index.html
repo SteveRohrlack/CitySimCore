@@ -13,7 +13,7 @@
     <a title="CitySimCoreiOS  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (85% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -31,13 +31,7 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/BudgetActor.html">BudgetActor</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/City.html">City</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -83,6 +77,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/GKGridGraph.html">GKGridGraph</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -101,7 +103,7 @@
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTPS_10Locateable_PS0___Sb">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2geFTOS_13RessourceTypeS0__Sb">&gt;=(_:_:)</a>
@@ -113,6 +115,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Protocols/Acting.html">Acting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:P14CitySimCoreiOS14ActorStageable">ActorStageable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Array2DMapping.html">Array2DMapping</a>
@@ -134,9 +139,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/EventSubscribing.html">EventSubscribing</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/Graphable.html">Graphable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Locateable.html">Locateable</a>
@@ -183,16 +185,25 @@
                 <a href="Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/CityMap.html">CityMap</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ConditionContainer.html">ConditionContainer</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/ElectricityActor.html">ElectricityActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Location.html">Location</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RessourceContainer.html">RessourceContainer</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Ressources.html">Ressources</a>
@@ -362,7 +373,6 @@ These behaviours are implemented using protocols.</p>
 <li><strong>contains budget information:</strong> one time cost and/or running cost</li>
 <li><strong>produces one ressource:</strong> see <q>Ressources</q></li>
 <li><strong>consumes one or more ressources:</strong> see <q>Ressources</q></li>
-<li><strong>graphable:</strong> is part of the pathfinding</li>
 </ul>
 <a href='#example_content_objects_with_protocol_adoption' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='example_content_objects_with_protocol_adoption'>example content objects with protocol adoption</h5>
 
@@ -389,8 +399,7 @@ produced and consumed.</p>
 <p>A tile can adopt the RessourceCarrying protocol to signal the simulation
 that it is capable of transporting ressources.</p>
 
-<p>A ressource carrier is always <q>graphable</q>, meaning that it is neccessary
-for any pathfinding.</p>
+<p>A ressource carrier is always added to the map graph.</p>
 
 <p>This is currently only planned for streets (StreetPlopp).</p>
 <a href='#event_system' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='event_system'>Event system</h2>
@@ -505,7 +514,7 @@ var simulation = Simulation(city: city)
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-17)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-07-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

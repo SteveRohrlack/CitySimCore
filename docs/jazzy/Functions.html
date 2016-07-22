@@ -13,7 +13,7 @@
     <a title="Functions  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (85% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -31,13 +31,7 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/BudgetActor.html">BudgetActor</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/City.html">City</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -83,6 +77,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/GKGridGraph.html">GKGridGraph</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -101,7 +103,7 @@
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTPS_10Locateable_PS0___Sb">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2geFTOS_13RessourceTypeS0__Sb">&gt;=(_:_:)</a>
@@ -113,6 +115,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Protocols/Acting.html">Acting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:P14CitySimCoreiOS14ActorStageable">ActorStageable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Array2DMapping.html">Array2DMapping</a>
@@ -134,9 +139,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/EventSubscribing.html">EventSubscribing</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/Graphable.html">Graphable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Locateable.html">Locateable</a>
@@ -183,16 +185,25 @@
                 <a href="Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/CityMap.html">CityMap</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ConditionContainer.html">ConditionContainer</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/ElectricityActor.html">ElectricityActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Location.html">Location</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RessourceContainer.html">RessourceContainer</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Ressources.html">Ressources</a>
@@ -625,12 +636,16 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb"></a>
+                    <a name="/s:ZF14CitySimCoreiOSoi2eeFTPS_10Locateable_PS0___Sb"></a>
                     <a name="//apple_ref/swift/Function/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
+                    <a class="token" href="#/s:ZF14CitySimCoreiOSoi2eeFTPS_10Locateable_PS0___Sb">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -645,7 +660,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Location</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Location</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Locateable</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Locateable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -661,7 +676,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>location</p>
+                                  <p>Locateable</p>
 
                                 </div>
                               </td>
@@ -674,7 +689,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>location</p>
+                                  <p>Locateable</p>
 
                                 </div>
                               </td>
@@ -695,7 +710,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-17)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-07-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

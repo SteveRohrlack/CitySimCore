@@ -13,7 +13,7 @@
     <a title="Structs  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">CitySimCoreiOS Docs</a> (86% documented)</p>
+        <p><a href="index.html">CitySimCoreiOS Docs</a> (85% documented)</p>
         <p class="header-right"><a href="https://github.com/SteveRohrlack/CitySimCore"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -31,13 +31,7 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/BudgetActor.html">BudgetActor</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/City.html">City</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ElectricityActor.html">ElectricityActor</a>
               </li>
             </ul>
           </li>
@@ -83,6 +77,14 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/GKGridGraph.html">GKGridGraph</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -101,7 +103,7 @@
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTOS_8TileTypeS0__Sb">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTVS_8LocationS0__Sb">==(_:_:)</a>
+                <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2eeFTPS_10Locateable_PS0___Sb">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:ZF14CitySimCoreiOSoi2geFTOS_13RessourceTypeS0__Sb">&gt;=(_:_:)</a>
@@ -113,6 +115,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Protocols/Acting.html">Acting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:P14CitySimCoreiOS14ActorStageable">ActorStageable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Array2DMapping.html">Array2DMapping</a>
@@ -134,9 +139,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/EventSubscribing.html">EventSubscribing</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/Graphable.html">Graphable</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Locateable.html">Locateable</a>
@@ -183,16 +185,25 @@
                 <a href="Structs/Budget.html">Budget</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/BudgetActor.html">BudgetActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/CityMap.html">CityMap</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ConditionContainer.html">ConditionContainer</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/ElectricityActor.html">ElectricityActor</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/Location.html">Location</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/MapStatisticContainer.html">MapStatisticContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RessourceContainer.html">RessourceContainer</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Ressources.html">Ressources</a>
@@ -326,6 +337,79 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:V14CitySimCoreiOS16ElectricityActor"></a>
+                    <a name="//apple_ref/swift/Struct/ElectricityActor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V14CitySimCoreiOS16ElectricityActor">ElectricityActor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The ElectricityActor</p>
+
+                        <a href="Structs/ElectricityActor.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ElectricityActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V14CitySimCoreiOS11BudgetActor"></a>
+                    <a name="//apple_ref/swift/Struct/BudgetActor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V14CitySimCoreiOS11BudgetActor">BudgetActor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The BudgetActor manages all aspects of the budget but the current budget value.</p>
+
+<p>BudgetActor adopts the protocol <q>EventSubscribing</q></p>
+
+<ul>
+<li>holds sum of current running cost</li>
+<li>event handler for <q>CityMap.add</q> and <q>CityMap.remove</q> for objects that are
+budgetable, subtracts cost to buy</li>
+<li>substracts running cost</li>
+</ul>
+
+                        <a href="Structs/BudgetActor.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BudgetActor</span><span class="p">:</span> <span class="kt">Acting</span><span class="p">,</span> <span class="kt">EventSubscribing</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:V14CitySimCoreiOS7CityMap"></a>
                     <a name="//apple_ref/swift/Struct/CityMap" class="dashAnchor"></a>
                     <a class="token" href="#/s:V14CitySimCoreiOS7CityMap">CityMap</a>
@@ -346,7 +430,7 @@ map data.</p>
 - StatisticlayersContainer holding all statistical layers</p>
 
 <p>Additionaly, the CityMap contains a Graph representation of Locations that are
-<q>Graphable</q>.</p>
+RessourceCyrrying.</p>
 
 <p>CityMap emits events, see CityMapEvent:
 - AddTile: when a tile was successfully added, payload: new tile
@@ -432,6 +516,40 @@ different StatisticsLayer instances</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Simulation</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V14CitySimCoreiOS18RessourceContainer"></a>
+                    <a name="//apple_ref/swift/Struct/RessourceContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V14CitySimCoreiOS18RessourceContainer">RessourceContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the ConditionContainer encapsulates accessing a list of conditions by</p>
+
+<p>adapting the <q>Containing</q> protocol</p>
+
+                        <a href="Structs/RessourceContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RessourceContainer</span><span class="p">:</span> <span class="kt">Containing</span></code></pre>
 
                         </div>
                       </div>
@@ -588,7 +706,7 @@ container (Array2DMapping) by providing a high level api to the raw data</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-06-17)</p>
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external">Steve Rohrlack</a>. All rights reserved. (Last updated: 2016-07-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
