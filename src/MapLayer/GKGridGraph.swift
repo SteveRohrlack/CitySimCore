@@ -33,7 +33,18 @@ extension GKGridGraph {
      - parameter location: the location to remove
      */
     func remove(location location: Locateable) {
-        removeNodes(location.nodes)
+        var nodes: [GKGridGraphNode] = []
+        
+        location.forEachCell {[weak self] (y: Int, x: Int) in
+            let node = self?.nodeAtGridPosition(vector_int2(Int32(x), Int32(y)))
+            guard let existingNode = node else {
+                return
+            }
+            
+            nodes.append(existingNode)
+        }
+        
+        removeNodes(nodes)
     }
     
     /**
@@ -45,11 +56,9 @@ extension GKGridGraph {
      - returns: GKGridGraphNode optional
      */
     func nodeAtGridPosition(location location: Locateable) -> GKGridGraphNode? {
-        guard let firstNode = location.nodes.first else {
-            return nil
-        }
+        let position = vector_int2(Int32(location.originX), Int32(location.originY))
         
-        return nodeAtGridPosition(firstNode.gridPosition)
+        return nodeAtGridPosition(position)
     }
     
 }
