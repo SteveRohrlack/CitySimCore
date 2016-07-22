@@ -12,7 +12,7 @@ import GameplayKit
 /**
  The ElectricityActor
 */
-public class ElectricityActor: Acting, EventSubscribing {
+public struct ElectricityActor: Acting, EventSubscribing {
     
     /// actor stage
     /// simulation's main data container

@@ -18,7 +18,7 @@ import Foundation
    budgetable, subtracts cost to buy
  - substracts running cost
 */
-public class BudgetActor: Acting, EventSubscribing {
+public struct BudgetActor: Acting, EventSubscribing {
    
     /// actor stage
     /// simulation's main data container
